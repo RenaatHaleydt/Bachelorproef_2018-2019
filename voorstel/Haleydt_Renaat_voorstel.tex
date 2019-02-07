@@ -1,0 +1,99 @@
+%==============================================================================
+% Sjabloon onderzoeksvoorstel bachelorproef
+%==============================================================================
+% Gebaseerd op LaTeX-sjabloon ‘Stylish Article’ (zie voorstel.cls)
+% Auteur: Jens Buysse, Bert Van Vreckem
+%
+% Compileren in TeXstudio:
+%
+% - Zorg dat Biber de bibliografie compileert (en niet Biblatex)
+%   Options > Configure > Build > Default Bibliography Tool: "txs:///biber"
+% - F5 om te compileren en het resultaat te bekijken.
+% - Als de bibliografie niet zichtbaar is, probeer dan F5 - F8 - F5
+%   Met F8 compileer je de bibliografie apart.
+%
+% Als je JabRef gebruikt voor het bijhouden van de bibliografie, zorg dan
+% dat je in ``biblatex''-modus opslaat: File > Switch to BibLaTeX mode.
+
+\documentclass{voorstel}
+
+\usepackage{lipsum}
+
+%------------------------------------------------------------------------------
+% Metadata over het voorstel
+%------------------------------------------------------------------------------
+
+%---------- Titel & auteur ----------------------------------------------------
+
+% TODO: geef werktitel van je eigen voorstel op
+\PaperTitle{Best practices om continuous integration en continuous delivery uit te rollen in een SAPUI5 webapplicatie op SAP Cloud Platform}
+\PaperType{Onderzoeksvoorstel Bachelorproef 2018-2019} % Type document
+
+% TODO: vul je eigen naam in als auteur, geef ook je emailadres mee!
+\Authors{Renaat Haleydt\textsuperscript{1}} % Authors
+\CoPromotor{Pieter-Jan Deraedt\textsuperscript{2} (Amista)}
+\affiliation{\textbf{Contact:}
+    \textsuperscript{1} \href{mailto:renaat.haleydt.y0066@student.hogent.be}{renaat.haleydt.y0066@student.hogent.be};
+    \textsuperscript{2} \href{mailto:pieter-jan.deraedt@amista.be}{pieter-jan.deraedt@amista.be};
+}
+
+%---------- Abstract ----------------------------------------------------------
+
+\Abstract{Met deze studie is het doel de best practices uit te schrijven om een Continuous Integration / Continuous Delivery pipeline te implementeren in een SAPUI5 webapplicatie op SAP Cloud Platform. De applicatie maakt gebruik van SAP HANA, NodeJS en HTML5. Er bestaan verschillende tools om een CI/CD pipeline te maken die elk voor- en nadelen hebben.
+    Amista beseft dat er nood is om wijzigingen sneller te implementeren en CI/CD kan daar een oplossing voor bieden.
+    Het is belangrijk dat dit onderzocht wordt, omdat dit binnen SAP een nieuw concept is. Er is geen specifieke handleiding voor de technologieën die ze bij Amista gebruiken. 
+    Een voorbeeldapplicatie - die de technologieën (SAP HANA, NodeJS en HTML5) gebruikt - zal helpen om in deze studie de best practices te onderzoeken die Amista op weg te helpen om de meest geschikte CI/CD pipeline te implementeren. De verschillende tools worden kort toegelicht en de voor- en nadelen van de verschillende tools worden besproken.
+    Deze studie is de gemiste koppeling tussen de theorie die je op internet vindt en een praktijkvoorbeeld van een SAPUI5 webapplicatie op een SAP Cloud Platform. 
+    De conclusie is dat Amista er meer voordelen dan nadelen uithaalt wanneer ze investeert in een CI/CD pipeline en dat er gebruik zal gemaakt worden van Git, Jenkins en Nexus.}
+
+%---------- Onderzoeksdomein en sleutelwoorden --------------------------------
+% TODO: Sleutelwoorden:
+%
+% Het eerste sleutelwoord beschrijft het onderzoeksdomein. Je kan kiezen uit
+% deze lijst:
+%
+% - Mobiele applicatieontwikkeling
+% - Webapplicatieontwikkeling
+% - Applicatieontwikkeling (andere)
+% - Systeembeheer
+% - Netwerkbeheer
+% - Mainframe
+% - E-business
+% - Databanken en big data
+% - Machineleertechnieken en kunstmatige intelligentie
+% - Andere (specifieer)
+%
+% De andere sleutelwoorden zijn vrij te kiezen
+
+\Keywords{Onderzoeksdomein. Continuous Integration --- Continuous Delivery --- SAP Cloud Platform --- Webapplicatieontwikkeling} % Keywords
+\newcommand{\keywordname}{Sleutelwoorden} % Defines the keywords heading name
+
+%---------- Titel, inhoud -----------------------------------------------------
+
+\begin{document}
+
+\flushbottom % Makes all text pages the same height
+\maketitle % Print the title and abstract box
+\tableofcontents % Print the contents section
+\thispagestyle{empty} % Removes page numbering from the first page
+
+%------------------------------------------------------------------------------
+% Hoofdtekst
+%------------------------------------------------------------------------------
+
+% De hoofdtekst van het voorstel zit in een apart bestand, zodat het makkelijk
+% kan opgenomen worden in de bijlagen van de bachelorproef zelf.
+\input{voorstel-inhoud}
+
+%------------------------------------------------------------------------------
+% Referentielijst
+%------------------------------------------------------------------------------
+% TODO: de gerefereerde werken moeten in BibTeX-bestand ``voorstel.bib''
+% voorkomen. Gebruik JabRef om je bibliografie bij te houden en vergeet niet
+% om compatibiliteit met Biber/BibLaTeX aan te zetten (File > Switch to
+% BibLaTeX mode)
+
+\phantomsection
+\printbibliography[heading=bibintoc]
+
+\end{document}
