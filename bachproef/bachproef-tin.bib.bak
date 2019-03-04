@@ -1,0 +1,12 @@
+% Encoding: UTF-8
+
+@Book{Riti2018,
+  author    = {Pierluigi Riti},
+  title     = {Pro DevOps with Google Cloud Platform},
+  year      = {2018},
+  date      = {2018-10-25},
+  publisher = {Apress, Berkeley, CA},
+  isbn      = {978-1-4842-3896-7},
+}
+
+@Comment{jabref-meta: databaseType:biblatex;}

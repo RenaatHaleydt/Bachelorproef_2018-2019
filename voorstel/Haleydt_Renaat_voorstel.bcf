@@ -2306,10 +2306,11 @@
     <bcf:citekey order="3">Fowler2013</bcf:citekey>
     <bcf:citekey order="4">Claps2015</bcf:citekey>
     <bcf:citekey order="5">Kramer2018</bcf:citekey>
-    <bcf:citekey order="6">Kramer2018</bcf:citekey>
-    <bcf:citekey order="7">GitLabPricing2019</bcf:citekey>
-    <bcf:citekey order="8">SonatypeNexusPricing2019</bcf:citekey>
-    <bcf:citekey order="9">OBrien2010</bcf:citekey>
+    <bcf:citekey order="6">SAPERP2019</bcf:citekey>
+    <bcf:citekey order="7">Kramer2018</bcf:citekey>
+    <bcf:citekey order="8">GitLabPricing2019</bcf:citekey>
+    <bcf:citekey order="9">SonatypeNexusPricing2019</bcf:citekey>
+    <bcf:citekey order="10">OBrien2010</bcf:citekey>
   </bcf:section>
   <bcf:sortlist section="0" name="apa/global/" type="entry" sortscheme="apa" sortnamekeyscheme="global" labelprefix="">
   <bcf:sorting>

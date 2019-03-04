@@ -2,50 +2,125 @@
 
 \section{Introductie} % The \section*{} command stops section numbering
 \label{sec:introductie}
+Betere, redundante projecten opleveren, dit is waar ieder bedrijf naar streeft.
+Amista is een consultancy bedrijf dat op zoek gaat, samen met hun klanten, naar oplossingen binnen de wereld van SAP.
+Bij Amista weten ze heel goed waar de noden van hun klanten liggen en zouden hier dan ook graag op inspelen.
+Klanten willen namelijk de gewenste veranderingen onmiddellijk te zien krijgen, de wachttijd op een oplevering die ze willen doorvoeren moet minimaal blijven.
+Meestal werkt een heel team aan de oplevering van een project, dit leidt tot verschillende versies van de code.
+Men weet niet precies op welk punt de code 'echt werkt'. 
+Continuous Integration en Continuous Delivery kan een hulpmiddel zijn om bij elke push werkende software te hebben. Er wordt namelijk gecontroleerd of de code voldoet aan criteria om het als 'werkende' te beschouwen (de code wordt groen verklaard).
 
-Hier introduceer je werk. Je hoeft hier nog niet te technisch te gaan.
+Vandaag de dag verwachten klanten dat het programma blijft werken eens een oplevering doorgevoerd wordt (dit wordt vaak 0 downtime genoemd in het vakjargon).
+Een manier om deze nood op te vangen is het implementeren van Continuous Deployment.
 
-Je beschrijft zeker:
+Deze studie biedt een weg aan bedrijven die denken om een CI/CD pipeline te integreren op SAP Cloud Platform om te slagen in hun opdracht. Het gaat specifiek over SAPUI5 webapplicaties die gebruik maken van SAP HANA, NodeJS en HTML5. 
+De best practices om zo een systeem uit te rollen worden besproken, alsook wat de voor- en nadelen zijn van bepaalde frameworks/tools.
 
+Onderzoeksvragen:
 \begin{itemize}
-  \item de probleemstelling en context
-  \item de motivatie en relevantie voor het onderzoek
-  \item de doelstelling en onderzoeksvraag/-vragen
+    \item Wat zijn de voor- en nadelen van een CI/CD pipeline te integreren in het algemeen en specifiek voor Amista?
+    \item Is het mogelijk om op een eenvoudige manier een Continuous Integration en Continuous Delivery pipeline te implementeren voor de ontwikkelingen van een SAPUI5 applicatie op SAP Cloud Platform?
+    \item Hoe kunnen we deze implementatie tot een succes brengen?
+    \item Welke tools moeten we gebruiken om een CI/CD pipeline op SAP Cloud Platform te implementeren als we vergelijken op snelheid, configureerbaarheid, documentatie en kostprijs?
 \end{itemize}
+
 
 %---------- Stand van zaken ---------------------------------------------------
 
 \section{State-of-the-art}
 \label{sec:state-of-the-art}
-
-Hier beschrijf je de \emph{state-of-the-art} rondom je gekozen onderzoeksdomein. Dit kan bijvoorbeeld een literatuurstudie zijn. Je mag de titel van deze sectie ook aanpassen (literatuurstudie, stand van zaken, enz.). Zijn er al gelijkaardige onderzoeken gevoerd? Wat concluderen ze? Wat is het verschil met jouw onderzoek? Wat is de relevantie met jouw onderzoek?
-
-Verwijs bij elke introductie van een term of bewering over het domein naar de vakliteratuur, bijvoorbeeld~\autocite{Doll1954}! Denk zeker goed na welke werken je refereert en waarom.
-
 % Voor literatuurverwijzingen zijn er twee belangrijke commando's:
 % \autocite{KEY} => (Auteur, jaartal) Gebruik dit als de naam van de auteur
 %   geen onderdeel is van de zin.
 % \textcite{KEY} => Auteur (jaartal)  Gebruik dit als de auteursnaam wel een
 %   functie heeft in de zin (bv. ``Uit onderzoek door Doll & Hill (1954) bleek
 %   ...'')
+\large{\textbf{SAP Cloud Platform}}
 
-Je mag gerust gebruik maken van subsecties in dit onderdeel.
+SAP Cloud Platform is een Platform-as-a-service (PaaS), een platform dat - door hardware en software samen te brengen - applicaties overal toegankelijk maakt en samenbrengt tot 1 platform  ~\autocite{SAPSE2018}.
+SAP Cloud Platform is een development en deployment platform dat ook de hand reikt aan verschillende technologieën: Internet of Things, big data, Artificial Intelligence enzovoort. Het is een platform dat zowel on-premise als cloud technologieën samen kan brengen, die je kan uitbreiden en zelf kan ontwikkelen. Het haalt zijn kracht vooral uit de perfecte integratie van andere SAP software die je ook nog eens kan uitbreiden. 
 
-%---------- Methodologie ------------------------------------------------------
-\section{Methodologie}
-\label{sec:methodologie}
+\large{\textbf{Continuous Integration}}
+Dit is een manier om software te maken waar de focus ligt bij de teamleden ~\autocite{Fowler2006}. Zij worden verwacht hun geschreven code op regelmatige basis te integreren met de master applicatie. Op die manier gaat de code door een molen die een geautomatiseerde build zal uitvoeren en kijkt of de code slaagt voor Unit tests. Een best practice is om te testen in een kopie van de productieomgeving, zo heb je weinig risico op ongelukken.
+Deze techniek van implementeren brengt bepaalde voordelen met zich mee: er zijn minder problemen om de code te integreren op de master applicatie waardoor men sneller kan voldoen aan de eisen van de klant.
 
-Hier beschrijf je hoe je van plan bent het onderzoek te voeren. Welke onderzoekstechniek ga je toepassen om elk van je onderzoeksvragen te beantwoorden? Gebruik je hiervoor experimenten, vragenlijsten, simulaties? Je beschrijft ook al welke tools je denkt hiervoor te gebruiken of te ontwikkelen.
+\large{\textbf{Continuous Delivery}}
+De code wordt getest  de testen slagen wordt de code afgeleverd in een formaat dat klaar is om te deployen.
+Bij deze stap is er een menselijke keuze nodig om de software naar de klant of gebruiker te brengen ~\autocite{Fowler2013}.
 
-%---------- Verwachte resultaten ----------------------------------------------
-\section{Verwachte resultaten}
-\label{sec:verwachte_resultaten}
 
-Hier beschrijf je welke resultaten je verwacht. Als je metingen en simulaties uitvoert, kan je hier al mock-ups maken van de grafieken samen met de verwachte conclusies. Benoem zeker al je assen en de stukken van de grafiek die je gaat gebruiken. Dit zorgt ervoor dat je concreet weet hoe je je data gaat moeten structureren.
+\large{\textbf{Continuous Deployment}}
+\newline
+Dit is een manier om software uit te sturen en als klaar te beschouwen. Het is een mogelijkheid om alle soorten wijzigingen - inclusief nieuwe functies, configuratiewijzigingen, bugfixes en experimenten - op een veilige, snelle en automatische manier bij de klant of gebruiker te brengen. 
+Deze manier van deployen is makkelijker om te voldoen aan de wijzigingen die moeten doorgevoerd worden. Er komt geen grote release bij te pas waar iedereen bang afwacht of de update stand houdt. Door telkens kleine veranderingen op een veilige manier door te voeren zorgt men ervoor dat de applicatie veel minder kans heeft op falen ~\autocite{Claps2015}.
+Het is aan te raden dat wanneer je Continuous Deployment wil implementeren in je project, je eerst Continuous Integration en Continuous Delivery op punt moet zetten. 
+Ook is het belangrijk om een goede flow van versie control te hebben binnen het team en je moet gebruik maken van een automated deploy script die je aan de build hangt . 
 
-%---------- Verwachte conclusies ----------------------------------------------
-\section{Verwachte conclusies}
-\label{sec:verwachte_conclusies}
 
-Hier beschrijf je wat je verwacht uit je onderzoek, met de motivatie waarom. Het is \textbf{niet} erg indien uit je onderzoek andere resultaten en conclusies vloeien dan dat je hier beschrijft: het is dan juist interessant om te onderzoeken waarom jouw hypothesen niet overeenkomen met de resultaten.
+\large{\textbf{CI/CD integreren op SAP Cloud Platform}}
+\newline{}
+SAP Cloud Platform biedt de mogelijkheid om verschillende omgevingen op te stellen waarin je kan werken als developer. Het vergt enige vereisten om te voldoen aan de regels van Continuous Integration ~\autocite{Kramer2018}:
+\begin{itemize}
+    \item Hou alles goed bij via een version control systeem
+    \item Automatiseer de build
+    \item Zorg ervoor dat tijdens de build er Unit testen lopen
+    \item Het team moet op regelmatige basis commits uitvoeren
+    \item Elke verandering moet gebuild worden
+    \item Als er errors tevoorschijn komen tijdens de build moeten die opgelost worden
+    \item De build moet uitgetest worden op een kopie van de productieomgeving
+    \item Automatiseer de deployment
+\end{itemize}
+Eens deze regels toegepast zijn kunnen we spreken van een CI implementatie.
+Vaak wordt CI in combinatie gebracht met Continuous Delivery. Om dit in een vloeiende lijn te laten gaan spreekt men van een CI/CD pipeline.
 
+\large{\textbf{CI/CD pipeline volgens SAP}}
+\newline{}
+SAP is een Duitse onderneming dat softwareoplossingen aanbiedt voor grote ondernemingen en heeft zicht gespecialiseerd in het maken van ERP pakketten. Dat is software dat alle processen van het bedrijf opneemt ~\autocite{SAPERP2019}.
+Een programmeur schrijft nieuwe code voor een verandering die de klant wil uitvoeren. Idealiter zou dit - voor het mergen naar de masterapplication - eens door een voter build moeten gaan, waar automatische test aanwezig zijn die kijken of de code geen problemen zou geven als je die zou mergen met de master. Een laaste stap voor de code naar de master gemerged wordt, is het toepassen van code reviews door collega developers (het 4-ogen principe).
+Na het samenvoegen wordt automatisch de CI-build geactiveerd. De code gaat door de automatische tests. Eens de testen slagen worden de wijzigingen geïntegreerd op de master. 
+
+Dan komt de Continuous Delivery fase, waarbij de code nog eens door een test systeem gaat. Deze fase gebeurt allemaal automatisch, maar er kunnen ook manueel testen uitgevoerd worden. Eens de code door deze fase raakt is ze klaar om te deployen. 
+Bij Continuous Deployment worden de wijzigingen dus automatisch naar buiten gebracht ~\autocite{Kramer2018}.
+
+\large{\textbf{Tools die gebruikt kunnen worden om een CI/CD pipeline te implementeren}}
+    \newline
+    Er bestaan verschillende source code repositories waar je de versies van je code kan beheren. GitHub, Git, GitLab, Bitbucket zijn voorbeelden van zo een tools.
+    Build schedulers zorgen ervoor dat de procedures worden samengesteld en dat de builds worden getriggerd. Voorbeelden hiervan zijn: Jenkins, Travis CI, GitLab-CI en Bamboo. Sonatype Nexus en Archiva zijn voorbeelden van tools die gebruikt worden als repository manager, deze houden bij wijze van spreken de code bij die klaar is om te deployen.
+    
+    %---------- Methodologie ------------------------------------------------------
+    \section{Methodologie}
+    \label{sec:methodologie}
+    
+    Eerst worden de voor- en nadelen van het integreren van een CI/CD pipeline in een SAPUI5 applicatie uitgeschreven. 
+    Deze studie zal de voor- en nadelen van de verschillende tools onderzoeken op vlak van snelheid, configureerbaarheid met SAP en de tools die Amista gebruikt, documentatie die te vinden is online en de kostprijs.
+    Er wordt een voorbeeldapplicatie gemaakt die zal helpen bij het uitschrijven van de best practices om een CI/CD pipeline uit te werken aan de hand van de tools die gekozen werden.
+    De voorbeeldapplicatie wordt een omgeving waar het mogelijk is om kleine deeltjes code te wijzigen en die dan testen of ze klaar zijn om te deployen.
+    
+    %---------- Verwachte resultaten ----------------------------------------------
+    \section{Verwachte resultaten}
+    \label{sec:verwachte_resultaten}
+    
+    Uit onderzoek zal blijken dat de nadelen niet zullen opwegen tegen de vele voordelen die een CI/CD pipeline te bieden heeft.
+    Amista maakt reeds gebruik van Git als versiebeheersysteem, dit zal ongetwijfeld doorwegen op de keuze. Ook het feit dat Git open source en dus helemaal gratis te gebruiken is heeft zijn voordelen.
+    GitHub, GitLab en Bitbucket zijn allemaal een online repository management systeem om Git projecten te beheren.
+    GitLab is open source, maar er bestaat een formule waar een onderneming moet betalen voor de diensten en server beheer.
+    Als een onderneming gebruik wil maken van GitHub en Bitbucket zal ze geld op tafel moeten leggen. 
+    Wanneer we kijken naar de samenwerking met build schedulers, zien we dat de online repository management systemen hun eigen tool hebben. 
+    Zo heeft GitLab een eigen gemaakte Continuous Integration tool, GitLab CI genaamd. Deze tool is gratis te gebruiken tot 2000 minuten per maand ~\autocite{GitLabPricing2019}.
+    Wanneer er gebruik gemaakt wordt van Bitbucket zal hoogst waarschijnlijk Bamboo gebruiken, deze twee tools komen van hetzelfde bedrijf en werken bijgevolg naadloos samen.
+    Wanneer men GitHub gebruikt is het mogelijk om Travis CI te implementeren.
+    Jenkins heeft dan weer plug-ins ter beschikking waarbij de samenwerking met de bovenstaande online repository management systemen verzekerd is.
+    \newline
+    Als we kijken naar de build schedulers zien we dat Jenkins een grote community heeft, het brengt geen kosten met zich mee (want het is open source) en biedt vele plug-ins aan om combinatie met andere tools makkelijk te laten verlopen.
+    Sonatype Nexus biedt de mogelijkheid aan om te kiezen tussen de open source versie of de professionele versie die minstens \$10/maand kost~\autocite{SonatypeNexusPricing2019}. Het verschil zit hem in de support die Sonatype biedt ~\autocite{OBrien2010}.
+    Apache Archiva is ook open source, maar daar is minder informatie over te vinden. De community is niet zo groot als bij Nexus.
+    \newline
+    In dit onderzoek wordt er ook een koppeling van de gevonden theorie aan een klein praktijkvoorbeeld gemaakt. Dit aan de hand van best practices om een Continuous Integration/Continuous Delivery pipeline op te zetten en een soort gids om die best practices toe te passen op de omgeving waar Amista mee werkt.
+    
+    %---------- Verwachte conclusies ----------------------------------------------
+    \section{Verwachte conclusies}
+    \label{sec:verwachte_conclusies}
+    
+    Als onderneming heeft het zeker voordelen om een CI/CD pipeline te integreren. Gaande van onmiddellijke feedback op geschreven code van developers, betere implementatie, 0 downtime. Het grootste nadeel zal de tijd van implementatie zijn, maar ook de kostprijs. De integratie en onderhoud van zo een infrastructuur brengt heel wat aanpassingen met zich mee die geld kosten. Er moeten ook veel test geschreven worden om een goede pipeline te bekomen.
+    Het zal mogelijk zijn dat bedrijven, mits een goede handleiding van best practices bij de hand, een succesvolle CI/CD pipeline kunnen integreren.
+    Git, Jenkins en Nexus zullen als winnaars uit de bus komen om zo de pipeline te maken. Rekening houdend met de kosten en de configureerbaarheid met de tools die Amista gebruikt en beschikbare documentatie.
