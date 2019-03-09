@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.2.18)  4 MAR 2019 11:20
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.2.18)  5 MAR 2019 21:34
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1969,13 +1969,13 @@ LaTeX Font Info:    Font shape `T1/pag/b/n' in size <12> not available
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 Package babel Info: Redefining dutch shorthand "|
-(babel)             in language  on input line 31.
+(babel)             in language  on input line 33.
 Package babel Info: Redefining dutch shorthand "~
-(babel)             in language  on input line 31.
+(babel)             in language  on input line 33.
 Package babel Info: Redefining dutch shorthand "|
-(babel)             in language  on input line 31.
+(babel)             in language  on input line 33.
 Package babel Info: Redefining dutch shorthand "~
-(babel)             in language  on input line 31.
+(babel)             in language  on input line 33.
  [7
 
 ])
@@ -2100,79 +2100,94 @@ Package babel Info: Redefining dutch shorthand "|
 Package babel Info: Redefining dutch shorthand "~
 (babel)             in language  on input line 1.
 Package babel Info: Redefining dutch shorthand "|
-(babel)             in language  on input line 9.
+(babel)             in language  on input line 10.
 Package babel Info: Redefining dutch shorthand "~
-(babel)             in language  on input line 9.
+(babel)             in language  on input line 10.
+
+LaTeX Warning: Citation 'Riti2018' on page 15 undefined on input line 13.
+
+LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <12> not available
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 13.
 Package babel Info: Redefining dutch shorthand "|
-(babel)             in language  on input line 12.
+(babel)             in language  on input line 17.
 Package babel Info: Redefining dutch shorthand "~
-(babel)             in language  on input line 12.
-Package babel Info: Redefining dutch shorthand "|
-(babel)             in language  on input line 15.
-Package babel Info: Redefining dutch shorthand "~
-(babel)             in language  on input line 15.
-Package babel Info: Redefining dutch shorthand "|
-(babel)             in language  on input line 18.
-Package babel Info: Redefining dutch shorthand "~
-(babel)             in language  on input line 18.
+(babel)             in language  on input line 17.
+
+LaTeX Warning: Citation 'Riti2018' on page 15 undefined on input line 19.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
 Package babel Info: Redefining dutch shorthand "|
 (babel)             in language  on input line 21.
 Package babel Info: Redefining dutch shorthand "~
 (babel)             in language  on input line 21.
 Package babel Info: Redefining dutch shorthand "|
-(babel)             in language  on input line 24.
+(babel)             in language  on input line 21.
 Package babel Info: Redefining dutch shorthand "~
-(babel)             in language  on input line 24.
-Package babel Info: Redefining dutch shorthand "|
-(babel)             in language  on input line 27.
-Package babel Info: Redefining dutch shorthand "~
-(babel)             in language  on input line 27.
-Package babel Info: Redefining dutch shorthand "|
-(babel)             in language  on input line 30.
-Package babel Info: Redefining dutch shorthand "~
-(babel)             in language  on input line 30.
-Package babel Info: Redefining dutch shorthand "|
-(babel)             in language  on input line 33.
-Package babel Info: Redefining dutch shorthand "~
-(babel)             in language  on input line 33.
-Package babel Info: Redefining dutch shorthand "|
-(babel)             in language  on input line 36.
-Package babel Info: Redefining dutch shorthand "~
-(babel)             in language  on input line 36.
-Package babel Info: Redefining dutch shorthand "|
-(babel)             in language  on input line 39.
-Package babel Info: Redefining dutch shorthand "~
-(babel)             in language  on input line 39.
-Package babel Info: Redefining dutch shorthand "|
-(babel)             in language  on input line 39.
-Package babel Info: Redefining dutch shorthand "~
-(babel)             in language  on input line 39.
-[15
+(babel)             in language  on input line 21.
+ [15
 
 ]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Package babel Info: Redefining dutch shorthand "|
+(babel)             in language  on input line 22.
+Package babel Info: Redefining dutch shorthand "~
+(babel)             in language  on input line 22.
+
+
+LaTeX Warning: Citation 'Fowler2013' on page 16 undefined on input line 26.
 
 Package babel Info: Redefining dutch shorthand "|
-(babel)             in language  on input line 39.
+(babel)             in language  on input line 28.
 Package babel Info: Redefining dutch shorthand "~
-(babel)             in language  on input line 39.
-Package babel Info: Redefining dutch shorthand "|
-(babel)             in language  on input line 39.
-Package babel Info: Redefining dutch shorthand "~
-(babel)             in language  on input line 39.
- [16]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+(babel)             in language  on input line 28.
+
+LaTeX Warning: Citation 'Claps2015' on page 16 undefined on input line 31.
 
 Package babel Info: Redefining dutch shorthand "|
-(babel)             in language  on input line 39.
+(babel)             in language  on input line 33.
 Package babel Info: Redefining dutch shorthand "~
-(babel)             in language  on input line 39.
+(babel)             in language  on input line 33.
+
+LaTeX Warning: Citation 'Amista2018' on page 16 undefined on input line 35.
+
 Package babel Info: Redefining dutch shorthand "|
-(babel)             in language  on input line 39.
+(babel)             in language  on input line 38.
 Package babel Info: Redefining dutch shorthand "~
-(babel)             in language  on input line 39.
- [17])
-(./methodologie.tex
+(babel)             in language  on input line 38.
+
+LaTeX Warning: Citation 'SAPERP2019' on page 16 undefined on input line 40.
+
+Package babel Info: Redefining dutch shorthand "|
+(babel)             in language  on input line 42.
+Package babel Info: Redefining dutch shorthand "~
+(babel)             in language  on input line 42.
+Package babel Info: Redefining dutch shorthand "|
+(babel)             in language  on input line 45.
+Package babel Info: Redefining dutch shorthand "~
+(babel)             in language  on input line 45.
+Package babel Info: Redefining dutch shorthand "|
+(babel)             in language  on input line 45.
+Package babel Info: Redefining dutch shorthand "~
+(babel)             in language  on input line 45.
+[16]
+LaTeX Font Info:    Font shape `T1/pag/bx/n' in size <10.95> not available
+(Font)              Font shape `T1/pag/b/n' tried instead on input line 45.
+LaTeX Font Info:    Font shape `T1/pag/b/n' in size <10.95> not available
+(Font)              Font shape `T1/pag/db/n' tried instead on input line 45.
+Package babel Info: Redefining dutch shorthand "|
+(babel)             in language  on input line 54.
+Package babel Info: Redefining dutch shorthand "~
+(babel)             in language  on input line 54.
+Package babel Info: Redefining dutch shorthand "|
+(babel)             in language  on input line 58.
+Package babel Info: Redefining dutch shorthand "~
+(babel)             in language  on input line 58.
+Package babel Info: Redefining dutch shorthand "|
+(babel)             in language  on input line 62.
+Package babel Info: Redefining dutch shorthand "~
+(babel)             in language  on input line 62.
+) (./methodologie.tex
 Package babel Info: Redefining dutch shorthand "|
 (babel)             in language  on input line 5.
 Package babel Info: Redefining dutch shorthand "~
@@ -2181,7 +2196,18 @@ Package babel Info: Redefining dutch shorthand "|
 (babel)             in language  on input line 5.
 Package babel Info: Redefining dutch shorthand "~
 (babel)             in language  on input line 5.
- [18]
+ [17]
+Package babel Info: Redefining dutch shorthand "|
+(babel)             in language  on input line 5.
+Package babel Info: Redefining dutch shorthand "~
+(babel)             in language  on input line 5.
+Package babel Info: Redefining dutch shorthand "|
+(babel)             in language  on input line 5.
+Package babel Info: Redefining dutch shorthand "~
+(babel)             in language  on input line 5.
+ [18
+
+]
 Hoofdstuk 3.
 Package babel Info: Redefining dutch shorthand "|
 (babel)             in language  on input line 5.
@@ -2203,30 +2229,27 @@ Package babel Info: Redefining dutch shorthand "|
 (babel)             in language  on input line 23.
 Package babel Info: Redefining dutch shorthand "~
 (babel)             in language  on input line 23.
+) (./conclusie.tex
+Package babel Info: Redefining dutch shorthand "|
+(babel)             in language  on input line 5.
+Package babel Info: Redefining dutch shorthand "~
+(babel)             in language  on input line 5.
+Package babel Info: Redefining dutch shorthand "|
+(babel)             in language  on input line 5.
+Package babel Info: Redefining dutch shorthand "~
+(babel)             in language  on input line 5.
+ [19]
+Package babel Info: Redefining dutch shorthand "|
+(babel)             in language  on input line 5.
+Package babel Info: Redefining dutch shorthand "~
+(babel)             in language  on input line 5.
+Package babel Info: Redefining dutch shorthand "|
+(babel)             in language  on input line 5.
+Package babel Info: Redefining dutch shorthand "~
+(babel)             in language  on input line 5.
+ [20
 
-Underfull \vbox (badness 2409) has occurred while \output is active []
-
-Package babel Info: Redefining dutch shorthand "|
-(babel)             in language  on input line 26.
-Package babel Info: Redefining dutch shorthand "~
-(babel)             in language  on input line 26.
-Package babel Info: Redefining dutch shorthand "|
-(babel)             in language  on input line 26.
-Package babel Info: Redefining dutch shorthand "~
-(babel)             in language  on input line 26.
- [19
-
-])
-(./conclusie.tex
-Package babel Info: Redefining dutch shorthand "|
-(babel)             in language  on input line 5.
-Package babel Info: Redefining dutch shorthand "~
-(babel)             in language  on input line 5.
-Package babel Info: Redefining dutch shorthand "|
-(babel)             in language  on input line 5.
-Package babel Info: Redefining dutch shorthand "~
-(babel)             in language  on input line 5.
- [20]
+]
 Hoofdstuk 4.
 Package babel Info: Redefining dutch shorthand "|
 (babel)             in language  on input line 5.
@@ -2243,9 +2266,7 @@ Package babel Info: Redefining dutch shorthand "|
 (babel)             in language  on input line 17.
 Package babel Info: Redefining dutch shorthand "~
 (babel)             in language  on input line 17.
- [21
-
-])
+ [21])
 Package babel Info: Redefining dutch shorthand "|
 (babel)             in language  on input line 115.
 Package babel Info: Redefining dutch shorthand "~
@@ -2402,11 +2423,11 @@ Package logreq Info: Writing requests to 'bachproef-tin.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 37312 strings out of 492995
- 686057 string characters out of 6132704
- 1294965 words of memory out of 5000000
- 40031 multiletter control sequences out of 15000+600000
- 43547 words of font info for 181 fonts, out of 8000000 for 9000
+ 37323 strings out of 492995
+ 686243 string characters out of 6132704
+ 1294845 words of memory out of 5000000
+ 40041 multiletter control sequences out of 15000+600000
+ 52693 words of font info for 183 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  62i,12n,56p,10403b,1896s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
@@ -2415,10 +2436,10 @@ xlive/2017/texmf-dist/fonts/type1/urw/avantgar/uagd8a.pfb></usr/local/texlive/2
 017/texmf-dist/fonts/type1/urw/avantgar/uagk8a.pfb></usr/local/texlive/2017/tex
 mf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2017/texmf-dist/fo
 nts/type1/urw/times/utmr8a.pfb>
-Output written on bachproef-tin.pdf (30 pages, 198473 bytes).
+Output written on bachproef-tin.pdf (30 pages, 192738 bytes).
 PDF statistics:
- 357 PDF objects out of 1000 (max. 8388607)
- 287 compressed objects within 3 object streams
- 62 named destinations out of 1000 (max. 500000)
- 18162 words of extra memory for PDF output out of 20736 (max. 10000000)
+ 358 PDF objects out of 1000 (max. 8388607)
+ 288 compressed objects within 3 object streams
+ 65 named destinations out of 1000 (max. 500000)
+ 23282 words of extra memory for PDF output out of 24883 (max. 10000000)
 

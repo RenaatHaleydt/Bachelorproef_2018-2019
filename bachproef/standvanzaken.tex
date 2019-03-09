@@ -4,36 +4,115 @@
 % Tip: Begin elk hoofdstuk met een paragraaf inleiding die beschrijft hoe
 % dit hoofdstuk past binnen het geheel van de bachelorproef. Geef in het
 % bijzonder aan wat de link is met het vorige en volgende hoofdstuk.
+Bedrijven zijn constant op zoek naar betere en snellere resultaten. In het software development circuit is het vandaag soms nog lang wachten voor een wijziging effectief doorgevoerd wordt. Men levert nog vaak software op aan het einde van de sprint, wat soms voor problemen zorgt als men veel code tegelijk aflevert. Met een nieuwe software development methode - Continuous Integration en Continuous Delivery genaamd - wil men deze problemen zoveel mogelijk vermijden. Men spreekt vaak van een CI/CD pipeline als men het heeft over Continuous Integration en Continuous Delivery, maar er is nog een derde speler dat men kan invoeren: Continuous Deployment. Samen vormen zij de 3 musketiers om software projecten een grotere slaagkans te geven.
 
 % Pas na deze inleidende paragraaf komt de eerste sectiehoofding.
+\section{DevOps}
+\label{sec:devops}
+    DevOps is een samentrekking van development en operations en is een welgekend begrip binnen de informatica wereld. Het heeft als doel om de 'state of mind' binnen een bedrijf te veranderen zodat alle lagen/departementen vlotter samenwerken. Het is een praktische 'gids' dat bedrijven kunnen gebruiken om de communicatie tussen developers en systeembeheerders beter te maken. Deze twee verschillende lagen in een bedrijf willen namelijk hetzelfde: zo snel mogelijk kwaliteitsvolle software opleveren. DevOps is gebaseerd op Agile development, maar gaat verder dan dat. Het gaat dieper in op automatisatie, integratie, samenwerking en communicatie. 
+    Continuous Integration, Delivery en Deployment zijn kenmerkend voor DevOps, omdat het inzet op snellere oplevering van kwaliteitsvolle software. ~\autocite{Riti2018}
+    
+    % Hier zeker Patrick Debois vernoemen en vermelden waarom DevOps is opgericht: omdat ze in 2008 veel te maken hadden met falende projecten vanwege slechte communicatie.
+
 \section{Continuous Integration}
 \label{sec:continuous-integration}
+    Dit is een eerste stap in de pipeline waarbij de geschreven code wordt gecommit naar een 'source control system'. Hierdoor wordt de 'source code' automatisch opnieuw opgebouwd en wordt er gekeken of het deel dat net toegevoegd is geweest ook slaagt voor de testen die automatisch zijn opgestart. Afgewerkte code onmiddellijk 'pushen' naar het 'source control system' is broodnodig om dit proces te doen slagen. Een goede samenwerking tussen de verschillende leden van het development team is ook vanzelfsprekend ~\autocite{Riti2018}. 
+    % De push naar de version control laat ook weten indien er tests niet zouden slagen.
 
 \section{Continuous Delivery}
 \label{sec:continuous-delivery}
+    Eens het team met succes de Continuous Integration toepast kan men overschakelen naar de volgende stap: Continuous Delivery.
+    Het is een manier dat ervoor zorgt dat de code die van de Continuous Integration stap komt gebuild wordt en voorbereidt wordt voor een release.
+    Er is echter wel nog een menselijk hand nodig om de software naar de klant of gebruiker te brengen ~\autocite{Fowler2013}. 
 
 \section{Continuous Deployment}
 \label{sec:continuous-deployment}
-
-\section{DevOps}
-\label{sec:devops}
+    De gelijkenis met Continuous Deployment is treffend, maar er is wel degelijk een verschil.
+    Hier gaat men automatisch de veranderde code naar productie brengen. De veranderingen gaan door de volledige pipeline en eens ze slagen voor alle testen wordt - zonder menselijke interactie - de code naar productie gebracht ~\autocite{Claps2015}.
 
 \section{Amista}
 \label{sec:amista}
+    Amista is een dochterbedrijf van Boutique dat zich enkel toespitst op SAP. Het is een consultancy bedrijf dat net 5 kaarjes heeft mogen uitblazen, maar ondertussen al een gekende naam is binnen het SAP milieu. Ondertussen werken er in totaal al 50 personen onder Amista en het blijft maar groeien. Ze mogen Infrabel, Alcopa, Danone, AG Real Estate en nog andere tot hun cliënteel benoemen zoals op hun site staat te lezen ~\autocite{Amista2018}.
+    Omdat Amista graag wil innoveren en de wensen van hun klanten zo goed mogelijk probeert uit te voeren willen ze investeren in een CI/CD pipeline.
+
+\section{SAP}
+\label{sec:sap}
+    SAP is een Duitse onderneming dat softwareoplossingen aanbiedt voor grote ondernemingen en heeft zicht gespecialiseerd in het maken van ERP pakketten. Dat is software dat alle processen van het bedrijf opneemt ~\autocite{SAPERP2019}.
 
 \section{SAPUI5 webapplicatie volgens Amista}
 \label{sec:sapui5-sap-hana}
+    Amista heeft enkele klanten waar ze SAPUI5 webapplicaties voor moeten maken. Deze combineren ze met een SAP HANA database dat allemaal draait op SAP Cloud Platform. Omdat er nog niet veel informatie te vinden is over een CI/CD pipeline binnen bovenstaande toepassingen, wil Amista heel graag een gepersonaliseerde handleiding om zo een pipeline op te stellen.
+     
+\paragraph{SAP Cloud Platform}
+    SAP Cloud Platform is een platform as a service (PaaS), dat aangeboden wordt door SAP SE. het is een online platform dat - door hardware en software samen te brengen - applicaties overal toegankelijk maakt en samenbrengt tot 1 platform online ~\autocite{SAPSE2018}.
+    SAP Cloud Platform wordt zowel voor development als deployment gebruikt, maar reikt ook de hand aan verschillende technologieën: Internet of Things, big data, Artificiële Intelligentie enzovoort. Het is een platform dat zowel on-premise - waarbij software enkel lokaal op een computer beschikbaar is - als cloud technologieën samen kan brengen. Je kan er de technologieën ook uitbreiden en zelf ontwikkelen. Het haalt zijn kracht uit de perfecte integratie met andere SAP software die je ook nog eens kan uitbreiden.
 
-\section{SAP Cloud Platform}
-\label{sec:sap-cloud-platform}
+\paragraph{SAPUI5}
+    SAPUI5 is een framework dat uitgevonden is door SAP en bevat verschillende libraries die bovenop JavaScript gebouwd zijn. Men kan via het SAP Cloud Platform front-end applicaties maken en deployen die geschreven zijn in SAPUI5. Het is een framework dat bedoeld is om HTML5 applicaties te bouwen die bijna automatisch responsive zijn zonder veel bijkomende code toe te voegen.
+    Het is bedoeld om dezelfde lay-out en hetzelfde gebruik voor de eindklant te garanderen. Het biedt aan de developers een resem aan UI controls aan zodat er een consistenter en beter UX design gehanteerd wordt.~\autocite{SAPSEa} 
+    SAPUI5 is a framework that includes a collection of libraries that you can use to build applications that run in a desktop or mobile browser – while only maintaining one code base. Using the SAPUI5 JavaScript toolkit, it’s easy to build HTML5 applications that are accessible and responsive without additional coding. Developing open source apps? You also get the benefits of responsive UIs with OpenUI5, the open source version of SAPUI5.
+
+\paragraph{SAP HANA}
+    In-Memory Data Platform staat er er als titel op de site van SAP te lezen. Het is een platform dat gebruik maakt van het RAM geheugen van de computer, wat enorme snelheden met zich meebrengt, maar ook een enorm kostenplaatje. Dit even terzijde wordt SAP Hana aangeprezen als een platform  om ingewikkelde, real-time analytische berekeningen uit te voeren op data.
+    Het is een relationeel database management systeem (RDMBMS) dat geïntegreerd kan worden in SAP Cloud Platform, waarbij het mogelijk is om zowel on-premise als in de cloud te werken, of een combinatie van beiden. 
 
 \section{CI/CD pipeline op SAP Cloud Platform}
 \label{sec:ci-cd-op-sap-cloud-platform}
+    SAP Cloud Platform biedt de mogelijkheid om verschillende omgevingen op te stellen waarin je kan werken als developer. Het vergt enige vereisten om te voldoen aan de regels van Continuous Integration ~\autocite{Kramer2018}:
+    \begin{itemize}
+        \item Hou alles goed bij via een version control systeem
+        \item Automatiseer de build
+        \item Zorg ervoor dat tijdens de build er Unit testen lopen
+        \item Het team moet op regelmatige basis commits uitvoeren
+        \item Elke verandering moet gebuild worden
+        \item Als er errors tevoorschijn komen tijdens de build moeten die opgelost worden
+        \item De build moet uitgetest worden op een kopie van de productieomgeving
+        \item Automatiseer de deployment
+    \end{itemize}
+    Eens deze regels toegepast zijn kunnen we spreken van een CI implementatie.
+    Vaak wordt CI in combinatie gebracht met Continuous Delivery. Om dit in een vloeiende lijn te laten gaan spreekt men van een CI/CD pipeline.
 
 \section{CI/CD pipeline volgens SAP}
 \label{sec:ci-cd-pipeling-volgens-sap}
+    SAP is een Duitse onderneming dat softwareoplossingen aanbiedt voor grote ondernemingen en heeft zicht gespecialiseerd in het maken van ERP pakketten. Dat is software dat alle processen van het bedrijf opneemt ~\autocite{SAPERP2019}.
+    Een programmeur schrijft nieuwe code voor een verandering die de klant wil uitvoeren. Idealiter zou dit - voor het mergen naar de masterapplication - eens door een voter build moeten gaan, waar automatische test aanwezig zijn die kijken of de code geen problemen zou geven als je die zou mergen met de master. Een laaste stap voor de code naar de master gemerged wordt, is het toepassen van code reviews door collega developers (het 4-ogen principe).
+    Na het samenvoegen wordt automatisch de CI-build geactiveerd. De code gaat door de automatische tests. Eens de testen slagen worden de wijzigingen geïntegreerd op de master. 
+    
+    Dan komt de Continuous Delivery fase, waarbij de code nog eens door een test systeem gaat. Deze fase gebeurt allemaal automatisch, maar er kunnen ook manueel testen uitgevoerd worden. Eens de code door deze fase raakt is ze klaar om te deployen. 
+    Bij Continuous Deployment worden de wijzigingen dus automatisch naar buiten gebracht ~\autocite{Kramer2018}.
 
-\section{Tools voor CI/CD pipeline}
+\section{Tools voor een CI/CD pipeline}
 \label{sec:tools-voor-pipeline}
-
+    Er bestaan verschillende repository management services die een source control systeem hebben. GitHub, GitLab en Bitbucket zijn enkele voorbeelden uit het rijtje.
+    Build schedulers zorgen ervoor dat de procedures worden samengesteld en dat de builds worden getriggerd. Voorbeelden hiervan zijn: Jenkins, Travis CI, GitLab-CI en Bamboo. Sonatype Nexus en Archiva zijn dan weer voorbeelden van tools die gebruikt worden als artifact repository manager, deze houden bij wijze van spreken de code bij die klaar is om te deployen. 
+    
+    \paragraph{Source Control System}
+    Dit systeem houdt alle veranderingen bij aan de code en zal de veranderingen ook beheren zodat ze niet overlappen. Het laat toe dat meerdere developers tegelijk aan - soms dezelfde - code werken. Een source control systeem houdt dan de veranderingen bij wat elke developer gedaan heeft. Best practice is er maar 1 versie van de software die stabiel is, meestal master genoemd. Een gangbare praktijk binnen dit systeem is het maken van branches. Hier wordt een kopie gemaakt van de stabiele master, waardoor men wat kan knoeien in de branch zonder de master te beschadigen. Als men overtuigd is van de kwaliteiten dat men op een branch gemaakt heeft kan men de branch 'mergen' in de master. Deze techniek wordt ook wel 'revision control' of 'version control' genoemd ~\autocite{Skelton2014} en ãutocite{Riti2018}.
+    Voorbeelden van zo een source control system zijn Git, CVS (Concurrent Version System), Subversion en Mercurial.
+    
+    \paragraph{Repository Management Services}
+    Dit zijn diensten die bedrijven aanbieden om het source control systeem op te slaan en te beheren.
+    Het is een online repository waar je source control bijgehouden wordt, dit maakt het makkelijker voor developers om samen te werken en dezelfde bron te gebruiken.
+    
+    \paragraph{Build Scheduler of Continuous Integration Server}
+    Dit zorgt ervoor dat - telkens wanneer er code gecommit wordt - de pipeline wordt uitgevoerd. De taken van de build scheduler zijn: 
+    \begin{itemize}
+        \item Code ophalen van het source control system
+        \item De testen uitvoeren
+        \item Het builden van de software
+        \item Feedback geven over voorgaande stappen
+    \end{itemize}
+    Deze taken moeten allemaal automatisch uitgevoerd worden ~\autocite{Riti2018}. 
+    
+    \paragraph{Artifact Repository Manager}
+    Als laatste zijn de Artifact Repository Managers aan de beurt. Deze repository manager houdt alles wat nodig is om de applicatie te deployen bij zoals
+    \begin{itemize}
+        \item packaged application code
+        \item application assets
+        \item infrastructure code
+        \item virtual machine images
+        \item configuration data
+    \end{itemize}
+    Deze tool houdt alle geschiedenis bij van de bovenstaande files. Zoals eerder vermeld kan men vanaf hier de software (automatisch) deployen. Dit is de allerlaatste fase in de CI/CD pipeline ~\autocite{Skelton2014}.
+    
 % \lipsum[7-20]
