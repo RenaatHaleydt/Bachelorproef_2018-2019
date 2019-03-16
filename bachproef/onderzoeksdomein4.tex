@@ -7,3 +7,32 @@
 
 \section{Inleiding}
 \label{sec:inleiding}
+
+\section{Continuous Delivery principles}
+\label{sec:continuous-delivery-principles}
+% Zie pagina 44 in Riti2018_Chapter_IntroductionToContinuousIntegr.pdf
+
+\section{CI/CD pipeline op SAP Cloud Platform}
+\label{sec:ci-cd-op-sap-cloud-platform}
+SAP Cloud Platform biedt de mogelijkheid om verschillende omgevingen op te stellen waarin je kan werken als developer. Het vergt enige vereisten om te voldoen aan de regels van Continuous Integration ~\autocite{Kramer2018}:
+\begin{itemize}
+    \item Hou alles goed bij via een version control systeem
+    \item Automatiseer de build
+    \item Zorg ervoor dat tijdens de build er Unit testen lopen
+    \item Het team moet op regelmatige basis commits uitvoeren
+    \item Elke verandering moet gebuild worden
+    \item Als er errors tevoorschijn komen tijdens de build moeten die opgelost worden
+    \item De build moet uitgetest worden op een kopie van de productieomgeving
+    \item Automatiseer de deployment
+\end{itemize}
+Eens deze regels toegepast zijn kunnen we spreken van een CI implementatie.
+Vaak wordt CI in combinatie gebracht met Continuous Delivery. Om dit in een vloeiende lijn te laten gaan spreekt men van een CI/CD pipeline.
+
+\section{CI/CD pipeline volgens SAP}
+\label{sec:ci-cd-pipeling-volgens-sap}
+SAP is een Duitse onderneming dat softwareoplossingen aanbiedt voor grote ondernemingen en heeft zicht gespecialiseerd in het maken van ERP pakketten. Dat is software dat alle processen van het bedrijf opneemt ~\autocite{SAPERP2019}.
+Een programmeur schrijft nieuwe code voor een verandering die de klant wil uitvoeren. Idealiter zou dit - voor het mergen naar de masterapplication - eens door een voter build moeten gaan, waar automatische test aanwezig zijn die kijken of de code geen problemen zou geven als je die zou mergen met de master. Een laaste stap voor de code naar de master gemerged wordt, is het toepassen van code reviews door collega developers (het 4-ogen principe).
+Na het samenvoegen wordt automatisch de CI-build geactiveerd. De code gaat door de automatische tests. Eens de testen slagen worden de wijzigingen geïntegreerd op de master. 
+
+Dan komt de Continuous Delivery fase, waarbij de code nog eens door een test systeem gaat. Deze fase gebeurt allemaal automatisch, maar er kunnen ook manueel testen uitgevoerd worden. Eens de code door deze fase raakt is ze klaar om te deployen. 
+Bij Continuous Deployment worden de wijzigingen dus automatisch naar buiten gebracht ~\autocite{Kramer2018}.
