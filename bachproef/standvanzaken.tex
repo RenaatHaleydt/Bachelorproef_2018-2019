@@ -22,8 +22,11 @@ Om een duidelijker beeld te scheppen van een CI/CD pipeline zal dit hoofdstuk ee
     Het doel van een Continuous Integration is om de integratie feilloos te laten verlopen wanneer men software ontwikkelt en geen functionaliteiten verliezen na een merge ~\autocite{Riti2018}.
     \newline
     Bovenstaande uitleg is makkelijker te begrijpen aan de hand van een voorbeeld. Op Figuur \ref{img-ci-example} is een grafische voorstelling van dit voorbeeld terug te vinden.
-    De developer commit code naar de repository die te vinden is op het source-control systeem. De Continuous Integration server krijgt het bericht dat er code is toegevoegd, haalt de laatst toegevoegde code op en laat de testen runnen. Wanneer alle testen slagen zal de CI server de code compilen en feedback bezorgen aan de developer. In dit voorbeeld maakt men gebruik van een externe mail server om die feedback te verzenden.
+    De developer maakt een wijziging en commit de code naar de repository die te vinden is op het source-control systeem. De Continuous Integration server krijgt het bericht dat er code is toegevoegd, haalt de laatst toegevoegde code op en laat de testen runnen. Wanneer alle testen slagen zal de CI server de code compilen en feedback bezorgen aan de developer. In dit voorbeeld maakt men gebruik van een externe mail server om die feedback te verzenden.
     Deze stappen gebeuren elke keer er code naar de repository gestuurd wordt.
+    Bovenstaand voorbeeld is een best-practice hoe het zou moeten gebeuren. Er zijn echter enkele zaken die wat extra uitleg kunnen gebruiken.
+    De frequentie en hoeveelheid code zijn belangrijke zaken waar de developer rekening mee moet houden bij een CI pipeline. Volgens \textcite{Fowler2006} is het de plicht van een developer om minstens 1 maal per dag een commit te doen. Hij moet telkens een commit uitvoeren wanneer hij een kleine opdracht afgerond heeft. Zo blijft de hoeveelheid code klein en is het makkelijk om te zoeken wanneer er zich een probleem voordoet.
+    Eens de wijziging gecommit is naar de version control repository moet de CI pipeline zijn werk doen. Een belangrijke stap is het bezorgen van de feedback. Dit moet namelijk het resultaat van de build en de feedback waar het probleem zich kan bevinden terug geven, door bijvoorbeeld aan te geven welke test niet slaagt bij het uitvoeren van de automated testing. De key factor hier is de tijd. Als de developer pas daags nadien feedback krijgt over de fout die hij gepusht heeft wordt het al moeilijker om de fout te vinden en ze op te lossen. 
     \begin{figure}	
         \includegraphics[scale=0.65]{ci-example}
         \caption{Voorbeeld van een Continuous Integration set-up ~\autocite{Riti2018}} \label{img-ci-example}
@@ -34,11 +37,16 @@ Om een duidelijker beeld te scheppen van een CI/CD pipeline zal dit hoofdstuk ee
     Het is een manier dat ervoor zorgt dat de code die van de Continuous Integration stap komt gebuild wordt en voorbereidt wordt voor een release.
     Er is echter wel nog een menselijk hand nodig om de build van deze stap te deployen en voor de buitenwereld beschikbaar stellen ~\autocite{Fowler2013}.
     
+    In dit proces is feedback ook uiterst belangrijk. Als men foute code pusht, moet de persoon die deze code geschreven heeft zo snel mogelijk verwittigd worden. Op deze manier kan het euvel snel opgelost worden.
+    Mail kan een vorm zijn van feedback, maar er bestaan nog andere leuke vormen bovenop de mail. Het bedrijf Dynatrace heeft bijvoorbeeld een licht ontworpen dat je in de kamer van het team kan hangen. Dit IoT gadget, DevOps UFO genaamd, is via WiFi verbonden aan de pipeline omgeving. Het geeft feedback over de staat van de CI/CD pipeline en is een vorm van monitoring. Het geeft de developers en iedereen in de kamer onmiddelijke feedback wanneer er een commit gebeurd. Als de commit door de pipeline geraakt zal de UFO groen kleuren, wanneer de build faalt kleurt de UFO rood en weet iedereen dat er een fout is. Zo weet de persoon die de foute code gepusht heeft dat er iets fout is en kan hij hier nog sneller op inspelen. 
 
     \paragraph{Continuous Deployment}
     De gelijkenis met Continuous Deployment is treffend, maar er is wel degelijk een verschil.
     Hier gaat men automatisch de veranderde code naar productie brengen. De veranderingen gaan door de volledige pipeline en eens ze slagen voor alle testen wordt - zonder menselijke interactie - de code naar productie gebracht ~\autocite{Claps2015}.
-    Dit wordt soms ook wel de 'train to production' genoemd, omdat elke code dat gepushed wordt naar de source-control automatisch tot bij de klant geraakt.
+    Dit wordt soms ook wel de 'train to production' genoemd, omdat elke code dat gepusht wordt naar de source-control automatisch tot bij de klant geraakt.
+    
+    \paragraph{Automated Testing}
+    Zoals hierboven reeds aangegeven is er geen Continuous Integration pipeline zonder automated testing. Dit bestaat ook uit twee delen: automated \& testing. De automated is belangrijk om het principe van DevOps toe te passen, zo weinig mogelijk menselijke tussenkomst. De testen zijn dan weer belangrijk om fouten op te sporen en voor een minimale dienstverlening van de applicatie te zorgen.
 
 \section{SAP}
 \label{sec:sap}
