@@ -2302,33 +2302,36 @@
     <bcf:datasource type="file" datatype="bibtex">../voorstel/voorstel.bib</bcf:datasource>
   </bcf:bibdata>
   <bcf:section number="0">
-    <bcf:citekey order="3">Amista2018</bcf:citekey>
-    <bcf:citekey order="4">Riti2018</bcf:citekey>
-    <bcf:citekey order="5">Fowler2006</bcf:citekey>
-    <bcf:citekey order="6">Riti2018</bcf:citekey>
-    <bcf:citekey order="7">Riti2018</bcf:citekey>
-    <bcf:citekey order="8">Fowler2013</bcf:citekey>
-    <bcf:citekey order="9">Claps2015</bcf:citekey>
-    <bcf:citekey order="10">SAPERP2019</bcf:citekey>
-    <bcf:citekey order="11">SAPSE2018</bcf:citekey>
-    <bcf:citekey order="12">SAPSEa</bcf:citekey>
-    <bcf:citekey order="13">Skelton2014</bcf:citekey>
-    <bcf:citekey order="14">Riti2018</bcf:citekey>
+    <bcf:citekey order="8">Amista2018</bcf:citekey>
+    <bcf:citekey order="9">Riti2018</bcf:citekey>
+    <bcf:citekey order="10">Fowler2006</bcf:citekey>
+    <bcf:citekey order="11">Riti2018</bcf:citekey>
+    <bcf:citekey order="12">Fowler2006</bcf:citekey>
+    <bcf:citekey order="13">Riti2018</bcf:citekey>
+    <bcf:citekey order="14">Fowler2013</bcf:citekey>
     <bcf:citekey order="15">Riti2018</bcf:citekey>
-    <bcf:citekey order="16">Skelton2014</bcf:citekey>
-    <bcf:citekey order="17">Kramer2018</bcf:citekey>
+    <bcf:citekey order="16">Claps2015</bcf:citekey>
+    <bcf:citekey order="17">Vocke2018</bcf:citekey>
     <bcf:citekey order="18">SAPERP2019</bcf:citekey>
-    <bcf:citekey order="19">Kramer2018</bcf:citekey>
-    <bcf:citekey order="20">SAPSE2018</bcf:citekey>
-    <bcf:citekey order="21">Fowler2006</bcf:citekey>
-    <bcf:citekey order="22">Fowler2013</bcf:citekey>
-    <bcf:citekey order="23">Claps2015</bcf:citekey>
-    <bcf:citekey order="24">Kramer2018</bcf:citekey>
-    <bcf:citekey order="25">SAPERP2019</bcf:citekey>
-    <bcf:citekey order="26">Kramer2018</bcf:citekey>
-    <bcf:citekey order="27">GitLabPricing2019</bcf:citekey>
-    <bcf:citekey order="28">SonatypeNexusPricing2019</bcf:citekey>
-    <bcf:citekey order="29">OBrien2010</bcf:citekey>
+    <bcf:citekey order="19">SAPSE2018</bcf:citekey>
+    <bcf:citekey order="20">SAPSEa</bcf:citekey>
+    <bcf:citekey order="21">Skelton2014</bcf:citekey>
+    <bcf:citekey order="22">Riti2018</bcf:citekey>
+    <bcf:citekey order="23">Riti2018</bcf:citekey>
+    <bcf:citekey order="24">Skelton2014</bcf:citekey>
+    <bcf:citekey order="25">Kramer2018</bcf:citekey>
+    <bcf:citekey order="26">SAPERP2019</bcf:citekey>
+    <bcf:citekey order="27">Kramer2018</bcf:citekey>
+    <bcf:citekey order="28">SAPSE2018</bcf:citekey>
+    <bcf:citekey order="29">Fowler2006</bcf:citekey>
+    <bcf:citekey order="30">Fowler2013</bcf:citekey>
+    <bcf:citekey order="31">Claps2015</bcf:citekey>
+    <bcf:citekey order="32">Kramer2018</bcf:citekey>
+    <bcf:citekey order="33">SAPERP2019</bcf:citekey>
+    <bcf:citekey order="34">Kramer2018</bcf:citekey>
+    <bcf:citekey order="35">GitLabPricing2019</bcf:citekey>
+    <bcf:citekey order="36">SonatypeNexusPricing2019</bcf:citekey>
+    <bcf:citekey order="37">OBrien2010</bcf:citekey>
   </bcf:section>
   <bcf:sortlist section="0" name="apa/global/" type="entry" sortscheme="apa" sortnamekeyscheme="global" labelprefix="">
   <bcf:sorting>

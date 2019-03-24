@@ -1,5 +1,13 @@
 [0] Config.pm:354> INFO - This is Biber 2.7
 [0] Config.pm:357> INFO - Logfile is 'bachproef-tin.blg'
-[51] biber-darwin:303> INFO - === Mon Mar 18, 2019, 18:05:53
-[79] Utils.pm:180> ERROR - bachproef-tin.bcf is malformed, last biblatex run probably failed. Deleted bachproef-tin.bbl
-[79] Biber.pm:113> INFO - ERRORS: 1
+[52] biber-darwin:303> INFO - === Sun Mar 24, 2019, 20:06:08
+[89] Biber.pm:359> INFO - Reading 'bachproef-tin.bcf'
+[237] Biber.pm:835> INFO - Found 13 citekeys in bib section 0
+[260] Biber.pm:3670> INFO - Processing section 0
+[281] Biber.pm:3840> INFO - Looking for bibtex format file 'bachproef-tin.bib' for section 0
+[285] bibtex.pm:1435> INFO - Decoding LaTeX character macros into UTF-8
+[292] bibtex.pm:1292> INFO - Found BibTeX data source 'bachproef-tin.bib'
+[295] Utils.pm:164> WARN - Invalid or undefined BibTeX entry key in file '/var/folders/rz/0q2vz7td1nv9znkkmhb0_61h0000gn/T/tTJVdS66JN/bachproef-tin.bib_55556.utf8', skipping ...
+[351] Utils.pm:180> ERROR - BibTeX subsystem: /var/folders/rz/0q2vz7td1nv9znkkmhb0_61h0000gn/T/tTJVdS66JN/bachproef-tin.bib_55556.utf8, line 139, syntax error: found ",", expected one of: number, name (entry type, key, field, or macro name), end of entry ("}" or ")") or quoted string ({...} or "...")
+[351] Biber.pm:109> INFO - WARNINGS: 1
+[352] Biber.pm:113> INFO - ERRORS: 1
