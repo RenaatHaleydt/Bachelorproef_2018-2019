@@ -136,7 +136,7 @@
   url    = {https://www.sap.com/products/hana.html},
 }
 
-@Article{,
+@Article{Sonmez2017,
   author  = {John Sonmez},
   title   = {What Software Developers Should Know About Source Control},
   journal = {DZone},
@@ -153,7 +153,29 @@
   file         = {:DZone-GuideToContinuousDelivery-2014.pdf:PDF},
 }
 
-@Article{,
+@Electronic{Vocke2018,
+  author = {Ham Vocke},
+  title  = {The Practical Test Pyramid},
+  year   = {2018},
+  date   = {2018-02-26},
+  url    = {https://martinfowler.com/articles/practical-test-pyramid.html},
+}
+
+@Electronic{Fowler2012,
+  author = {Martin Fowler},
+  title  = {TestPyramid},
+  year   = {2012},
+  date   = {2012-05-01},
+  url    = {https://martinfowler.com/bliki/TestPyramid.html},
+}
+
+@Article{Jones2019,
+  author       = {Angie Jones},
+  title        = {Testing in CI},
+  journal      = {DZone},
+  journaltitle = {DZone's 2019 Guide To DevOps},
+  year         = {2019},
+  file         = {:Dzone-GuideToDevOps-2019.pdf:PDF},
 }
 
 @Comment{jabref-meta: databaseType:biblatex;}
