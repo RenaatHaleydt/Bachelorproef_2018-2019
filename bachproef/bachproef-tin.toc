@@ -22,17 +22,17 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {paragraph}{Continuous Delivery}{20}{section*.8}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Continuous Deployment}{21}{section*.9}
+\contentsline {paragraph}{Continuous Deployment}{22}{section*.9}
 \defcounter {refsection}{0}\relax 
 \contentsline {paragraph}{Automated Testing}{22}{section*.10}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.2}SAP}{22}{section.2.2}
+\contentsline {section}{\numberline {2.2}SAP}{23}{section.2.2}
 \defcounter {refsection}{0}\relax 
 \contentsline {paragraph}{SAP Cloud Platform}{23}{section*.11}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{SAPUI5}{23}{section*.12}
+\contentsline {paragraph}{SAPUI5}{24}{section*.12}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{SAP HANA}{23}{section*.13}
+\contentsline {paragraph}{SAP HANA}{24}{section*.13}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {3}Voor- en nadelen CI/CD pipeline}{25}{chapter.3}
 \defcounter {refsection}{0}\relax 
@@ -70,17 +70,19 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {7.3}CI/CD pipeline volgens SAP}{34}{section.7.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {8}Conclusie}{35}{chapter.8}
+\contentsline {section}{\numberline {7.4}Automated Tests voor CI}{34}{section.7.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {A}Onderzoeksvoorstel}{37}{appendix.A}
+\contentsline {chapter}{\numberline {8}Conclusie}{37}{chapter.8}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.1}Introductie}{37}{section.A.1}
+\contentsline {chapter}{\numberline {A}Onderzoeksvoorstel}{39}{appendix.A}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.2}State-of-the-art}{38}{section.A.2}
+\contentsline {section}{\numberline {A.1}Introductie}{39}{section.A.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.3}Methodologie}{40}{section.A.3}
+\contentsline {section}{\numberline {A.2}State-of-the-art}{40}{section.A.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.4}Verwachte resultaten}{41}{section.A.4}
+\contentsline {section}{\numberline {A.3}Methodologie}{42}{section.A.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.5}Verwachte conclusies}{42}{section.A.5}
+\contentsline {section}{\numberline {A.4}Verwachte resultaten}{43}{section.A.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {A.5}Verwachte conclusies}{44}{section.A.5}
 \contentsfinish 

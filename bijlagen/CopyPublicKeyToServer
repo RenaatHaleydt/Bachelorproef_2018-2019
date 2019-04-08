@@ -1,0 +1,288 @@
+Last login: Sat Apr  6 13:14:42 on ttys001
+MacBook-Pro-van-Renaat:~ Renaat$ ls
+Applications			Documents			Movies				Pictures			iCloud Drive (Archive)
+Applications (Parallels)	Downloads			Music				Public				node_modules
+Desktop				Library				Parallels			VirtualBox VMs			package-lock.json
+MacBook-Pro-van-Renaat:~ Renaat$ ls -a
+.				.aspnet				.eclipse			.ms_openjdk_config		.subversion			Movies
+..				.bash_history			.emulator_console_auth_token	.netbeans-derby			.templateengine			Music
+.3T				.bash_profile			.gervill			.ngrok				.tooling			Parallels
+.CFUserTextEncoding		.bash_sessions			.gitconfig			.node-gyp			.vagrant.d			Pictures
+.DS_Store			.cf				.gradle				.node_repl_history		.viminfo			Public
+.IdentityService		.conda				.install4j			.npm				.vscode				VirtualBox VMs
+.RData				.condarc			.ipynb_checkpoints		.npmrc				.vue_2				iCloud Drive (Archive)
+.Rapp.history			.config				.ipython			.nuget				.wapi				node_modules
+.Rhistory			.cups				.jupyter			.objectbox-build.properties	Applications			package-lock.json
+.ServiceHub			.dbshell			.local				.omnisharp			Applications (Parallels)
+.Trash				.docker				.m2				.oracle_jre_usage		Desktop
+.adobe				.dotnet				.matplotlib			.p2				Documents
+.anaconda			.dropbox			.mongorc.js			.rstudio-desktop		Downloads
+.android			.dvdcss				.mono				.ssh				Library
+MacBook-Pro-van-Renaat:~ Renaat$ cd .ssh/
+MacBook-Pro-van-Renaat:.ssh Renaat$ ls -l
+total 24
+-rw-------  1 Renaat  staff  1675 Oct  3  2017 id_rsa
+-rw-r--r--  1 Renaat  staff   403 Oct  3  2017 id_rsa.pub
+-rw-r--r--  1 Renaat  staff  2079 Apr  6 10:01 known_hosts
+MacBook-Pro-van-Renaat:.ssh Renaat$ clear
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+MacBook-Pro-van-Renaat:.ssh Renaat$ cd ..
+MacBook-Pro-van-Renaat:~ Renaat$ cd ..
+MacBook-Pro-van-Renaat:Users Renaat$ cd ..
+MacBook-Pro-van-Renaat:/ Renaat$ cd Users/Renaat/
+MacBook-Pro-van-Renaat:~ Renaat$ clear
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+MacBook-Pro-van-Renaat:~ Renaat$ ssh-copy-id 188.166.61.128
+/usr/bin/ssh-copy-id: INFO: Source of key(s) to be installed: "/Users/Renaat/.ssh/id_rsa.pub"
+/usr/bin/ssh-copy-id: INFO: attempting to log in with the new key(s), to filter out any that are already installed
+/usr/bin/ssh-copy-id: INFO: 1 key(s) remain to be installed -- if you are prompted now it is to install the new keys
+Renaat@188.166.61.128's password: 
+Permission denied, please try again.
+Renaat@188.166.61.128's password: 
+Permission denied, please try again.
+Renaat@188.166.61.128's password: 
+Renaat@188.166.61.128: Permission denied (publickey,password).
+MacBook-Pro-van-Renaat:~ Renaat$ clear
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+MacBook-Pro-van-Renaat:~ Renaat$ ssh-copy-id 188.166.61.128
+/usr/bin/ssh-copy-id: INFO: Source of key(s) to be installed: "/Users/Renaat/.ssh/id_rsa.pub"
+/usr/bin/ssh-copy-id: INFO: attempting to log in with the new key(s), to filter out any that are already installed
+/usr/bin/ssh-copy-id: INFO: 1 key(s) remain to be installed -- if you are prompted now it is to install the new keys
+Renaat@188.166.61.128's password: 
+Permission denied, please try again.
+Renaat@188.166.61.128's password: 
+Permission denied, please try again.
+Renaat@188.166.61.128's password: 
+Renaat@188.166.61.128: Permission denied (publickey,password).
+MacBook-Pro-van-Renaat:~ Renaat$ ssh-copy-id 188.166.61.128
+/usr/bin/ssh-copy-id: INFO: Source of key(s) to be installed: "/Users/Renaat/.ssh/id_rsa.pub"
+/usr/bin/ssh-copy-id: INFO: attempting to log in with the new key(s), to filter out any that are already installed
+/usr/bin/ssh-copy-id: INFO: 1 key(s) remain to be installed -- if you are prompted now it is to install the new keys
+Renaat@188.166.61.128's password: 
+Permission denied, please try again.
+Renaat@188.166.61.128's password: 
+Permission denied, please try again.
+Renaat@188.166.61.128's password: 
+Renaat@188.166.61.128: Permission denied (publickey,password).
+MacBook-Pro-van-Renaat:~ Renaat$ clear
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+MacBook-Pro-van-Renaat:~ Renaat$ ssh-copy-id root@188.166.61.128
+/usr/bin/ssh-copy-id: INFO: Source of key(s) to be installed: "/Users/Renaat/.ssh/id_rsa.pub"
+/usr/bin/ssh-copy-id: INFO: attempting to log in with the new key(s), to filter out any that are already installed
+/usr/bin/ssh-copy-id: INFO: 1 key(s) remain to be installed -- if you are prompted now it is to install the new keys
+root@188.166.61.128's password: 
+Permission denied, please try again.
+root@188.166.61.128's password: 
+MacBook-Pro-van-Renaat:~ Renaat$ clear
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+MacBook-Pro-van-Renaat:~ Renaat$ ssh-copy-id root@188.166.61.128
+/usr/bin/ssh-copy-id: INFO: Source of key(s) to be installed: "/Users/Renaat/.ssh/id_rsa.pub"
+/usr/bin/ssh-copy-id: INFO: attempting to log in with the new key(s), to filter out any that are already installed
+/usr/bin/ssh-copy-id: INFO: 1 key(s) remain to be installed -- if you are prompted now it is to install the new keys
+root@188.166.61.128's password: 
+
+Number of key(s) added:        1
+
+Now try logging into the machine, with:   "ssh 'root@188.166.61.128'"
+and check to make sure that only the key(s) you wanted were added.
+
+MacBook-Pro-van-Renaat:~ Renaat$ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
