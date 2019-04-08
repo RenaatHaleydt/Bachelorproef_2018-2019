@@ -37,7 +37,7 @@ Onderzoeksvragen:
 %   ...'')
 \large{\textbf{SAP Cloud Platform}}
 
-SAP Cloud Platform is een Platform-as-a-service (PaaS), een platform dat - door hardware en software samen te brengen - applicaties overal toegankelijk maakt en samenbrengt tot 1 platform  ~\autocite{SAPSE2018}.
+SAP Cloud Platform is een Platform-as-a-service (PaaS), een platform dat - door hardware en software samen te brengen - applicaties overal toegankelijk maakt en samenbrengt tot 1 platform\footnote{https://cloudplatform.sap.com/index.html}.
 SAP Cloud Platform is een development en deployment platform dat ook de hand reikt aan verschillende technologieën: Internet of Things, big data, Artificial Intelligence enzovoort. Het is een platform dat zowel on-premise als cloud technologieën samen kan brengen, die je kan uitbreiden en zelf kan ontwikkelen. Het haalt zijn kracht vooral uit de perfecte integratie van andere SAP software die je ook nog eens kan uitbreiden. 
 
 \large{\textbf{Continuous Integration}}
@@ -75,7 +75,7 @@ Vaak wordt CI in combinatie gebracht met Continuous Delivery. Om dit in een vloe
 
 \large{\textbf{CI/CD pipeline volgens SAP}}
 \newline{}
-SAP is een Duitse onderneming dat softwareoplossingen aanbiedt voor grote ondernemingen en heeft zicht gespecialiseerd in het maken van ERP pakketten. Dat is software dat alle processen van het bedrijf opneemt ~\autocite{SAPERP2019}.
+SAP is een Duitse onderneming dat softwareoplossingen aanbiedt voor grote ondernemingen en heeft zicht gespecialiseerd in het maken van ERP pakketten. Dat is software dat alle processen van het bedrijf opneemt\footnote{https://www.sap.com/products/enterprise-management-erp.html}.
 Een programmeur schrijft nieuwe code voor een verandering die de klant wil uitvoeren. Idealiter zou dit - voor het mergen naar de masterapplication - eens door een voter build moeten gaan, waar automatische test aanwezig zijn die kijken of de code geen problemen zou geven als je die zou mergen met de master. Een laaste stap voor de code naar de master gemerged wordt, is het toepassen van code reviews door collega developers (het 4-ogen principe).
 Na het samenvoegen wordt automatisch de CI-build geactiveerd. De code gaat door de automatische tests. Eens de testen slagen worden de wijzigingen geïntegreerd op de master. 
 
@@ -106,13 +106,13 @@ Bij Continuous Deployment worden de wijzigingen dus automatisch naar buiten gebr
     GitLab is open source, maar er bestaat een formule waar een onderneming moet betalen voor de diensten en server beheer.
     Als een onderneming gebruik wil maken van GitHub en Bitbucket zal ze geld op tafel moeten leggen. 
     Wanneer we kijken naar de samenwerking met build schedulers, zien we dat de online repository management systemen hun eigen tool hebben. 
-    Zo heeft GitLab een eigen gemaakte Continuous Integration tool, GitLab CI genaamd. Deze tool is gratis te gebruiken tot 2000 minuten per maand ~\autocite{GitLabPricing2019}.
+    Zo heeft GitLab een eigen gemaakte Continuous Integration tool, GitLab CI genaamd. Deze tool is gratis te gebruiken tot 2000 minuten per maand\footnote{https://about.gitlab.com}.
     Wanneer er gebruik gemaakt wordt van Bitbucket zal hoogst waarschijnlijk Bamboo gebruiken, deze twee tools komen van hetzelfde bedrijf en werken bijgevolg naadloos samen.
     Wanneer men GitHub gebruikt is het mogelijk om Travis CI te implementeren.
     Jenkins heeft dan weer plug-ins ter beschikking waarbij de samenwerking met de bovenstaande online repository management systemen verzekerd is.
     \newline
     Als we kijken naar de build schedulers zien we dat Jenkins een grote community heeft, het brengt geen kosten met zich mee (want het is open source) en biedt vele plug-ins aan om combinatie met andere tools makkelijk te laten verlopen.
-    Sonatype Nexus biedt de mogelijkheid aan om te kiezen tussen de open source versie of de professionele versie die minstens \$10/maand kost~\autocite{SonatypeNexusPricing2019}. Het verschil zit hem in de support die Sonatype biedt ~\autocite{OBrien2010}.
+    Sonatype Nexus biedt de mogelijkheid aan om te kiezen tussen de open source versie of de professionele versie die minstens \$10/maand kost\footnote{https://www.sonatype.com/nexus-product-pricing}. Het verschil zit hem in de support die Sonatype biedt ~\autocite{OBrien2010}.
     Apache Archiva is ook open source, maar daar is minder informatie over te vinden. De community is niet zo groot als bij Nexus.
     \newline
     In dit onderzoek wordt er ook een koppeling van de gevonden theorie aan een klein praktijkvoorbeeld gemaakt. Dit aan de hand van best practices om een Continuous Integration/Continuous Delivery pipeline op te zetten en een soort gids om die best practices toe te passen op de omgeving waar Amista mee werkt.

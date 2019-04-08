@@ -8,7 +8,7 @@
 IT-bedrijven willen hun klanten steeds sneller te hulp kunnen schieten en betere software leveren. Vandaag de dag worstelen ze nog te vaak met deadlines die verstrijken en krijgen ze te maken met problemen tijdens de oplevering van software. Gelukkig is er doorheen de jaren al veel progressie gemaakt door principes zoals Agile en DevOps toe te passen. Agile leidt tot een betere samenwerking tussen business en IT. DevOps gaat dan weer een stapje verder en is een mindset om de samenwerking tussen alle afdelingen binnen een IT-bedrijf vlotter te maken. 
 Een Continuous Integration en Continuous Delivery (CI/CD) pipeline opzetten is een vast onderdeel van DevOps en zou de werking van een bedrijf ten goede komen. Een CI/CD pipeline zorgt voor de automatisatie van testen, builds en deployment en heeft als groot voordeel dat er sneller wijzigingen doorgevoerd kunnen worden, alsook de tijd dat een applicatie niet runt -'downtime' in IT genoemd- kleiner wordt.
 
-Uit onderzoek - uitgevoerd door DZone - blijkt dat DevOps steeds meer ingeburgerd raakt in de bedrijfscultuur. In 2019 werkte 48\% van de ondervraagden binnen een Operations team mee aan een Continuous Delivery pipeline, een stijging van 7\% in vergelijking met 2018.
+Uit onderzoek - uitgevoerd door DZone - blijkt dat DevOps steeds meer ingeburgerd raakt in de bedrijfscultuur ~\autocite{Baker2019}. In 2019 werkte 48\% van de ondervraagden binnen een Operations team mee aan een Continuous Delivery pipeline, een stijging van 7\% in vergelijking met 2018.
 De stijging is dankzij het management dat gelooft in de mindset van DevOps. Van de 527 technologiespecialisten heeft bij 54\% van hen de steun van het management, maar er is nog een hele weg af te leggen.
 Als we verder naar het onderzoek kijken, blijkt dat er een duidelijk verschil is tussen de implementatie van DevOps en de implementatie van een CI/CD pipeline. 
 31\% heeft voor elk project een Continuous Integration pipeline en 33\% heeft een CI pipeline voor enkele projecten.
@@ -16,18 +16,17 @@ Slechts 14\% van de ondervraagden bevestigt dat ze voor elk project aan Continuo
 28\% heeft voor een aantal projecten zo een Continuous Delivery pipeline.
 Hieruit kan men besluiten dat CI meer ingeburgerd is dan CD. In 58\% van de gevallen vloeien Continuous Integration processen niet door naar Continuous Delivery. De belangrijkste redenen voor deze 'gap' zijn de moeilijkheid van de configuration setup, de moeilijkheden van user acceptance testing (de laatste fase binnen software testing waarbij echte gebruikers de software testen) en automated testing.
 Volgens 47\% van de 527 technologiespecialisten was dit te wijten aan de bedrijfscultuur die niet klaar is om Continuous Delivery toe te passen, in 2018 was dit nog 45\%.
-%TODO: Referentie nog toevoegen voor Jordan Baker!
-%TODO: Referentie met DevOps magazine nog toevoegen! Uitzoeken welk soort referentie het is! Want met die auteurs weet ik het niet goed!
+
 Zoals u kan zien op Figuur\ref{img-survey-cicd} is er nog heel wat werk aan de winkel, maar is er toch al verbetering vastgesteld ten opzichte van vorige jaren. Dit bewijst ook dat een CI/CD pipeline en DevOps in het algemeen niet zo makkelijk op te zetten zijn. Technologisch is het vandaag mogelijk om een pipeline op te stellen, maar de mindset binnen het bedrijf moet meewerken om dit tot een goed eind te brengen.
 Deze scriptie gaat echter niet al te diep in op hoe de DevOps cultuur binnen een bedrijf toe te passen is, maar zal vooral het technische luik onder de loep nemen. Het bedrijf Amista zou graag een gepersonaliseerde vergelijking en handleiding hebben hoe men technisch een CI/CD pipeline opstart.
 
 %TODO: de autocite nog compleet maken!
 \begin{figure}	
     \includegraphics[scale=0.5]{survey-DZone-cicd}
-    \caption{Deel van DZone's survey ~\autocite{}} \label{img-survey-cicd}
+    \caption{Deel van DZone's survey ~\autocite{Baker2019}} \label{img-survey-cicd}
 \end{figure}
 
-Amista is een groeiend bedrijf binnen IT consultancy. Het is een dochterbedrijf van Boutique dat zich toespitst op SAP. Amista bestaat nog maar 5 jaar en ze hebben al 60 personen in dienst. Ze mogen Infrabel, Alcopa, Danone, AG Real Estate en nog anderen tot hun cliënteel rekenen, zoals ook op hun site te lezen valt ~\autocite{Amista2018}.
+Amista is een groeiend bedrijf binnen IT consultancy. Het is een dochterbedrijf van Boutique dat zich toespitst op SAP. Amista bestaat nog maar 5 jaar en ze hebben al 60 personen in dienst. Ze mogen Infrabel, Alcopa, Danone, AG Real Estate en nog anderen tot hun cliënteel rekenen, zoals ook op hun site te lezen valt\footnote{https://www.amista.be}. %Algemene websites van organisaties, sofwarepakkerren, enz. mogen niet in bib file, maar als voetnoot gebruikt worden!
 Ze zijn in twee landen actief, Frankrijk en België, maar werken ook samen met mensen uit India.
 Amista heeft zich verdiept in de Sales, Marketing en Service Management takken van bedrijven. Ze helpen hun klanten op gebied van Innovation, Integration, HCM Services (implementatie van succesfactoren binnen de HR-afdeling) en Digital Learning.
 De missie van Amista is om samen met hun klanten, innovatieve en kwalitatieve oplossingen aan te bieden met behulp van het volledige gamma dat SAP te bieden heeft.

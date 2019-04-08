@@ -1,0 +1,412 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 2.8 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \sortlist[entry]{apa/global/}
+    \entry{Baker2019}{online}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,hash=2470dc11142a1c44ffa17f30568c473e}{%
+           family={Baker},
+           familyi={B\bibinitperiod},
+           given={Jordan},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{2470dc11142a1c44ffa17f30568c473e}
+      \strng{fullhash}{2470dc11142a1c44ffa17f30568c473e}
+      \strng{authornamehash}{2470dc11142a1c44ffa17f30568c473e}
+      \strng{authorfullhash}{2470dc11142a1c44ffa17f30568c473e}
+      \field{sortinit}{B}
+      \field{sortinithash}{5f6fa000f686ee5b41be67ba6ff7962d}
+      \field{labeldatesource}{year}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Key Research Findings}
+      \field{urlday}{25}
+      \field{urlmonth}{3}
+      \field{urlyear}{2019}
+      \field{year}{2019}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb :Dzone-GuideToDevOps-2019.pdf:PDF
+      \endverb
+      \verb{url}
+      \verb https://dzone.com/guides/devops-implementing-cultural-change
+      \endverb
+    \endentry
+    \entry{Claps2015}{online}{}
+      \name{author}{3}{}{%
+        {{uniquename=0,hash=4ec961004ece9e10e4f8dc7e9d2c83ca}{%
+           family={Claps},
+           familyi={C\bibinitperiod},
+           given={Gerry\bibnamedelima Gerard},
+           giveni={G\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+        {{uniquename=0,hash=9cb7339cde5c8923175d58d89391cace}{%
+           family={Svensson},
+           familyi={S\bibinitperiod},
+           given={Richard\bibnamedelima Berntsson},
+           giveni={R\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+        {{uniquename=0,hash=aaebec8b78f58fb15db6dfcf50bcc115}{%
+           family={Aurum},
+           familyi={A\bibinitperiod},
+           given={Aybüke},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{1a5d0f4465f51e1b638143313df73342}
+      \strng{fullhash}{ca89a2c99cc0e2936baff6a4f5c9872d}
+      \strng{authornamehash}{1a5d0f4465f51e1b638143313df73342}
+      \strng{authorfullhash}{ca89a2c99cc0e2936baff6a4f5c9872d}
+      \field{sortinit}{C}
+      \field{sortinithash}{095692fd22cc3c74d7fe223d02314dbd}
+      \field{labeldatesource}{year}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Information and software technology}
+      \field{month}{1}
+      \field{title}{On the journey to continuous deployment: Technical and social challenges along the way}
+      \field{urlday}{11}
+      \field{urlmonth}{3}
+      \field{urlyear}{2019}
+      \field{volume}{57}
+      \field{year}{2015}
+      \field{urldateera}{ce}
+      \field{pages}{21\bibrangedash 31}
+      \range{pages}{11}
+      \verb{url}
+      \verb https://www.sciencedirect.com/search/advanced?docId=10.1016/j.infsof.2014.07.009
+      \endverb
+    \endentry
+    \entry{Fowler2006}{online}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,hash=312ac886938a9b2be4f8eb607567fe4c}{%
+           family={Fowler},
+           familyi={F\bibinitperiod},
+           given={Martin},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{312ac886938a9b2be4f8eb607567fe4c}
+      \strng{fullhash}{312ac886938a9b2be4f8eb607567fe4c}
+      \strng{authornamehash}{312ac886938a9b2be4f8eb607567fe4c}
+      \strng{authorfullhash}{312ac886938a9b2be4f8eb607567fe4c}
+      \field{sortinit}{F}
+      \field{sortinithash}{276475738cc058478c1677046f857703}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{5}
+      \field{title}{Continuous Integration}
+      \field{urlday}{9}
+      \field{urlmonth}{2}
+      \field{urlyear}{2019}
+      \field{year}{2006}
+      \field{urldateera}{ce}
+      \verb{url}
+      \verb http://www.dccia.ua.es/dccia/inf/asignaturas/MADS/2013-14/lecturas/10_Fowler_Continuous_Integration.pdf
+      \endverb
+    \endentry
+    \entry{Fowler2012}{online}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,hash=312ac886938a9b2be4f8eb607567fe4c}{%
+           family={Fowler},
+           familyi={F\bibinitperiod},
+           given={Martin},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{312ac886938a9b2be4f8eb607567fe4c}
+      \strng{fullhash}{312ac886938a9b2be4f8eb607567fe4c}
+      \strng{authornamehash}{312ac886938a9b2be4f8eb607567fe4c}
+      \strng{authorfullhash}{312ac886938a9b2be4f8eb607567fe4c}
+      \field{sortinit}{F}
+      \field{sortinithash}{276475738cc058478c1677046f857703}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{1}
+      \field{month}{5}
+      \field{title}{TestPyramid}
+      \field{urlday}{30}
+      \field{urlmonth}{3}
+      \field{urlyear}{2019}
+      \field{year}{2012}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{url}
+      \verb https://martinfowler.com/bliki/TestPyramid.html
+      \endverb
+    \endentry
+    \entry{Fowler2013}{online}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,hash=312ac886938a9b2be4f8eb607567fe4c}{%
+           family={Fowler},
+           familyi={F\bibinitperiod},
+           given={Martin},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{312ac886938a9b2be4f8eb607567fe4c}
+      \strng{fullhash}{312ac886938a9b2be4f8eb607567fe4c}
+      \strng{authornamehash}{312ac886938a9b2be4f8eb607567fe4c}
+      \strng{authorfullhash}{312ac886938a9b2be4f8eb607567fe4c}
+      \field{sortinit}{F}
+      \field{sortinithash}{276475738cc058478c1677046f857703}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{5}
+      \field{title}{Continuous Delivery}
+      \field{urlday}{30}
+      \field{urlmonth}{3}
+      \field{urlyear}{2019}
+      \field{year}{2013}
+      \field{urldateera}{ce}
+      \verb{url}
+      \verb https://martinfowler.com/bliki/ContinuousDelivery.html
+      \endverb
+    \endentry
+    \entry{Jones2019}{online}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,hash=42eeb8f268807fdcb513db3716933eb2}{%
+           family={Jones},
+           familyi={J\bibinitperiod},
+           given={Angie},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{42eeb8f268807fdcb513db3716933eb2}
+      \strng{fullhash}{42eeb8f268807fdcb513db3716933eb2}
+      \strng{authornamehash}{42eeb8f268807fdcb513db3716933eb2}
+      \strng{authorfullhash}{42eeb8f268807fdcb513db3716933eb2}
+      \field{sortinit}{J}
+      \field{sortinithash}{c86bd6cced82a15683b396c2169909ef}
+      \field{labeldatesource}{year}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{DZone's 2019 Guide To DevOps}
+      \field{title}{Testing in CI}
+      \field{urlday}{30}
+      \field{urlmonth}{3}
+      \field{urlyear}{2019}
+      \field{year}{2019}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb :Dzone-GuideToDevOps-2019.pdf:PDF
+      \endverb
+      \verb{url}
+      \verb https://dzone.com/guides/devops-implementing-cultural-change
+      \endverb
+    \endentry
+    \entry{Kramer2018}{online}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,hash=616fc279687bf048b3c5ef5af13ea075}{%
+           family={Kramer},
+           familyi={K\bibinitperiod},
+           given={Wolfram},
+           giveni={W\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {SAP}%
+      }
+      \strng{namehash}{616fc279687bf048b3c5ef5af13ea075}
+      \strng{fullhash}{616fc279687bf048b3c5ef5af13ea075}
+      \strng{authornamehash}{616fc279687bf048b3c5ef5af13ea075}
+      \strng{authorfullhash}{616fc279687bf048b3c5ef5af13ea075}
+      \field{sortinit}{K}
+      \field{sortinithash}{4c244ceae61406cdc0cc2ce1cb1ff703}
+      \field{labeldatesource}{year}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{2}
+      \field{title}{Continuous Integration (CI) Best Practices with SAP, CI/CD Practices}
+      \field{urlday}{25}
+      \field{urlmonth}{2}
+      \field{urlyear}{2019}
+      \field{year}{2018}
+      \field{urldateera}{ce}
+      \verb{url}
+      \verb https://developers.sap.com/tutorials/ci-best-practices-ci-cd.html
+      \endverb
+    \endentry
+    \entry{OBrien2010}{online}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,hash=1a791113e5049f89382b4742ed4713b4}{%
+           family={OBrien},
+           familyi={O\bibinitperiod},
+           given={Tim},
+           giveni={T\bibinitperiod}}}%
+      }
+      \strng{namehash}{1a791113e5049f89382b4742ed4713b4}
+      \strng{fullhash}{1a791113e5049f89382b4742ed4713b4}
+      \strng{authornamehash}{1a791113e5049f89382b4742ed4713b4}
+      \strng{authorfullhash}{1a791113e5049f89382b4742ed4713b4}
+      \field{sortinit}{O}
+      \field{sortinithash}{f5d80ef71b5b58852663ecfd775b175a}
+      \field{labeldatesource}{year}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Nexus Open Source or Professional: Which One is Right for You?}
+      \field{urlday}{8}
+      \field{urlmonth}{12}
+      \field{urlyear}{2018}
+      \field{year}{2010}
+      \field{urldateera}{ce}
+      \verb{url}
+      \verb https://blog.sonatype.com/2010/01/nexus-open-source-or-professional-which-one-is-right-for-you/
+      \endverb
+    \endentry
+    \entry{Riti2018}{book}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,hash=49ee7d9f405d9177a53ebf6aba3aeaf4}{%
+           family={Riti},
+           familyi={R\bibinitperiod},
+           given={Pierluigi},
+           giveni={P\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Apress, Berkeley, CA}%
+      }
+      \strng{namehash}{49ee7d9f405d9177a53ebf6aba3aeaf4}
+      \strng{fullhash}{49ee7d9f405d9177a53ebf6aba3aeaf4}
+      \strng{authornamehash}{49ee7d9f405d9177a53ebf6aba3aeaf4}
+      \strng{authorfullhash}{49ee7d9f405d9177a53ebf6aba3aeaf4}
+      \field{sortinit}{R}
+      \field{sortinithash}{c15bc8eb6936bc6b3c8baa9e8575af53}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{25}
+      \field{isbn}{978-1-4842-3896-7}
+      \field{month}{10}
+      \field{title}{Pro DevOps with Google Cloud Platform}
+      \field{year}{2018}
+      \field{dateera}{ce}
+    \endentry
+    \entry{SAPERP2019}{online}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,hash=dff150d176ea6633050f5ce153ec20f8}{%
+           family={SAPERP},
+           familyi={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{dff150d176ea6633050f5ce153ec20f8}
+      \strng{fullhash}{dff150d176ea6633050f5ce153ec20f8}
+      \strng{authornamehash}{dff150d176ea6633050f5ce153ec20f8}
+      \strng{authorfullhash}{dff150d176ea6633050f5ce153ec20f8}
+      \field{sortinit}{S}
+      \field{sortinithash}{3c1547c63380458f8ca90e40ed14b83e}
+      \field{labeldatesource}{year}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Proven, time-tested on-premise ERP}
+      \field{year}{2019}
+      \verb{url}
+      \verb https://www.sap.com/products/enterprise-management-erp.html
+      \endverb
+    \endentry
+    \entry{SAPSEa}{online}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,hash=a8fdc4d4089d2e7c3046b1da9fa45a47}{%
+           family={SAPSE},
+           familyi={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{a8fdc4d4089d2e7c3046b1da9fa45a47}
+      \strng{fullhash}{a8fdc4d4089d2e7c3046b1da9fa45a47}
+      \strng{authornamehash}{a8fdc4d4089d2e7c3046b1da9fa45a47}
+      \strng{authorfullhash}{a8fdc4d4089d2e7c3046b1da9fa45a47}
+      \field{sortinit}{S}
+      \field{sortinithash}{3c1547c63380458f8ca90e40ed14b83e}
+      \field{labeldatesource}{year}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{SAPUI5}
+      \field{year}{2019}
+      \verb{url}
+      \verb https://developers.sap.com/topics/ui5.html
+      \endverb
+    \endentry
+    \entry{Skelton2014}{online}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,hash=33f19b6a2aa152f177afc565c458a2f6}{%
+           family={Skelton},
+           familyi={S\bibinitperiod},
+           given={Matthew},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{33f19b6a2aa152f177afc565c458a2f6}
+      \strng{fullhash}{33f19b6a2aa152f177afc565c458a2f6}
+      \strng{authornamehash}{33f19b6a2aa152f177afc565c458a2f6}
+      \strng{authorfullhash}{33f19b6a2aa152f177afc565c458a2f6}
+      \field{sortinit}{S}
+      \field{sortinithash}{3c1547c63380458f8ca90e40ed14b83e}
+      \field{labeldatesource}{year}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{2014 Guide To Continuous Delivery}
+      \field{title}{The Continuous Delivery Toolchain}
+      \field{urlday}{25}
+      \field{urlmonth}{2}
+      \field{urlyear}{2019}
+      \field{year}{2014}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb :DZone-GuideToContinuousDelivery-2014.pdf:PDF
+      \endverb
+      \verb{url}
+      \verb https://dzone.com/guides/continuous-delivery-1
+      \endverb
+    \endentry
+    \entry{Vocke2018}{online}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,hash=7d3cd456e2ab542b1ace51ca0eb8f263}{%
+           family={Vocke},
+           familyi={V\bibinitperiod},
+           given={Ham},
+           giveni={H\bibinitperiod}}}%
+      }
+      \strng{namehash}{7d3cd456e2ab542b1ace51ca0eb8f263}
+      \strng{fullhash}{7d3cd456e2ab542b1ace51ca0eb8f263}
+      \strng{authornamehash}{7d3cd456e2ab542b1ace51ca0eb8f263}
+      \strng{authorfullhash}{7d3cd456e2ab542b1ace51ca0eb8f263}
+      \field{sortinit}{V}
+      \field{sortinithash}{555737dafdcf1396ebfeae5822e5bde2}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{26}
+      \field{month}{2}
+      \field{title}{The Practical Test Pyramid}
+      \field{urlday}{25}
+      \field{urlmonth}{3}
+      \field{urlyear}{2019}
+      \field{year}{2018}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{url}
+      \verb https://martinfowler.com/articles/practical-test-pyramid.html
+      \endverb
+    \endentry
+  \endsortlist
+\endrefsection
+\endinput
+

@@ -1,13 +1,27 @@
 [0] Config.pm:354> INFO - This is Biber 2.7
 [0] Config.pm:357> INFO - Logfile is 'bachproef-tin.blg'
-[52] biber-darwin:303> INFO - === Sun Mar 24, 2019, 20:06:08
-[89] Biber.pm:359> INFO - Reading 'bachproef-tin.bcf'
-[237] Biber.pm:835> INFO - Found 13 citekeys in bib section 0
-[260] Biber.pm:3670> INFO - Processing section 0
-[281] Biber.pm:3840> INFO - Looking for bibtex format file 'bachproef-tin.bib' for section 0
-[285] bibtex.pm:1435> INFO - Decoding LaTeX character macros into UTF-8
-[292] bibtex.pm:1292> INFO - Found BibTeX data source 'bachproef-tin.bib'
-[295] Utils.pm:164> WARN - Invalid or undefined BibTeX entry key in file '/var/folders/rz/0q2vz7td1nv9znkkmhb0_61h0000gn/T/tTJVdS66JN/bachproef-tin.bib_55556.utf8', skipping ...
-[351] Utils.pm:180> ERROR - BibTeX subsystem: /var/folders/rz/0q2vz7td1nv9znkkmhb0_61h0000gn/T/tTJVdS66JN/bachproef-tin.bib_55556.utf8, line 139, syntax error: found ",", expected one of: number, name (entry type, key, field, or macro name), end of entry ("}" or ")") or quoted string ({...} or "...")
-[351] Biber.pm:109> INFO - WARNINGS: 1
-[352] Biber.pm:113> INFO - ERRORS: 1
+[52] biber-darwin:303> INFO - === Mon Apr  8, 2019, 14:29:16
+[81] Biber.pm:359> INFO - Reading 'bachproef-tin.bcf'
+[210] Biber.pm:835> INFO - Found 13 citekeys in bib section 0
+[229] Biber.pm:3670> INFO - Processing section 0
+[247] Biber.pm:3840> INFO - Looking for bibtex format file 'bachproef-tin.bib' for section 0
+[253] bibtex.pm:1435> INFO - Decoding LaTeX character macros into UTF-8
+[260] bibtex.pm:1292> INFO - Found BibTeX data source 'bachproef-tin.bib'
+[312] Biber.pm:3840> INFO - Looking for bibtex format file '../voorstel/voorstel.bib' for section 0
+[314] bibtex.pm:1435> INFO - Decoding LaTeX character macros into UTF-8
+[316] bibtex.pm:1292> INFO - Found BibTeX data source '../voorstel/voorstel.bib'
+[317] Utils.pm:164> WARN - Duplicate entry key: 'CloudScaleQA2018' in file '../voorstel/voorstel.bib', skipping ...
+[317] Utils.pm:164> WARN - Duplicate entry key: 'Matthew2018' in file '../voorstel/voorstel.bib', skipping ...
+[317] Utils.pm:164> WARN - Duplicate entry key: 'Kramer2018' in file '../voorstel/voorstel.bib', skipping ...
+[317] Utils.pm:164> WARN - Duplicate entry key: 'Claps2015' in file '../voorstel/voorstel.bib', skipping ...
+[317] Utils.pm:164> WARN - Duplicate entry key: 'Fowler2013' in file '../voorstel/voorstel.bib', skipping ...
+[318] Utils.pm:164> WARN - Duplicate entry key: 'Beimborn2011' in file '../voorstel/voorstel.bib', skipping ...
+[318] Utils.pm:164> WARN - Duplicate entry key: 'OBrien2010' in file '../voorstel/voorstel.bib', skipping ...
+[318] Utils.pm:164> WARN - Duplicate entry key: 'Fowler2006' in file '../voorstel/voorstel.bib', skipping ...
+[351] UCollate.pm:68> INFO - Overriding locale 'nl-NL' defaults 'variable = shifted' with 'variable = non-ignorable'
+[351] UCollate.pm:68> INFO - Overriding locale 'nl-NL' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[351] Biber.pm:3499> INFO - Sorting list 'apa/global/' of type 'entry' with scheme 'apa' and locale 'nl-NL'
+[351] Biber.pm:3505> INFO - No sort tailoring available for locale 'nl-NL'
+[367] bbl.pm:608> INFO - Writing 'bachproef-tin.bbl' with encoding 'UTF-8'
+[370] bbl.pm:712> INFO - Output to bachproef-tin.bbl
+[370] Biber.pm:109> INFO - WARNINGS: 8
