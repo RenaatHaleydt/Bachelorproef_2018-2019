@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.2.18)  8 APR 2019 14:30
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.2.18)  8 APR 2019 14:43
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2267,15 +2267,8 @@ Package babel Info: Redefining dutch shorthand "|
 (babel)             in language  on input line 45.
 Package babel Info: Redefining dutch shorthand "~
 (babel)             in language  on input line 45.
- [21 <./img/ci-example.png>]
-LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 50.
-
-
-LaTeX Warning: Reference `img-mg-test-pyramid' on page 22 undefined on input li
-ne 50.
-
-<img/test-pyramid.png, id=267, 303.1325pt x 250.9375pt>
+ [21 <./img/ci-example.png>] <img/test-pyramid.png, id=268, 303.1325pt x 250.93
+75pt>
 File: img/test-pyramid.png Graphic file (type png)
 
 <use img/test-pyramid.png>
@@ -2513,11 +2506,6 @@ Package babel Info: Redefining dutch shorthand "|
 (babel)             in language  on input line 37.
 Package babel Info: Redefining dutch shorthand "~
 (babel)             in language  on input line 37.
-
-
-LaTeX Warning: Reference `img-mg-test-pyramid' on page 36 undefined on input li
-ne 45.
-
 Package babel Info: Redefining dutch shorthand "|
 (babel)             in language  on input line 47.
 Package babel Info: Redefining dutch shorthand "~
@@ -2526,7 +2514,7 @@ Package babel Info: Redefining dutch shorthand "|
 (babel)             in language  on input line 47.
 Package babel Info: Redefining dutch shorthand "~
 (babel)             in language  on input line 47.
-[36]) (./conclusie.tex
+ [36]) (./conclusie.tex
 Package babel Info: Redefining dutch shorthand "|
 (babel)             in language  on input line 5.
 Package babel Info: Redefining dutch shorthand "~
@@ -2701,20 +2689,16 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 131.
  (./bachproef-tin.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 131.
 Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 131.
-
-
-LaTeX Warning: There were undefined references.
-
 Package logreq Info: Writing requests to 'bachproef-tin.run.xml'.
 \openout1 = `bachproef-tin.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 37847 strings out of 492995
- 695651 string characters out of 6132704
+ 37842 strings out of 492995
+ 695574 string characters out of 6132704
  1299435 words of memory out of 5000000
- 40399 multiletter control sequences out of 15000+600000
- 95005 words of font info for 291 fonts, out of 8000000 for 9000
+ 40395 multiletter control sequences out of 15000+600000
+ 92202 words of font info for 289 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  62i,12n,68p,10403b,3609s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
@@ -2724,10 +2708,10 @@ xlive/2017/texmf-dist/fonts/type1/urw/avantgar/uagd8a.pfb></usr/local/texlive/2
 mf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2017/texmf-dist/fo
 nts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/
 urw/times/utmri8a.pfb>
-Output written on bachproef-tin.pdf (50 pages, 472796 bytes).
+Output written on bachproef-tin.pdf (50 pages, 471832 bytes).
 PDF statistics:
- 605 PDF objects out of 1000 (max. 8388607)
- 493 compressed objects within 5 object streams
+ 607 PDF objects out of 1000 (max. 8388607)
+ 495 compressed objects within 5 object streams
  125 named destinations out of 1000 (max. 500000)
- 54558 words of extra memory for PDF output out of 61914 (max. 10000000)
+ 54046 words of extra memory for PDF output out of 61914 (max. 10000000)
 

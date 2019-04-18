@@ -1,16 +1,18 @@
 %%=============================================================================
-%% Handleiding van een CI/CD pipeline
+%% Proof-of-concept van een CI/CD pipeline
 %%=============================================================================
 
-\chapter{\IfLanguageName{dutch}{Handleiding van een CI/CD pipeline}{Setting up a CI/CD pipeline}}
-\label{ch:handleiding}
-Een ideaal scenarie voor Amista zou zijn als ze een mooie 'handleiding' over de best practices om een CI/CD pipeline op te starten met de winnende tools uit Onderzoeksdomein 2. Zo heeft Amista een 'gepersonaliseerde tutorial' over hoe een pipeline op te zetten met de tools die het beste matchen met de noden van het bedrijf zelf.
+\chapter{\IfLanguageName{dutch}{Proof-of-concept van een CI/CD pipeline}{Setting up a CI/CD pipeline}}
+\label{ch:proof-of-concept}
+Uit vorig hoofdstuk is gebleken dat SCHRAPPEN WAT NIET PAST: Jenkins \& Travis de tools zijn die aan het meeste must-haves, should-haves en nice-to-haves voldoen. In dit hoofdstuk worden deze tools extra onder de loep genomen door ze op te stellen in een realistische omgeving zoals in hoofdstuk/ref{ch:voorbeeldapplicatie} besproken is. Door de tools te vergelijken in zo'n omgeving krijgen we een meer realistisch beeld welke build-scheduler het beste zal functioneren in deze omgeving. Op het einde van dit hoofdstuk zal er een conclusie worden gemaakt welke build-scheduler Amista moet kiezen en waarom. Maar beginnen doen we met enkele tips te geven van SAP hoe een CI/CD pipeline opgestart moet worden.
+
 \section{Continuous Delivery principles}
 \label{sec:continuous-delivery-principles}
 %TODO: Zie pagina 44 in Riti2018_Chapter_IntroductionToContinuousIntegr.pdf
 
 \section{CI/CD pipeline op SAP Cloud Platform}
 \label{sec:ci-cd-op-sap-cloud-platform}
+%TODO: Naar deze site kijken: https://developers.sap.com/tutorials/ci-best-practices-ci-cd.html
 SAP Cloud Platform biedt de mogelijkheid om verschillende omgevingen op te stellen waarin je kan werken als developer. Het vergt enige vereisten om te voldoen aan de regels van Continuous Integration ~\autocite{Kramer2018}:
 \begin{itemize}
     \item Hou alles goed bij via een version control systeem
@@ -42,7 +44,7 @@ Bij Continuous Integration draait alles rond feedback, hierbij speelt snelheid e
 
 Betrouwbaarheid wordt tegenwoordig als 'normaal' beschouwd, maar dit is niet zo vanzelfsprekend. Het kan gebeuren dat de automated tests niet zo betrouwbaar zijn waardoor de developers met valse informatie moeten werken. Dit is niet bevorderlijk voor de verdere productie en het vertrouwen in een Continuous Integration en Continuous Delivery pipeline. Er zijn wel enkele tips om de automated tests betrouwbaar te maken door de UI elements een degelijke identifier geven. Zo hoeven de testen niet de onbetrouwbare css selectors te gebruiken om aan de elementen te kunnen. 
 
-De test data onderhouden is ook een belangrijke tip. Dit kan door één bron van informatie te voorzien voor test data, vooral in het bijzonder wanneer testen - die dezelfde data aanpassen en controleren - tegelijk runnen. Rekening houden met de asynchrone acties bij Service en UI tests uit de Test Pyramid (Figuur \ref{img-mg-test-pyramid}) door bepaalde situaties te vermijden. We hebben het over situaties waarbij de applicatie zich in de verkeerde staat bevindt, zodat de asynchrone test foute resultaten teruggeeft.
+De test data onderhouden is ook een belangrijke tip. Dit kan door één bron van informatie te voorzien voor test data, vooral in het bijzonder wanneer testen - die dezelfde data aanpassen en controleren - tegelijk runnen. Rekening houden met de asynchrone acties bij Service en UI tests uit de Test Pyramid (Figuur \ref{img-test-pyramid}) door bepaalde situaties te vermijden. We hebben het over situaties waarbij de applicatie zich in de verkeerde staat bevindt, zodat de asynchrone test foute resultaten teruggeeft.
 
 De hoeveelheid aan tests moet beperkt blijven om zo de snelheid van de execution times, de hoge waarde van tests en het onderhoudsgemak te bewaren.
 Als men automated tests schrijft voor een CI/CD pipeline, moet men zaken testen die de integratie en het deployen van de applicatie kunnen verstoren.
@@ -51,3 +53,6 @@ De testen groeperen per functionaliteit is een goede tip, zo moet er niet telken
 Angie Jones \textcite{Jones2019} geeft ook nog als tip mee om af en toe wat onnodige testen te verwijderen.
 
 Voor het onderhoud van de testen moet je rekening houden met de staat van je applicatie. Deze verandert doorheen de tijd en je teste moeten deze verandering ook doorstaan.
+
+\section{Conclusie}
+\label{sec:conclusie}

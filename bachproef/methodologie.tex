@@ -5,7 +5,7 @@
 \chapter{\IfLanguageName{dutch}{Methodologie}{Methodology}}
 \label{ch:methodologie}
 
-Deze thesis gaat op zoek naar de beste build scheduler voor de specifieke set-up die ze bij Amista hanteren: een SAPUI5 webapplicatie met een SAP HANA database draaiend via Node.js en alles gehost op SAP Cloud Platform.
+Deze thesis gaat aan de hand van een vergelijkende studie op zoek naar de beste build scheduler voor de specifieke set-up die ze bij Amista hanteren. De omgeving waar de build-scheduler overweg mee moet kunnen ziet er als volgt uit: een SAPUI5 webapplicatie met een SAP HANA database draaiend via Node.js en alles gehost op SAP Cloud Platform. Er worden aan de hand van criteria enkele build-schedulers gekozen die worden opgezet in bovenstaande omgeving, de stappen die hierbij komen kijken worden zorgvuldig uitgeschreven en in een handleiding gegoten. Zo is deze proof-of-concept reproduceerbaar en heeft Amista een mooi voorbeeld om een CI/CD pipeline op te zetten.
 
 %% TODO: Hoe ben je te werk gegaan? Verdeel je onderzoek in grote fasen, en
 %% licht in elke fase toe welke stappen je gevolgd hebt. Verantwoord waarom je
@@ -16,13 +16,13 @@ Deze thesis gaat op zoek naar de beste build scheduler voor de specifieke set-up
 
 \section{Voorbeeldapplicatie dat Amista zal gebruiken}
 \label{sec:voorbeeldapplicatie}
-Hoe ziet de omgeving eruit waar een CI/CD pipeline geïntegreerd moet worden? In de literatuurstudie is de uitleg over de tools terug te vinden, hier worden de onderliggende relaties tussen de tools besproken.
-Amista heeft een Ubuntu server ter beschikking gesteld om te experimenteren. Ze geven carte blanche wat er met de server moet gebeuren.
-Voor deze thesis wordt de server gebruikt als Continuous Integration server. Zo kunnen de build schedulers op de beste manier vergeleken worden zonder veel externe factoren.
+Hoe ziet de omgeving eruit waar Amista een CI/CD pipeline in wil opzetten? In de literatuurstudie is de uitleg te vinden over de gebruikte tools binnen SAP. In dit hoofdstuk worden de onderliggende relaties tussen de tools besproken.
+Amista heeft een Ubuntu server ter beschikking gesteld om te experimenteren. Voor deze thesis wordt de server gebruikt als Continuous Integration server, zo kunnen de build schedulers op de beste manier vergeleken worden zonder veel externe factoren.
 
-\section{Vergelijking van de build schedulers}
-\label{sec:Vergelijking-build-schedulers}
-Wat zijn voor Amista nu de beste build schedulers om een CI/CD pipeline te integreren in hun software development? Welke tools scoren het beste op vlak van snelheid, configureerbaarheid met SAP, geheugenverbruik en de tools die Amista gebruikt en documentatie die te vinden is online.
+\section{Vergelijkende studie van de build schedulers}
+\label{sec:Vergelijkende-studie-build-schedulers}
+Amista heeft enkele zaken aangehaald die zeker aanwezig moeten zijn. Deze zijn onderverdeeld in 2 categorieën: functioneel en niet-functioneel. In elke categorie wordt dan weer onderscheid gemaakt tussen: zaken die zeker aanwezig moeten zijn, taken die de tool zou moeten kunnen en enkele nice-to-haves. Er wordt een lijst met build-schedulers gemaakt en hoe deze aan de criteria voldoen. Op het einde wordt een korte conclusie gemaakt wat voor Amista de beste build scheduler is om een CI/CD pipeline te integreren in hun software development? %TODO: Welke tools scoren het beste op vlak van snelheid, configureerbaarheid met SAP, geheugenverbruik en de tools die Amista gebruikt en documentatie die te vinden is online.
 
-\section{Handleiding}
-\label{sec:handleiding}
+\section{Proof-Of-Concept}
+\label{sec:proof-of-concept}
+In dit hoofdstuk worden alle stappen die gebeurd zijn tijdens het opzetten van de voorbeeldapplicatie en de CI/CD server beschreven aan de hand van tekst en afbeeldingen. Het is perfect mogelijk om aan de hand van de info uit dit hoofdstuk de omgeving opnieuw te reproduceren.
