@@ -54,5 +54,27 @@ Angie Jones \textcite{Jones2019} geeft ook nog als tip mee om af en toe wat onno
 
 Voor het onderhoud van de testen moet je rekening houden met de staat van je applicatie. Deze verandert doorheen de tijd en je teste moeten deze verandering ook doorstaan.
 
+\section{Short List}
+\label{sec:short-list}
+Uit het hoofdstuk\ref{ch:vergelijking-build-schedulers} hebben we in grote lijnen de vergelijking gemaakt tussen verschillende build schedulers. Hier gaan we een gedetailleerde vergelijking te maken door de build schedulers uit te testen aan de hand van de voorbeeldapplicatie die uitgewerkt is in hoofdstuk\ref{ch:voorbeeldapplicatie}.
+We hebben Jenkins en %TODO: volgende tool gekozen om uit te zetten en te vergelijken met elkaar.
+In het vorige hoofdstuk hebben we de Ubuntu server helemaal klaar gezet voor het gebruik met een build scheduler. De opzet van Jenkins en %TODO: andere buikd scheduler
+wordt hier beschreven.
+
+    \paragraph{Jenkins}
+    Omdat Jenkins op Java draait is het nodig om Java 8 te installeren. Dit is dan ook de eerste stap in het proces. 
+    De eerste stap is inloggen in de server door ssh root@188.166.61.128 in te typen. Daarna moet je het commando sudo apt install openjdk-8-jdk intypen om JAVA 8 te installeren. De server vraagt bevestiging om te downloaden en te installeren, er moet enkel maar y worden getypt en op return gedrukt worden om te bevestigen. %TODO: Dit kan u zien in figuren InstallatieJenkins1 en InstallatieJenkins2.
+    Nu kunnen we overgaan tot de installatie van Jenkins op de server. We maken gebruik van de packages die Jenkins onderhoud om de software te installeren op Ubuntu zoals te zien is in figuur %TODO: InstallatieJenkins3.
+    Eens dit gebeurd is moeten we de Debian package repository toevoegen aan de server's sources.list.
+    De apt - een command-line tool binnen Ubuntu om software te installeren - moet eerst geupdate worden, nadien kan Jenkins effectief geïnstalleerd worden. Deze stappen kan u volgen in figuren %TODO: InstallatieJenkins4 en InstallatieJenkins5.
+    
+    Na de installatie kunnen we Jenkins starten op de server door het commando 'sudo systemctl start jenkins' in te typen. Omdat dit commando geen uitvoer geeft moeten we het commando 'sudo systemctl status jenkins' intypen. Als je active ziet verschijnen wil dit zeggen dan Jenkins runt op de Ubuntu server. Deze stappen kan je volgen in figuur %TODO: Jenkins1.
+    Eens Jenkins gestart is moeten we die kunnen aanspreken vanuit een browser, daarom moeten we de regels van de firewall wat aanpassen. Standaard draait Jenkins op poort 8080. Deze moet geopend worden op de server door het commando 'sudo ufw allow 8080' in te voeren zoals in figuur %TODO: Jenkins2 te zien is.
+    
+    Nu moet Jenkins geconfigureerd worden, dit moet vanuit elke browser gebeuren.
+    Er moet naar http://188.166.61.128:8080 gesurft worden om de configuratie te voltooien, zoals aangegeven in figuur %TODO: Jenkins3. De cijfers voor de :8080 staan voor het ip-adres van de Ubuntu server, de :8080 is de poort waar je naartoe wil gaan. Hier draait - zoals in de vorige stappen geconfigureerd - Jenkins op.
+    Het paswoord dat gevraagd wordt is terug te vinden in de 'initialAdminPassword' file dat zich in de map '/var/lib/jenkins/secrets/' bevindt op de server. Het is voldoende om op de server volgend commando in te voeren: 'sudo cat /var/lib/jenkins/secrets/initialAdminPassword'. Het paswoord dat als uitvoer komt moet gekopieerd worden en geplakt worden in het invoerveld in de web browser zoals in figuur %TODO: Jenkins4 te zien is.
+    De volgende stap is het installeren van de voorgestelde plugins. Er wordt gevraagd om een eerste user te configureren, maar voor deze doeleinden is het voldoende om als admin en met het initiële paswoord verder te gaan, er mag dus op 'Continue as admin' gedrukt worden. Nu moet er instantie gemaakt worden door te controleren of de url die ingevuld is klopt met de url die enkele stappen geleden ingegeven is om de webpagina te openen. Wanneer deze klopt kan er op 'Save and Finish' en nadien op 'Start using Jenkins' geklikt worden. Het dashboard van Jenkins wordt geopend. Bovenstaande stappen kan u allemaal volgen in de figuren %TODO: Jenkins5, Jenkins6, Jenkins7, Jenkins8, Jenkins9 en Jenkins10.
+    
 \section{Conclusie}
 \label{sec:conclusie}

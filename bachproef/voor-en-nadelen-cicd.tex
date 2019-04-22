@@ -16,7 +16,17 @@ Op de vraag wat de voor- en nadelen voor Amista zullen zijn kan enkel iemand van
     \item Maak de applicatie die de klant wil %TODO: https://www.youtube.com/watch?v=skLJuksCRTw
     \item Als men kleine stukjes code commit naar de centrale repository en de testen slagen niet, weet men dat het aan dit klein deeltje van de code ligt en kan men de fout veel sneller opsporen. %TODO: Zie ~\autocite{Fowler2006}, daar staat staat in hoofdstuk Everyone Commits To the Mainline Every Day. Hiernaar kan ik verwijzen voor dit voordeel.
     \item In de meeste omgevingen met een CI/CD pipeline is het niet nodig om een QA team te hebben om de testen uit te voeren, wat de kosten doet dalen.
+    \item Het risico op downtime van een applicatie wordt naar beneden gehaald. Door de vele testen die automatisch gerund worden alvorens de aanpassing aan de code naar buiten wordt gebracht, verkleint de kans dat een fout niet herkend wordt. Dit is wel onder de voorwaarde dat de testen in een soortgelijke omgeving worden getest en dat de testen aan alle kwaliteitseisen voldoen om de applicatie werkende te houden.
+    \item De stress die komt kijken bij een release kan achterwege gelaten worden. Door continu kleine aanpassingen door te voeren, die aan alle kwaliteitseisen voldoen eens ze door alle testen raken, zal er minder stress bij komen kijken. Dit is een heel groot voordeel voor iedereen die iets met de applicatie te maken heeft. Wanneer een team minder stress ervaart zal het ook minder fouten maken en de productiviteit ten goede komen
+    \item Bij een grote release is er meestal ook een team van wacht om problemen, die zouden kunnen opduiken, op te lossen
 \end{itemize}
 
 \section{Nadelen}
 \label{sec:nadelen}
+Het vergt echter wat inspanningen om een Continuous Integration en Continuous Delivery pipeline op te zetten. De inspanningen moeten door heel het bedrijf geleverd worden.
+\begin{itemize}
+    \item Er zal wat werk kruipen in het opzetten van een CI/CD pipeline. Dit gaat gepaard met werkuren, die geld zullen kosten.
+    \item De developers moeten zich ervan bewust zijn dat het enorm belangrijk is om op regelmatige basis en met kleine werkende aanpassingen de code naar de repository te sturen. Dit kan een aanpassing vergen om op deze manier te werk te gaan.
+    \item Er kruipt heel wat tijd in het schrijven van goede testen die de applicatie op alle lagen zal testen.
+    \item De geschreven testen moeten ook zeer goed onderhouden worden. Elke nieuwe functionaliteit moet uitvoerig getest worden zonder de vorige functionaliteiten uit het oog te verliezen.
+\end{itemize}
