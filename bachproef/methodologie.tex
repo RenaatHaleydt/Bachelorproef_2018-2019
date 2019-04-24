@@ -13,15 +13,173 @@ Deze thesis gaat aan de hand van een vergelijkende studie op zoek naar de beste 
 %% mogelijke manier toegepast hebt om een antwoord te vinden op de
 %% onderzoeksvraag.
 
-\section{Vergelijkende studie van de build schedulers}
-\label{sec:Vergelijkende-studie-build-schedulers}
-Amista heeft enkele zaken aangehaald die zeker aanwezig moeten zijn. Deze zijn onderverdeeld in 2 categorieën: functioneel en niet-functioneel. In elke categorie wordt dan weer onderscheid gemaakt tussen: zaken die zeker aanwezig moeten zijn, taken die de tool zou moeten kunnen en enkele nice-to-haves. Er wordt een lijst met build-schedulers gemaakt en hoe deze aan de criteria voldoen. Op het einde wordt een korte conclusie gemaakt wat voor Amista de beste build scheduler is om een CI/CD pipeline te integreren in hun software development? %TODO: Welke tools scoren het beste op vlak van snelheid, configureerbaarheid met SAP, geheugenverbruik en de tools die Amista gebruikt en documentatie die te vinden is online.
+    \section{Vergelijkende studie van de build schedulers}
+    \label{sec:Vergelijkende-studie-build-schedulers}
+    We beginnen met een klein stukje theorie over de build scheduler, om nadien tot de vergelijking over te gaan. Hier worden ook de verschillende criteria die Amista aangaf als belangrijk en minder belangrijk opgedeeld in twee delen: de functionele requirements en de niet-functionele requirements. Binnen beide categorieën wordt er nog een opsplitsing gemaakt tussen: must-haves, should-haves en nice-to-haves.
+    Met deze informatie kunnen we al een eerste vergelijking maken tussen de build-schedulers die vandaag op de markt te vinden zijn. Als resultaat krijgen we een long list waar de tools naast elkaar worden gezet en vergeleken kunnen worden aan de hand van criteria. 
+    Uit deze eerste vergelijking nemen we de beste tools eruit om te testen in een realistische omgeving. Dit zal in hoofdstuk\ref{ch:proof-of-concept} gebeuren.
 
-\section{Voorbeeldapplicatie dat Amista zal gebruiken}
-\label{sec:voorbeeldapplicatie}
-Hoe ziet de omgeving eruit waar Amista een CI/CD pipeline in wil opzetten? In de literatuurstudie worden de gebruikte tools binnen SAP uitgelegd, in dit hoofdstuk worden de onderliggende relaties tussen de tools besproken.
-Amista heeft een Ubuntu server ter beschikking gesteld om te experimenteren. Voor deze thesis wordt de server gebruikt als Continuous Integration server, zo kunnen de build schedulers op de beste manier vergeleken worden zonder veel externe factoren.
+        \subsection{Build Scheduler}
+        \label{subsec:build-scheduler}
+        In Hoofdstuk~\ref{ch:ci-cd-cd} wordt er kort even aangehaald wat een build scheduler is en doet. Om hier toch een beter beeld van te krijgen kaarten we nog een stukje theorie aan, om nadien aan de technische vergelijking te beginnen.
+        
+        
+        \subsection{Requirements}
+        \label{subsec:requirements}
+        Hier zullen de twee soorten requirements met elkaar vergeleken worden.
 
-\section{Proof-Of-Concept}
-\label{sec:proof-of-concept}
-In dit hoofdstuk worden alle stappen die gebeurd zijn tijdens het opzetten van de voorbeeldapplicatie en de CI/CD server beschreven aan de hand van tekst en afbeeldingen. Het is perfect mogelijk om aan de hand van de info uit dit hoofdstuk de omgeving opnieuw te reproduceren.
+            \paragraph{Functionele requirements}
+            Een functionele requirement is een functie wat het systeem moet doen.
+            De punten die in deze sectie worden aangehaald komen uit hoofdstuk\ref{ch:voor-en-nadelen-cicd}. Om een duidelijk beeld te krijgen wat de build scheduler moet doen worden de functionele requirements hier nog eens kort besproken.
+            \begin{itemize}
+                \item De build scheduler moet de aanpassingen aan de code sneller naar de klant brengen
+                \item De downtime van een applicatie moet dalen
+                \item Er moet vermeden worden dat een applicatie stopt met werken omdat er een fout in de code zit die gedeployed wordt
+            \end{itemize}
+            
+            \paragraph{Niet-functionele requirements}
+            Een niet-functionele requirement legt uit hoe het systeem een bepaalde functie moet uitvoeren. Voor Amista is het belangrijk dat de build scheduler voldoet aan hoge security eisen. Vaak wordt er met hele grote projecten gewerkt die gevoelige data en broncode beschikken. Om optimale veiligheid te garanderen wordt gewerkt met een build scheduler die op een on-premise systeem zal draaien. Een andere mogelijkheid, waar vandaag de dag veel in wordt geïnvesteerd is een cloud build scheduler. Dit zorgt ervoor dat de code buiten de onderneming gaat, wat toch een zeker risico met zich meebrengt.
+
+
+        \subsection{Criteria}
+        \label{subsec:criteria}
+
+            \paragraph{Must-haves}
+            De must-haves van de build scheduler zullen vooral te maken hebben met de omgeving waarin ze moeten werken. Zoals in de literatuurstudie al beschreven staat, moet een build scheduler gebruikt worden met een SAPUI5 applicatie, samen met een SAP HANA database gehost op SAP Cloud Platform.
+            In deze thesis wordt dezelfde source control manager gebruikt als bij Amista. Het is niet van toepassing om zelf een source control system en repository manager te kiezen, er moet gebruik gemaakt worden van Git en Bitbucket. Het is vanzelfsprekend dat de build scheduler moet kunnen integreren met Git en Bitbucket.
+            Om een betere vergelijking te kunnen maken heeft Amista een Ubuntu server voorzien voor de uitwerking van de proof-of-concept, zie hoofdstuk\ref{ch:proof-of-concept}. Deze dient ook als simulatie voor de realistische on-premise set-up. Het is dus noodzakelijk dat de build scheduler op een Unix-based systeem kan draaien.
+            Omdat ze bij Amista met Bitbucket werken is het vanzelfsprekend dat de build scheduler ook kan integreren met deze Code Repository.
+            De build scheduler moet ook deel kunnen uitmaken van een Continuous Delivery pipeline.
+            
+            Als we bovenstaande punten even kort samenvatten moet de build scheduler aan volgende vereisten voldoen:
+            \begin{itemize}
+                \item Hij moet bruikbaar zijn met een SAPUI5 applicatie, een SAP HANA database gehost op SAP Cloud Platform
+                \item Hij moet kunnen integreren met Git \& Bitbucket
+                \item De build scheduler moet op een Unix-based server kunnen draaien
+            \end{itemize}
+            
+            
+            \paragraph{Should-Haves}
+            De build scheduler zou moeten beschikken over gratis gebruik van de software om te experimenteren. Het is de bedoeling dat we in het volgende hoofdstuk een proof-of-concept kunnen uitwerken om bepaalde build schedulers te installeren. Daarom is het nodig om een gratis versie te hebben die de opstelling mogelijk maakt.
+            
+            
+            \paragraph{Nice-to-Haves}
+            De build scheduler moet niet per se op een cloud draaien, het belangrijkste is dat de data lokaal gehouden kan worden door de build scheduler op een on-premise installatie op te zetten. Maar Amista wil graag deze optie wel openhouden voor de toekomst. Daarom is het mooi meegenomen als de gekozen build scheduler aan deze vereiste voldoet, maar het is geen breekpunt.
+            %TODO: Misschien moet er later ook gebruik gemaakt worden van Docker om de builds te bouwen? Dit kan dan ook een vereiste zijn?
+
+        \subsection{Long list}
+        \label{subsec:Long-list}
+        Nu de verschillende criteria gekend zijn kan de effectieve vergelijking tussen de build schedulers gebeuren.
+        Eerst zal er een korte uitleg gegeven worden over welke programma's we gaan vergelijken en nadien vindt de vergelijking plaats in een overzichtelijke tabel.
+
+            \paragraph{Jenkins}
+            Jenkins is de meest gekende build scheduler binnen de IT-wereld. Het is een op zichzelf staande, open source automation server dat ontstaan is in 2011 na een afscheiding van het Hudson project. Jenkins is vooral bekend om de vele plug-ins die het mogelijk maken om met bijna alle talen en platformen te integreren. Jenkins is geschreven in Java draait op een Java platform.
+            
+            \paragraph{Circle CI}
+            Circle CI is opgericht in 2011 in San Francisco en wordt door vele grote bedrijven gebruikt in hun Continuous Integration pipeline. Het grootste deel van Circle CI is geschreven in Clojure en de Frontend in ClojureScript. 
+            
+            \paragraph{Bamboo}
+            Bamboo, een Java-based Continuous Integration en Continuous Delivery tool, werd opgericht in 2007 door het bedrijf Atlassian dat ook Bitbucket onder zijn armen heeft.
+            
+            \paragraph{Travis CI}
+            Travis CI is een integration tool dat geschreven is in Ruby en opgericht in 2011 in Duitsland. Het staat bekend om zijn samenwerking met GitHub.
+            
+            %TODO: https://www.tablesgenerator.com
+            \begin{table}[]
+                \centering
+                \begin{tabular}{|l|l|l|l|l|}
+                    \hline
+                    \textbf{Build scheduler} & \textbf{\begin{tabular}[c]{@{}l@{}}SAPUI5, HANA \&\\ Cloud Platform\end{tabular}} & \textbf{\begin{tabular}[c]{@{}l@{}}Git \& \\ Bitbucket\end{tabular}} & \textbf{\begin{tabular}[c]{@{}l@{}}Unix-based\\ server\end{tabular}} & \textbf{Cloud toepassing} \\ \hline
+                    Bamboo &  & Yes &  &  \\ \hline
+                    Circle CI &  &  &  &  \\ \hline
+                    Jenkins &  & Yes & Yes &  \\ \hline
+                    Travis &  &  &  &  \\ \hline
+                \end{tabular}
+            \end{table}
+
+
+
+
+
+
+    \section{Voorbeeldapplicatie dat Amista zal gebruiken}
+    \label{sec:voorbeeldapplicatie}
+    Hoe ziet de omgeving eruit waar Amista een CI/CD pipeline in wil opzetten? In de literatuurstudie worden de gebruikte tools binnen SAP uitgelegd, in dit hoofdstuk worden de onderliggende relaties tussen de tools besproken.
+    Amista heeft een Ubuntu server ter beschikking gesteld om te experimenteren. Voor deze thesis wordt de server gebruikt als Continuous Integration server, zo kunnen de build schedulers op de beste manier vergeleken worden zonder veel externe factoren.
+    
+    
+        \subsection{Build scheduler server}
+        \label{subsec:build-scheduler-server}
+        Amista heeft een Ubuntu server ter beschikking gesteld dat wordt gehost op Digital Ocean. De server wordt gebruikt om de build schedulers op te draaien en zo te vergelijken. Eerst moeten er enkele belangrijke zaken ingesteld worden alvorens aan de slag te gaan, zoals security en dergelijke.
+    
+            \paragraph{Digital Ocean}
+            %TODO: uitleggen wat Digital Ocean is en doet.
+            
+            \paragraph{Ubuntu server}
+            %TODO: Uitleggen welke kenmerken de Ubuntu server heeft.
+            
+            \paragraph{Installatie Ubuntu server}
+            Eerst maken we de Ubuntu server klaar voor gebruik om zo de nodige zaken te installeren.
+            %TODO: In figuur OpzettenServer1 in de bijlagen wordt er getoond wat er moet gebeuren als er voor de eerste keer ingelogd wordt op de server.
+            Via de root account wordt er via SSH ingelogd op de server. 
+            
+            SSH staat voor secure shell en is een software protocol dat voor een veilige verbinding (tunnel) zorgt tussen de client en de server. Het wordt gebruikt voor het configureren van een server, het beheren van netwerken en operating systems. Alle gegevens dat tussen beiden worden uitgevoerd zijn geëncrypteerd waardoor het moeilijker wordt voor hackers om de data te bemachtigen.
+            
+            Een server die gebruik maakt van SSH wordt ook wel een sshd server genoemd. Eens ingelogd op de sshd server moeten er enkele zaken aangepast worden aan de ssh configuratie in de file '/etc/ssh/sshd\_config'. Omdat we hier via de root gebruiker werken moet de property PermitRootLogin op yes staan. Dit zorgt ervoor dat de root gebruiker kan inloggen.
+            StrictMode moet ook op yes staan, zo kan er niemand inloggen als de authenticatie documenten leesbaar zijn voor iedereen. Dit voor het beveiligen van configuratie documenten. %TODO: Deze configuratie kan u zien in figuur OpzettenServer2 in de bijlagen.
+            
+            De default manier om in te loggen via ssh is via een account en een paswoord, maar het is ook mogelijk om het account en het paswoord te vervangen door een private en een public key. Dit principe noemt key-based authentication en wordt vooral tijdens development en in scripts gebruikt of voor single sign-on. SSH genereert een private en een public key op de client wanneer deze stap wordt geconfigureerd. De private key moet veilig bewaard worden op de client computer. De public key moet doorgegeven worden aan de remote server. Wanneer de client wil inloggen op de server voert hij een request uit. De server maakt via zijn public key een bericht en stuurt dit als response door naar de client. De client leest het bericht aan de hand van zijn private key en stuurt dan een aangepaste response terug naar de remote server. De server valideert deze response. Bij een geldige private key zal er een goede response verstuurd worden, bij een ongeldige private key een foute response.
+            In deze thesis gaat men ervan uit dat de client computer een ssh key heeft die gebruikt kan worden. %TODO: Zoals u in figuur OpzettenServer3 kan zien heeft de client die gebruikt werd tijdens het schrijven van deze thesis enkel lees- en schrijfrechten voor de file 'id\_rsa', dit om het als secret te bewaren.
+            De 'id\_rsa.pub' is de publieke key van de client die op de server moet komen om zo de ssh validatie te voorzien, dit wordt ook wel een ssh session genoemd. Eens de ssh session geconfigureerd is zal het niet nodig zijn om via een paswoord in te loggen op de remote server via deze client.
+            %TODO: In figuur OpzettenServer4 in de bijlagen is te zien hoe de ssh session wordt opgezet tussen de client en de remote server voor de root user.
+            Voor deze thesis en om veiligheidsredenen is het beter om enkel via key-based authenticatie in te loggen en het paswoord uit te sluiten.
+            %TODO: In figuur OpzettenServer5 is te zien welke aanpassingen in de sshd\_config file van de sshd server moeten gebeuren om het niet meer mogelijk te maken om in te loggen via een paswoord. PasswordAuthentication en ChallengeResponseAuthentication moeten naar no verandert worden. PubKeyAuthentication moet naar yes verandert worden.
+            Nu moet de 'sshd\_config' file opgeslagen worden (\^x + y + enter) en de ssh daemon herstart worden door het commando 'sudo systemctl restart ssh' in te geven.
+            
+            Om de remote server nog meer te beschermen tegen cyber aanvallen is het nodig om een firewall op te zetten. In deze voorbeeldapplicatie maken we gebruik van de UFW Firewall. Dis staat voor Uncomplicated Firewall en is een gebruiksvriendelijke tool dat helpt om de iptables onder controle te houden om zo te zorgen dat bepaalde services toegelaten worden tot onze server.
+            In Linux maken ze gebruik van het protocol SSH via de service OpenSSH, deze heeft ook een profiel bij UFW.
+            %TODO: In Figuur OpzettenServer6 in de bijlagen is te zien hoe de firewall de SSH service toelaat. Het is enkel mogelijk om de server te bereiken via deze service. Later worden er uiteraard meerdere services toegelaten.
+            
+            Nu alle stappen voor de configuratie van de server gedaan zijn is het zeer makkelijk om in te loggen op de server.
+            Het is hetzelfde als de eerste keer, maar nu vraagt de server niet meer naar een paswoord, maar gebruikt hij de ssh-key. Het is voldoende om 
+            'ssh root@188.166.61.128' te typen om in te loggen.
+            Als je wil uitloggen is het nodig om in de command line van de server exit te typen.
+    
+        \subsection{Database}
+        \label{subsec:database}
+        Binnen SAP wordt een HANA database aangeraden om te gebruiken. Momenteel is versie 2.0 van SAP HANA op de markt en deze versie biedt tal van extra mogelijkheden ten opzichte van de vorige versie. SAP HANA wordt zeer goed ondersteund door de andere programma's binnen SAP en wordt daarom ook wel veel gebruikt.
+        Voor de database maken we gebruik van een Multi-Target Application Project, dit is een template die SAP ons geeft en is een goede uitvalsbasis om te gebruiken in de voorbeeldapplicatie.
+        Zoals eerder al aangegeven is een Source Code Repository van groot belang voor een CI/CD pipeline en development in het algemeen.
+        
+            \paragraph{Source Control \& Databank module}
+            %TODO: In figuur SourceControl1 kan u waarnemen hoe een repository gemaakt wordt in Bitbucket.
+            Eens de repository aangemaakt is heb je het webadres nodig om de clone te maken op je lokale machine.
+    
+            De volgende stap is het project aanmaken. In de Web IDE voor HANA development is het belangrijk om eerst enkele instellingen aan te passen.
+            %TODO: Alle nodige features die nodig zijn kan u terug vinden in figuur HANA1. Nu is het ook belangrijk om je Git account te connecteren met de Web IDE door het Git email adres en Git username in te voeren in de Git Settings.
+            Zoals eerder vermeld maken we het project aan de hand van het Multi-Target Application Project template. na de creatie van het project is het nodig om een build uit te voeren. (figuur HANA2 InitialBuildHANAProject)
+            Om het project aan het account op Bitbucket te linken klikt u op het project met de rechter muisknop, gaat u naar 'Git' en dan 'Initialize Local Repository'. (figuur HANA3 InitializeLocalRepositoryHANA)
+            Nu linken we de gemaakte repository aan het project door via rechter muisklik op het project op Git en dan Set Remote te klikken. Hier moet je de gekopieerde Bitbucket link plakken in het veld voor URL. Na het ingeven van het juiste wachtwoord, is het nodig om op 'OK' te klikken wanneer het 'Changes Fetched' window opent. Deze stappen zijn te volgen in %TODO: figuren HANA4 en HANA5.
+            Na deze stap is het project gelinkt met de repository op Bitbucket. Het maken van het project heeft voor changes gezorgd in de repository, deze moeten eerst gecommit en gepusht worden. %TODO: In figuur HANA6 is te zien wat er allemaal moet gebeuren om een commit en push te doen naar de repository.
+    
+            Een realistische opstelling van een CI/CD voorbeeldapplicatie start bijna nooit vanaf nul, het bouwt meestal voort op bestaande, geschreven software.
+            Daarom zal er in deze voorbeeldapplicatie manueel een basis gelegd worden, zo kan er aan de hand van een build scheduler voortgebouwd worden op deze geschreven software.
+            De bescheiden database waar we naartoe willen gaan bestaat uit twee entiteiten: een Artiest en een Album. Een artiest kan meerdere albums hebben, maar een album kan maar tot één artiest behoren. De entiteit Artiest heeft volgende properties: ID, Naam, JaarVanOorsprong en Stad. Album heeft ID, Naam, Beschrijving, Genre, Jaar en Studio als properties. Als basis maken we de entiteit Artiest enkel met ID, Naam en JaarVanOorsprong. De rest zal later toegevoegd worden aan de hand van de pipeline.
+            %TODO: Eerst maken we een HANA Database Module zoals in figuren HANA7, HANA8 en HANA9 te zien zijn. Daarna wordt een HDB CDS Artifact gemaakt. Dit is een Core Data Services document dat defenities bevat om objecten te creëeren in de database. Hoe de Artiest gedefinieerd wordt kan u zien in figuren HANA10, HANA11, HANA12 en HANA13.
+            Nu alle gegevens ingevoerd zijn, moeten we de database effectief aanmaken. In de meest linkse tab is er een knop 'Database Explorer' genaamd. Als je daar op klikt zie je een lege kolom verschijnen. Je moet op het +-teken klikken om een database aan te maken. Kies uit de lijst de optie met jouw naam en geef een realistische naam bij het veld 'How to Show in Display'. Laat de rest van de setting zoals ze zijn.
+            Dan is het de bedoeling om de gegevens die we hierboven hebben ingevoerd in de net aangemaakte database komen. Dit doe je door terug te gaan naar de 'Development' omgeving (in meest linkse tab), daar met de rechter muisknop op 'data.hdbcds' file te klikken en voor de optie 'Build Selected Files' te kiezen. De stappen kan je volgen in %TODO: figuren HANA14 en HANA15.
+            Eens deze gegevens ingevoerd zijn moeten we alle veranderingen toevoegen aan de commit om dan te pushen naar de repository.
+    
+            \paragraph{Node.js module}
+            Om de models te gebruiken dat gecreëerd zijn, moeten we een tweede module toevoegen aan de HANA database: een Node.js module om de data als OData service te kunnen gebruiken.
+            Deze module implementeert XSJS en XSODATA die op hun beurt zorgen voor de transformatie van het data model en de bereikbaarheid naar de buitenwereld. het is nodig om op de data CRUD (Create, Read, Update en Delete) operaties uit te voeren en als OData naar buiten gaat, dit is de taak van XSODATA. XSJS zorgt dan weer voor de integratie met SAPUI5. Het laat toe dat SAPUI5 applicaties de data kan lezen en kan bewerken.
+            Zoals u in %TODO: figuur HANA16 ziet moeten de instellingen aangepast worden. De feature Tools For Node.js Development moet beschikbaar zijn om te gebruiken in het project. Dit moet gesaved worden en het project moet opnieuw geladen worden. De volgende stap is de module maken door op het project met de rechtermuisknop te klikken, new en dan Node.js Module kiezen. Geef het een goede naam (js is good practice) en zorg ervoor dat Enable XSJX support aangevinkt is alvorens op Finish te klikken, zoals te zien is in %TODO: figuur HANA17, HANA18 en HANA19.
+            %TODO: Databeveiliging is zeer belangrijk. Binnen HANA wordt er gebruik gemaakt van UAA (User Account en Authentication) om de Node.js module te beveiligen. Deze service moet samen met de database module en de HDI container, achter de db module, toegevoegd worden als resource zoals te zien valt in figuur HANA20.
+            Om een OData service te maken moeten volgende stappen gebeuren: in de js-module in de lib folder, moet een xsodata-file gemaakt worden in een nieuwe folder, xsodata genaamd. De link met de data moet in deze nieuwe file gemaakt worden. Later zal er ook de associatie moeten gemaakt worden tussen Artiest en Album. Deze stappen zijn te zien in %TODO: figuren HANA21 en HANA22.
+            De volgende stap is de xsjs service maken door in de lib folder een nieuwe folder, xsjs genaamd, te maken met de nieuwe hdb.xsjs file. Zie %TODO: figuur HANA23. De inhoud van deze nieuwe file is te zien in %TODO: figuur HANA24.
+            De nieuwe Node.js module moet gebuild worden door op de module met de rechtermuisklik te klikken, Run, Run As en dan Node.js Application te kiezen zoals te zien is in %TODO: figuur HANA25.
+    
+    
+    \section{Proof-Of-Concept}
+    \label{sec:proof-of-concept}
+    In dit hoofdstuk worden alle stappen die gebeurd zijn tijdens het opzetten van de voorbeeldapplicatie en de CI/CD server beschreven aan de hand van tekst en afbeeldingen. Het is perfect mogelijk om aan de hand van de info uit dit hoofdstuk de omgeving opnieuw te reproduceren.

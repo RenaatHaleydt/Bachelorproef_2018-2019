@@ -60,27 +60,39 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {6}Vergelijking tussen build schedulers}{33}{chapter.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.1}Functionele requirements}{33}{section.6.1}
+\contentsline {section}{\numberline {6.1}Requirements}{33}{section.6.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.2}Niet-functionele requirements}{34}{section.6.2}
+\contentsline {paragraph}{Functionele requirements}{33}{section*.18}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.3}Must-Haves}{34}{section.6.3}
+\contentsline {paragraph}{Niet-functionele requirements}{34}{section*.19}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.4}Should-Haves}{34}{section.6.4}
+\contentsline {section}{\numberline {6.2}Criteria}{34}{section.6.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.5}Nice-to-Haves}{34}{section.6.5}
+\contentsline {paragraph}{Must-haves}{34}{section*.20}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.6}Long list}{35}{section.6.6}
+\contentsline {paragraph}{Should-Haves}{34}{section*.21}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Nice-to-Haves}{35}{section*.22}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {6.3}Long list}{35}{section.6.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Jenkins}{35}{section*.23}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Circle CI}{35}{section*.24}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Bamboo}{35}{section*.25}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Travis CI}{35}{section*.26}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {7}Voorbeeldapplicatie}{37}{chapter.7}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {7.1}Build scheduler server}{37}{section.7.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Digital Ocean}{37}{section*.18}
+\contentsline {paragraph}{Digital Ocean}{37}{section*.27}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Ubuntu server}{37}{section*.19}
+\contentsline {paragraph}{Ubuntu server}{37}{section*.28}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Installatie Ubuntu server}{37}{section*.20}
+\contentsline {paragraph}{Installatie Ubuntu server}{37}{section*.29}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {7.2}Database}{38}{section.7.2}
 \defcounter {refsection}{0}\relax 
@@ -94,7 +106,11 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {8.4}Automated Tests voor CI}{42}{section.8.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {8.5}Conclusie}{43}{section.8.5}
+\contentsline {section}{\numberline {8.5}Short List}{43}{section.8.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Jenkins}{43}{section*.30}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {8.6}Conclusie}{44}{section.8.6}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {9}Conclusie}{45}{chapter.9}
 \defcounter {refsection}{0}\relax 
@@ -110,5 +126,5 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {A.5}Verwachte conclusies}{52}{section.A.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Bibliografie}{53}{appendix*.21}
+\contentsline {chapter}{Bibliografie}{53}{appendix*.31}
 \contentsfinish 
