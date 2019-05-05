@@ -4,7 +4,7 @@
 
 \chapter{\IfLanguageName{dutch}{Proof-of-concept van een CI/CD pipeline}{Setting up a CI/CD pipeline}}
 \label{ch:proof-of-concept}
-Uit vorig hoofdstuk is gebleken dat SCHRAPPEN WAT NIET PAST: Jenkins \& Travis de tools zijn die aan het meeste must-haves, should-haves en nice-to-haves voldoen. In dit hoofdstuk worden deze tools extra onder de loep genomen door ze op te stellen in een realistische omgeving zoals in hoofdstuk/ref{ch:voorbeeldapplicatie} besproken is. Door de tools te vergelijken in zo'n omgeving krijgen we een meer realistisch beeld welke build-scheduler het beste zal functioneren in deze omgeving. Op het einde van dit hoofdstuk zal er een conclusie worden gemaakt welke build-scheduler Amista moet kiezen en waarom. Maar beginnen doen we met enkele tips te geven van SAP hoe een CI/CD pipeline opgestart moet worden.
+Uit vorig hoofdstuk is gebleken dat (SCHRAPPEN WAT NIET PAST): Jenkins \& Travis \& Bamboo de tools zijn die aan het meeste must-haves, should-haves en nice-to-haves voldoen. In dit hoofdstuk worden deze tools extra onder de loep genomen door ze op te stellen in een realistische omgeving zoals in hoofdstuk/ref{ch:voorbeeldapplicatie} besproken is. Door de tools te vergelijken in zo'n omgeving krijgen we een meer realistisch beeld welke build-scheduler het beste zal functioneren in deze omgeving. Op het einde van dit hoofdstuk zal er een conclusie worden gemaakt welke build-scheduler Amista moet kiezen en waarom. Maar beginnen doen we met enkele tips te geven van SAP hoe een CI/CD pipeline opgestart moet worden.
 
 \section{Continuous Delivery principles}
 \label{sec:continuous-delivery-principles}
@@ -54,9 +54,14 @@ Angie Jones \textcite{Jones2019} geeft ook nog als tip mee om af en toe wat onno
 
 Voor het onderhoud van de testen moet je rekening houden met de staat van je applicatie. Deze verandert doorheen de tijd en je teste moeten deze verandering ook doorstaan.
 
+    \paragraph{OPA5}
+    %TODO: https://blogs.sap.com/2018/10/03/testing-your-sapui5-application-with-opa5/
+    %TODO: Automatic testing with OPA on Jenkins and Travis: https://stackoverflow.com/questions/24934012/automated-ui-tests-for-sap-ui5 (onderste post)
+    %TODO: https://github.com/SAP/karma-ui5/issues/1
+
 \section{Short List}
 \label{sec:short-list}
-Uit het hoofdstuk\ref{ch:vergelijking-build-schedulers} hebben we in grote lijnen de vergelijking gemaakt tussen verschillende build schedulers. Hier gaan we een gedetailleerde vergelijking te maken door de build schedulers uit te testen aan de hand van de voorbeeldapplicatie die uitgewerkt is in hoofdstuk\ref{ch:voorbeeldapplicatie}.
+Uit het hoofdstuk\ref{ch:methodologie} hebben we in grote lijnen de vergelijking gemaakt tussen verschillende build schedulers. Hier gaan we een gedetailleerde vergelijking te maken door de build schedulers uit te testen aan de hand van de voorbeeldapplicatie die uitgewerkt is in hoofdstuk\ref{ch:methodologie}.
 We hebben Jenkins en %TODO: volgende tool gekozen om uit te zetten en te vergelijken met elkaar.
 In het vorige hoofdstuk hebben we de Ubuntu server helemaal klaar gezet voor het gebruik met een build scheduler. De opzet van Jenkins en %TODO: andere buikd scheduler
 wordt hier beschreven.
@@ -75,6 +80,15 @@ wordt hier beschreven.
     Er moet naar http://188.166.61.128:8080 gesurft worden om de configuratie te voltooien, zoals aangegeven in figuur %TODO: Jenkins3. De cijfers voor de :8080 staan voor het ip-adres van de Ubuntu server, de :8080 is de poort waar je naartoe wil gaan. Hier draait - zoals in de vorige stappen geconfigureerd - Jenkins op.
     Het paswoord dat gevraagd wordt is terug te vinden in de 'initialAdminPassword' file dat zich in de map '/var/lib/jenkins/secrets/' bevindt op de server. Het is voldoende om op de server volgend commando in te voeren: 'sudo cat /var/lib/jenkins/secrets/initialAdminPassword'. Het paswoord dat als uitvoer komt moet gekopieerd worden en geplakt worden in het invoerveld in de web browser zoals in figuur %TODO: Jenkins4 te zien is.
     De volgende stap is het installeren van de voorgestelde plugins. Er wordt gevraagd om een eerste user te configureren, maar voor deze doeleinden is het voldoende om als admin en met het initiële paswoord verder te gaan, er mag dus op 'Continue as admin' gedrukt worden. Nu moet er instantie gemaakt worden door te controleren of de url die ingevuld is klopt met de url die enkele stappen geleden ingegeven is om de webpagina te openen. Wanneer deze klopt kan er op 'Save and Finish' en nadien op 'Start using Jenkins' geklikt worden. Het dashboard van Jenkins wordt geopend. Bovenstaande stappen kan u allemaal volgen in de figuren %TODO: Jenkins5, Jenkins6, Jenkins7, Jenkins8, Jenkins9 en Jenkins10.
+    
+    
+    %TODO: https://sap.github.io/jenkins-library/scenarios/ui5-sap-cp/Readme/!!!!!!!!!
+    %TODO: https://blogs.sap.com/2017/11/21/continuous-delivery-with-jenkins-pipelines/
+    %TODO: http://www.sapspot.com/ci-cd-for-sapui5-on-scp-neo-with-gitlab/
+    OPA test via Selenium: https://www.agiletrailblazers.com/blog/modernized-technology/automated-testing-with-selenium-grid-and-jenkins-in-3-steps
+    
+    KIJK NAAR BOVENSTE SITE!!!!!!!
+    
     
 \section{Conclusie}
 \label{sec:conclusie}

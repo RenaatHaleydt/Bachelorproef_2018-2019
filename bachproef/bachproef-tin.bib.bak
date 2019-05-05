@@ -161,4 +161,13 @@
   file    = {:Dzone-GuideToDevOps-2019.pdf:PDF},
 }
 
+@Electronic{Tuli2018,
+  author  = {Tuli, Samarpit},
+  title   = {Learn how to set up a CI/CD pipeline from scratch},
+  year    = {2018},
+  url     = {https://dzone.com/articles/learn-how-to-setup-a-cicd-pipeline-from-scratch},
+  month   = apr,
+  urldate = {2019-05-05},
+}
+
 @Comment{jabref-meta: databaseType:biblatex;}
