@@ -189,8 +189,9 @@ Deze thesis gaat aan de hand van een vergelijkende studie op zoek naar de beste 
             In figuur \ref{OpzettenServer1} in de bijlagen wordt er getoond wat er moet gebeuren als er voor de eerste keer ingelogd wordt op de server.
             Via de root account wordt er via SSH ingelogd op de server. 
             
-            \begin{figure}	
-                \includegraphics{OpzettenServer1}
+            \begin{figure}
+                \centering
+                \includegraphics[scale=0.7]{OpzettenServer1}
                 \caption{Opzetten Server, stap 1} \label{OpzettenServer1}
             \end{figure}
             
@@ -199,8 +200,9 @@ Deze thesis gaat aan de hand van een vergelijkende studie op zoek naar de beste 
             Een server die gebruik maakt van SSH wordt ook wel een sshd server genoemd. Eens ingelogd op de sshd server moeten er enkele zaken aangepast worden aan de ssh configuratie in de file '/etc/ssh/sshd\_config'. Omdat we hier via de root gebruiker werken moet de property PermitRootLogin op yes staan. Dit zorgt ervoor dat de root gebruiker kan inloggen.
             StrictMode moet ook op yes staan, zo kan er niemand inloggen als de authenticatie documenten leesbaar zijn voor iedereen. Dit voor het beveiligen van configuratie documenten. Deze configuratie kan u zien in figuur\ref{OpzettenServer2} hier onder.
             
-            \begin{figure}	
-                \includegraphics{OpzettenServer2}
+            \begin{figure}
+                \centering
+                \includegraphics[scale=0.75]{OpzettenServer2}
                 \caption{Opzetten Server, stap 2} \label{OpzettenServer2}
             \end{figure}
             
@@ -212,18 +214,21 @@ Deze thesis gaat aan de hand van een vergelijkende studie op zoek naar de beste 
             In figuur\ref{OpzettenServer5} is te zien welke aanpassingen in de sshd\_config file van de sshd server moeten gebeuren om het niet meer mogelijk te maken om in te loggen via een paswoord. PasswordAuthentication en ChallengeResponseAuthentication moeten naar no verandert worden. PubKeyAuthentication moet naar yes verandert worden.
             Nu moet de 'sshd\_config' file opgeslagen worden (\^x + y + enter) en de ssh daemon herstart worden door het commando 'sudo systemctl restart ssh' in te geven.
             
-            \begin{figure}	
+            \begin{figure}
+                \centering
                 \includegraphics{OpzettenServer3}
                 \caption{Opzetten Server, stap 3} \label{OpzettenServer3}
             \end{figure}
         
-            \begin{figure}	
-                \includegraphics{OpzettenServer4}
+            \begin{figure}
+                \centering
+                \includegraphics[scale=0.65]{OpzettenServer4}
                 \caption{Opzetten Server, stap 4} \label{OpzettenServer4}
             \end{figure}
         
-            \begin{figure}	
-                \includegraphics{OpzettenServer}
+            \begin{figure}
+                \centering
+                \includegraphics[scale=0.75]{OpzettenServer5}
                 \caption{Opzetten Server, stap 5} \label{OpzettenServer5}
             \end{figure}
             
@@ -231,8 +236,9 @@ Deze thesis gaat aan de hand van een vergelijkende studie op zoek naar de beste 
             In Linux maken ze gebruik van het protocol SSH via de service OpenSSH, deze heeft ook een profiel bij UFW.
             In Figuur\ref{OpzettenServer6} in de bijlagen is te zien hoe de firewall de SSH service toelaat. Het is enkel mogelijk om de server te bereiken via deze service. Later worden er uiteraard meerdere services toegelaten.
             
-            \begin{figure}	
-                \includegraphics{OpzettenServer6}
+            \begin{figure}
+                \centering
+                \includegraphics[scale=0.9]{OpzettenServer6}
                 \caption{Opzetten Server, stap 6} \label{OpzettenServer6}
             \end{figure}
             
@@ -251,8 +257,9 @@ Deze thesis gaat aan de hand van een vergelijkende studie op zoek naar de beste 
             In figuur\ref{SourceControl1} kan u waarnemen hoe een repository gemaakt wordt in Bitbucket.
             Eens de repository aangemaakt is heb je het webadres nodig om de clone te maken op je lokale machine.
             
-            \begin{figure}	
-                \includegraphics{SourceControl1}
+            \begin{figure}
+                \centering
+                \includegraphics[scale=0.5]{SourceControl1}
                 \caption{Source Control, stap 1} \label{SourceControl1}
             \end{figure}
             
@@ -263,33 +270,39 @@ Deze thesis gaat aan de hand van een vergelijkende studie op zoek naar de beste 
             Nu linken we de gemaakte repository aan het project door via rechter muisklik op het project op Git en dan Set Remote te klikken. Hier moet je de gekopieerde Bitbucket link plakken in het veld voor URL. Na het ingeven van het juiste wachtwoord, is het nodig om op 'OK' te klikken wanneer het 'Changes Fetched' window opent. Deze stappen zijn te volgen in figuren \ref{HANA4} en \ref{HANA5}.
             Na deze stap is het project gelinkt met de repository op Bitbucket. Het maken van het project heeft voor changes gezorgd in de repository, deze moeten eerst gecommit en gepusht worden. In figuur\ref{HANA6} is te zien wat er allemaal moet gebeuren om een commit en push te doen naar de repository.
     
-            \begin{figure}	
-                \includegraphics{HANA1}
+            \begin{figure}
+                \centering
+                \includegraphics[scale=0.25]{HANA1}
                 \caption{Opzetten HANA, stap 1} \label{HANA1}
             \end{figure}
         
             \begin{figure}	
-                \includegraphics{HANA2}
+                \centering
+                \includegraphics[scale=0.35]{HANA2}
                 \caption{Opzetten HANA, stap 2} \label{HANA2}
             \end{figure}
             
             \begin{figure}	
-                \includegraphics{HANA3}
+                \centering
+                \includegraphics[scale=0.35]{HANA3}
                 \caption{Opzetten HANA, stap 3} \label{HANA3}
             \end{figure}
         
             \begin{figure}	
-                \includegraphics{HANA4}
+                \centering
+                \includegraphics[scale=0.35]{HANA4}
                 \caption{Opzetten HANA, stap 4} \label{HANA4}
             \end{figure}
         
             \begin{figure}	
-                \includegraphics{HANA5}
+                \centering
+                \includegraphics[scale=0.35]{HANA5}
                 \caption{Opzetten HANA, stap 5} \label{HANA5}
             \end{figure}
         
             \begin{figure}	
-                \includegraphics{HANA6}
+                \centering
+                \includegraphics[scale=0.2]{HANA6}
                 \caption{Opzetten HANA, stap 6} \label{HANA6}
             \end{figure}
             
@@ -302,47 +315,56 @@ Deze thesis gaat aan de hand van een vergelijkende studie op zoek naar de beste 
             Eens deze gegevens ingevoerd zijn moeten we alle veranderingen toevoegen aan de commit om dan te pushen naar de repository.
             
             \begin{figure}	
-                \includegraphics{HANA7}
+                \centering
+                \includegraphics[scale=0.35]{HANA7}
                 \caption{Opzetten HANA, stap 7} \label{HANA7}
             \end{figure}
             
             \begin{figure}	
-                \includegraphics{HANA8}
+                \centering
+                \includegraphics[scale=0.35]{HANA8}
                 \caption{Opzetten HANA, stap 8} \label{HANA8}
             \end{figure}
             
             \begin{figure}	
-                \includegraphics{HANA9}
+                \centering
+                \includegraphics[scale=0.35]{HANA9}
                 \caption{Opzetten HANA, stap 9} \label{HANA9}
             \end{figure}
             
             \begin{figure}	
-                \includegraphics{HANA10}
+                \centering
+                \includegraphics[scale=0.35]{HANA10}
                 \caption{Opzetten HANA, stap 10} \label{HANA10}
             \end{figure}
             
             \begin{figure}	
-                \includegraphics{HANA11}
+                \centering
+                \includegraphics[scale=0.35]{HANA11}
                 \caption{Opzetten HANA, stap 11} \label{HANA11}
             \end{figure}
             
             \begin{figure}	
-                \includegraphics{HANA12}
+                \centering
+                \includegraphics[scale=0.35]{HANA12}
                 \caption{Opzetten HANA, stap 12} \label{HANA12}
             \end{figure}
         
             \begin{figure}	
-                \includegraphics{HANA13}
+                \centering
+                \includegraphics[scale=0.35]{HANA13}
                 \caption{Opzetten HANA, stap 13} \label{HANA13}
             \end{figure}
             
             \begin{figure}	
-                \includegraphics{HANA14}
+                \centering
+                \includegraphics[scale=0.35]{HANA14}
                 \caption{Opzetten HANA, stap 14} \label{HANA14}
             \end{figure}
             
             \begin{figure}	
-                \includegraphics{HANA15}
+                \centering
+                \includegraphics[scale=0.35]{HANA15}
                 \caption{Opzetten HANA, stap 15} \label{HANA15}
             \end{figure}
            
@@ -356,52 +378,62 @@ Deze thesis gaat aan de hand van een vergelijkende studie op zoek naar de beste 
             De nieuwe Node.js module moet gebuild worden door op de module met de rechtermuisklik te klikken, Run, Run As en dan Node.js Application te kiezen zoals te zien is in figuur \ref{HANA25}.
             
             \begin{figure}	
-                \includegraphics{HANA16}
+                \centering
+                \includegraphics[scale=0.35]{HANA16}
                 \caption{Opzetten HANA, stap 16} \label{HANA16}
             \end{figure}
             
             \begin{figure}	
-                \includegraphics{HANA17}
+                \centering
+                \includegraphics[scale=0.35]{HANA17}
                 \caption{Opzetten HANA, stap 17} \label{HANA17}
             \end{figure}
             
             \begin{figure}	
-                \includegraphics{HANA18}
+                \centering
+                \includegraphics[scale=0.35]{HANA18}
                 \caption{Opzetten HANA, stap 18} \label{HANA18}
             \end{figure}
             
             \begin{figure}	
-                \includegraphics{HANA19}
+                \centering
+                \includegraphics[scale=0.35]{HANA19}
                 \caption{Opzetten HANA, stap 19} \label{HANA19}
             \end{figure}
             
             \begin{figure}	
-                \includegraphics{HANA20}
+                \centering
+                \includegraphics[scale=0.35]{HANA20}
                 \caption{Opzetten HANA, stap 20} \label{HANA20}
             \end{figure}
             
             \begin{figure}	
-                \includegraphics{HANA21}
+                \centering
+                \includegraphics[scale=0.35]{HANA21}
                 \caption{Opzetten HANA, stap 21} \label{HANA21}
             \end{figure}
         
             \begin{figure}	
-                \includegraphics{HANA22}
+                \centering
+                \includegraphics[scale=0.35]{HANA22}
                 \caption{Opzetten HANA, stap 22} \label{HANA22}
             \end{figure}
             
             \begin{figure}	
-                \includegraphics{HANA23}
+                \centering
+                \includegraphics[scale=0.35]{HANA23}
                 \caption{Opzetten HANA, stap 23} \label{HANA23}
             \end{figure}
             
             \begin{figure}	
-                \includegraphics{HANA24}
+                \centering
+                \includegraphics[scale=0.35]{HANA24}
                 \caption{Opzetten HANA, stap 24} \label{HANA24}
             \end{figure}
             
             \begin{figure}	
-                \includegraphics{HANA25}
+                \centering
+                \includegraphics[scale=0.35]{HANA25}
                 \caption{Opzetten HANA, stap 25} \label{HANA25}
             \end{figure} 
             

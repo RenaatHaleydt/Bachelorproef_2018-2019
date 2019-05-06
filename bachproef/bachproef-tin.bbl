@@ -179,6 +179,37 @@
       \verb https://martinfowler.com/bliki/ContinuousDelivery.html
       \endverb
     \endentry
+    \entry{Humble2012}{online}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,hash=9e89d796d06f74d6551850b1c3bff900}{%
+           family={Humble},
+           familyi={H\bibinitperiod},
+           given={Jez},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{9e89d796d06f74d6551850b1c3bff900}
+      \strng{fullhash}{9e89d796d06f74d6551850b1c3bff900}
+      \strng{authornamehash}{9e89d796d06f74d6551850b1c3bff900}
+      \strng{authorfullhash}{9e89d796d06f74d6551850b1c3bff900}
+      \field{sortinit}{H}
+      \field{sortinithash}{2f664b453ec75da1fe3804ca92633405}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{26}
+      \field{month}{10}
+      \field{title}{Continuous Delivery}
+      \field{urlday}{20}
+      \field{urlmonth}{4}
+      \field{urlyear}{2019}
+      \field{year}{2012}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{url}
+      \verb https://www.youtube.com/watch?v=skLJuksCRTw
+      \endverb
+    \endentry
     \entry{Jones2019}{online}{}
       \name{author}{1}{}{%
         {{uniquename=0,hash=42eeb8f268807fdcb513db3716933eb2}{%
@@ -373,6 +404,35 @@
       \endverb
       \verb{url}
       \verb https://dzone.com/guides/continuous-delivery-1
+      \endverb
+    \endentry
+    \entry{Tuli2018}{online}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,hash=fef47e17cd5fdb43f2e90bb300eadab7}{%
+           family={Tuli},
+           familyi={T\bibinitperiod},
+           given={Samarpit},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{fef47e17cd5fdb43f2e90bb300eadab7}
+      \strng{fullhash}{fef47e17cd5fdb43f2e90bb300eadab7}
+      \strng{authornamehash}{fef47e17cd5fdb43f2e90bb300eadab7}
+      \strng{authorfullhash}{fef47e17cd5fdb43f2e90bb300eadab7}
+      \field{sortinit}{T}
+      \field{sortinithash}{2e5c2f51f7fa2d957f3206819bf86dc3}
+      \field{labeldatesource}{year}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{4}
+      \field{title}{Learn how to set up a CI/CD pipeline from scratch}
+      \field{urlday}{5}
+      \field{urlmonth}{5}
+      \field{urlyear}{2019}
+      \field{year}{2018}
+      \field{urldateera}{ce}
+      \verb{url}
+      \verb https://dzone.com/articles/learn-how-to-setup-a-cicd-pipeline-from-scratch
       \endverb
     \endentry
     \entry{Vocke2018}{online}{}

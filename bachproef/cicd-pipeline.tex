@@ -11,7 +11,7 @@ De pipeline stelt het proces van de verschillende workflows voor die reeds in de
 Alles begint bij de developer die een verandering in de code aanbrengt en deze commit naar de version control repository waar de build scheduler toegang toe heeft. De build scheduler merkt op zijn beurt de commit en begint aan zijn taak: het builden van de code tijdens deze stap zorgt de build scheduler ervoor dat de unit testen uitgevoerd zijn alvorens de build begint. Eens de build slaagt is het de taak van de build scheduler om de automatische build tests uit te voeren en de code uitvoerig te testen of deze klaar is voor productie. Dit kan op een realistische testomgeving gebeuren of de code wordt door iemand anders nagekeken of deze voldoet aan de kwaliteitseisen. Eens de code door de testen raakt wordt de commit klaar gemaakt voor productie die deze in de stage fase te brengen. Eens de code zich in de stage fase bevindt kan deze manueel worden gedeployed om naar productie te brengen.
 
 \begin{figure}	
-    \includegraphics{cicd-pipeline}
+    \includegraphics[scale=0.2]{cicd-pipeline}
     \caption{Continuous Integration en Continuous Delivery pipeline ~\autocite{Tuli2018}} \label{cicd-pipeline}
 \end{figure}
 
@@ -37,7 +37,7 @@ De CI/CD pipeline bestaat uit verschillende lagen die naadloos met elkaar moeten
     \end{itemize}
     Deze taken kunnen ook door een script volbracht worden, maar het is belangrijk dat deze taken automatisch gebeuren telkens er code gecommit wordt naar de repository manager ~\autocite{Riti2018}.
 
-    In het hoofdstuk\ref{methodologie} worden de meest populaire build schedulers van vandaag met elkaar vergeleken. Naast Jenkins, Circle CI, Bamboo en Travis CI zijn er nog andere build schedulers op de markt die gebruikt kunnen worden: Team City, Gitlab CI, CodeShip en nog enkele tientallen.
+    In het hoofdstuk\ref{ch:methodologie} worden de meest populaire build schedulers van vandaag met elkaar vergeleken. Naast Jenkins, Circle CI, Bamboo en Travis CI zijn er nog andere build schedulers op de markt die gebruikt kunnen worden: Team City, Gitlab CI, CodeShip en nog enkele tientallen.
     
     
     \subsection{Artifact Repository Manager}

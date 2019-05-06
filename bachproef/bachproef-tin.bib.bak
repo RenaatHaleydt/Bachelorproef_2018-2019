@@ -170,4 +170,12 @@
   urldate = {2019-05-05},
 }
 
+@Online{Humble2012,
+  author  = {Jez Humble},
+  title   = {Continuous Delivery},
+  date    = {2012-10-26},
+  url     = {https://www.youtube.com/watch?v=skLJuksCRTw},
+  urldate = {2019-04-20},
+}
+
 @Comment{jabref-meta: databaseType:biblatex;}
