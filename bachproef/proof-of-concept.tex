@@ -8,11 +8,16 @@ Uit vorig hoofdstuk is gebleken dat (SCHRAPPEN WAT NIET PAST): Jenkins \& Travis
 
 \section{Continuous Delivery principles}
 \label{sec:continuous-delivery-principles}
-%TODO: Zie pagina 44 in Riti2018_Chapter_IntroductionToContinuousIntegr.pdf
+Volgens \textcite{Riti2018} is het uitermate belangrijk om volgende stappen te volbrengen om tot een goede Continuous Delivery omgeving te komen.
+\begin{itemize}
+    \item Er moeten goede branching strategieën bepaald worden om het team goed te laten samenwerken
+    \item Een belangrijk onderdeel van Continuous Integration is natuurlijk testen, deze zijn in Continuous Delivery niet te vergeten
+    \item Een stap verder is het automatisch uitvoeren van deze testen
+    \item Na het slagen van de testen en het automatisch builden van de software moet de build klaar gemaakt worden voor release
+\end{itemize}
 
 \section{CI/CD pipeline op SAP Cloud Platform}
 \label{sec:ci-cd-op-sap-cloud-platform}
-%TODO: Naar deze site kijken: https://developers.sap.com/tutorials/ci-best-practices-ci-cd.html
 SAP Cloud Platform biedt de mogelijkheid om verschillende omgevingen op te stellen waarin je kan werken als developer. Het vergt enige vereisten om te voldoen aan de regels van Continuous Integration ~\autocite{Kramer2018}:
 \begin{itemize}
     \item Hou alles goed bij via een version control systeem
@@ -52,9 +57,10 @@ Ook kritieke functionaliteiten, nieuwe informatie, zaken die de voorbije builds 
 De testen groeperen per functionaliteit is een goede tip, zo moet er niet telkens elke functionaliteit opnieuw getest worden. Maar kan de build scheduler beslissen welke groep test moet runnen bij de nieuwe code. 
 Angie Jones \textcite{Jones2019} geeft ook nog als tip mee om af en toe wat onnodige testen te verwijderen.
 
-Voor het onderhoud van de testen moet je rekening houden met de staat van je applicatie. Deze verandert doorheen de tijd en je teste moeten deze verandering ook doorstaan.
+Voor het onderhoud van de testen moet je rekening houden met de staat van je applicatie. Deze verandert doorheen de tijd en je testen moeten deze verandering ook doorstaan.
 
-    \paragraph{OPA5}
+    \paragraph{Testing in SAPUI5}
+    De developers van SAP hebben ook eigen test-frameworks ontwikkeld. Voor Unit testen zijn er de QUnit tests en voor de integratie testen hebben ze OPA, One-Page Acceptance Test, ontwikkeld.
     %TODO: https://blogs.sap.com/2018/10/03/testing-your-sapui5-application-with-opa5/
     %TODO: Automatic testing with OPA on Jenkins and Travis: https://stackoverflow.com/questions/24934012/automated-ui-tests-for-sap-ui5 (onderste post)
     %TODO: https://github.com/SAP/karma-ui5/issues/1
@@ -68,26 +74,99 @@ wordt hier beschreven.
 
     \paragraph{Jenkins}
     Omdat Jenkins op Java draait is het nodig om Java 8 te installeren. Dit is dan ook de eerste stap in het proces. 
-    De eerste stap is inloggen in de server door ssh root@188.166.61.128 in te typen. Daarna moet je het commando sudo apt install openjdk-8-jdk intypen om JAVA 8 te installeren. De server vraagt bevestiging om te downloaden en te installeren, er moet enkel maar y worden getypt en op return gedrukt worden om te bevestigen. %TODO: Dit kan u zien in figuren InstallatieJenkins1 en InstallatieJenkins2.
-    Nu kunnen we overgaan tot de installatie van Jenkins op de server. We maken gebruik van de packages die Jenkins onderhoud om de software te installeren op Ubuntu zoals te zien is in figuur %TODO: InstallatieJenkins3.
+    De eerste stap is inloggen in de server door ssh root@188.166.61.128 in te typen. Daarna moet je het commando sudo apt install openjdk-8-jdk intypen om JAVA 8 te installeren. De server vraagt bevestiging om te downloaden en te installeren, er moet enkel maar y worden getypt en op return gedrukt worden om te bevestigen. Dit kan u zien in figuren \ref{InstallatieJenkins1} en \ref{InstallatieJenkins2}.
+    Nu kunnen we overgaan tot de installatie van Jenkins op de server. We maken gebruik van de packages die Jenkins onderhoud om de software te installeren op Ubuntu zoals te zien is in figuur \ref{InstallatieJenkins3}.
     Eens dit gebeurd is moeten we de Debian package repository toevoegen aan de server's sources.list.
-    De apt - een command-line tool binnen Ubuntu om software te installeren - moet eerst geupdate worden, nadien kan Jenkins effectief geïnstalleerd worden. Deze stappen kan u volgen in figuren %TODO: InstallatieJenkins4 en InstallatieJenkins5.
+    De apt - een command-line tool binnen Ubuntu om software te installeren - moet eerst geupdate worden, nadien kan Jenkins effectief geïnstalleerd worden. Deze stappen kan u volgen in figuren \ref{InstallatieJenkins4} en \ref{InstallatieJenkins5}.
     
-    Na de installatie kunnen we Jenkins starten op de server door het commando 'sudo systemctl start jenkins' in te typen. Omdat dit commando geen uitvoer geeft moeten we het commando 'sudo systemctl status jenkins' intypen. Als je active ziet verschijnen wil dit zeggen dan Jenkins runt op de Ubuntu server. Deze stappen kan je volgen in figuur %TODO: Jenkins1.
-    Eens Jenkins gestart is moeten we die kunnen aanspreken vanuit een browser, daarom moeten we de regels van de firewall wat aanpassen. Standaard draait Jenkins op poort 8080. Deze moet geopend worden op de server door het commando 'sudo ufw allow 8080' in te voeren zoals in figuur %TODO: Jenkins2 te zien is.
+    \begin{figure}	
+        \includegraphics{InstallatieJenkins1}
+        \caption{Installatie Jenkins, stap 1} \label{InstallatieJenkins1}
+    \end{figure}
+    
+    \begin{figure}	
+        \includegraphics{InstallatieJenkins2}
+        \caption{Installatie Jenkins, stap 2} \label{InstallatieJenkins2}
+    \end{figure}
+    
+    \begin{figure}	
+        \includegraphics{InstallatieJenkins3}
+        \caption{Installatie Jenkins, stap 3} \label{InstallatieJenkins3}
+    \end{figure}
+    
+    \begin{figure}	
+        \includegraphics{InstallatieJenkins4}
+        \caption{Installatie Jenkins, stap 4} \label{InstallatieJenkins4}
+    \end{figure}
+    
+    \begin{figure}	
+        \includegraphics{InstallatieJenkins5}
+        \caption{Installatie Jenkins, stap 5} \label{InstallatieJenkins5}
+    \end{figure}
+
+    
+    Na de installatie kunnen we Jenkins starten op de server door het commando 'sudo systemctl start jenkins' in te typen. Omdat dit commando geen uitvoer geeft moeten we het commando 'sudo systemctl status jenkins' intypen. Als je active ziet verschijnen wil dit zeggen dan Jenkins runt op de Ubuntu server. Deze stappen kan je volgen in figuur \ref{Jenkins1}.
+    Eens Jenkins gestart is moeten we die kunnen aanspreken vanuit een browser, daarom moeten we de regels van de firewall wat aanpassen. Standaard draait Jenkins op poort 8080. Deze moet geopend worden op de server door het commando 'sudo ufw allow 8080' in te voeren zoals in figuur \ref{Jenkins2} te zien is.
     
     Nu moet Jenkins geconfigureerd worden, dit moet vanuit elke browser gebeuren.
-    Er moet naar http://188.166.61.128:8080 gesurft worden om de configuratie te voltooien, zoals aangegeven in figuur %TODO: Jenkins3. De cijfers voor de :8080 staan voor het ip-adres van de Ubuntu server, de :8080 is de poort waar je naartoe wil gaan. Hier draait - zoals in de vorige stappen geconfigureerd - Jenkins op.
-    Het paswoord dat gevraagd wordt is terug te vinden in de 'initialAdminPassword' file dat zich in de map '/var/lib/jenkins/secrets/' bevindt op de server. Het is voldoende om op de server volgend commando in te voeren: 'sudo cat /var/lib/jenkins/secrets/initialAdminPassword'. Het paswoord dat als uitvoer komt moet gekopieerd worden en geplakt worden in het invoerveld in de web browser zoals in figuur %TODO: Jenkins4 te zien is.
-    De volgende stap is het installeren van de voorgestelde plugins. Er wordt gevraagd om een eerste user te configureren, maar voor deze doeleinden is het voldoende om als admin en met het initiële paswoord verder te gaan, er mag dus op 'Continue as admin' gedrukt worden. Nu moet er instantie gemaakt worden door te controleren of de url die ingevuld is klopt met de url die enkele stappen geleden ingegeven is om de webpagina te openen. Wanneer deze klopt kan er op 'Save and Finish' en nadien op 'Start using Jenkins' geklikt worden. Het dashboard van Jenkins wordt geopend. Bovenstaande stappen kan u allemaal volgen in de figuren %TODO: Jenkins5, Jenkins6, Jenkins7, Jenkins8, Jenkins9 en Jenkins10.
+    Er moet naar http://188.166.61.128:8080 gesurft worden om de configuratie te voltooien, zoals aangegeven in figuur \ref{Jenkins3}. De cijfers voor de :8080 staan voor het ip-adres van de Ubuntu server, de :8080 is de poort waar je naartoe wil gaan. Hier draait - zoals in de vorige stappen geconfigureerd - Jenkins op.
+    Het paswoord dat gevraagd wordt is terug te vinden in de 'initialAdminPassword' file dat zich in de map '/var/lib/jenkins/secrets/' bevindt op de server. Het is voldoende om op de server volgend commando in te voeren: 'sudo cat /var/lib/jenkins/secrets/initialAdminPassword'. Het paswoord dat als uitvoer komt moet gekopieerd worden en geplakt worden in het invoerveld in de web browser zoals in figuur \ref{Jenkins4} te zien is.
+    De volgende stap is het installeren van de voorgestelde plugins. Er wordt gevraagd om een eerste user te configureren, maar voor deze doeleinden is het voldoende om als admin en met het initiële paswoord verder te gaan, er mag dus op 'Continue as admin' gedrukt worden. Nu moet er instantie gemaakt worden door te controleren of de url die ingevuld is klopt met de url die enkele stappen geleden ingegeven is om de webpagina te openen. Wanneer deze klopt kan er op 'Save and Finish' en nadien op 'Start using Jenkins' geklikt worden. Het dashboard van Jenkins wordt geopend. Bovenstaande stappen kan u allemaal volgen in de figuren \ref{Jenkins5}, \ref{Jenkins6}, \ref{Jenkins7}, \ref{Jenkins8}, \ref{Jenkins9} en \ref{Jenkins10}.
     
+    \begin{figure}	
+        \includegraphics{Jenkins1}
+        \caption{Opzetten Jenkins, stap 1} \label{Jenkins1}
+    \end{figure}
+    
+    \begin{figure}	
+        \includegraphics{Jenkins2}
+        \caption{Opzetten Jenkins, stap 2} \label{Jenkins2}
+    \end{figure}
+    
+    \begin{figure}	
+        \includegraphics{Jenkins3}
+        \caption{Opzetten Jenkins, stap 3} \label{Jenkins3}
+    \end{figure}
+    
+    \begin{figure}	
+        \includegraphics{Jenkins4}
+        \caption{Opzetten Jenkins, stap 4} \label{Jenkins4}
+    \end{figure}
+    
+    \begin{figure}	
+        \includegraphics{Jenkins5}
+        \caption{Opzetten Jenkins, stap 5} \label{Jenkins5}
+    \end{figure}
+    
+    \begin{figure}	
+        \includegraphics{Jenkins6}
+        \caption{Opzetten Jenkins, stap 6} \label{Jenkins6}
+    \end{figure}
+
+    \begin{figure}	
+        \includegraphics{Jenkins7}
+        \caption{Opzetten Jenkins, stap 7} \label{Jenkins7}
+    \end{figure}
+    
+    \begin{figure}	
+        \includegraphics{Jenkins8}
+        \caption{Opzetten Jenkins, stap 8} \label{Jenkins8}
+    \end{figure}
+    
+    \begin{figure}	
+        \includegraphics{Jenkins9}
+        \caption{Opzetten Jenkins, stap 9} \label{Jenkins9}
+    \end{figure}
+    
+    \begin{figure}	
+        \includegraphics{Jenkins10}
+        \caption{Opzetten Jenkins, stap 10} \label{Jenkins10}
+    \end{figure}
     
     %TODO: https://sap.github.io/jenkins-library/scenarios/ui5-sap-cp/Readme/!!!!!!!!!
     %TODO: https://blogs.sap.com/2017/11/21/continuous-delivery-with-jenkins-pipelines/
     %TODO: http://www.sapspot.com/ci-cd-for-sapui5-on-scp-neo-with-gitlab/
-    OPA test via Selenium: https://www.agiletrailblazers.com/blog/modernized-technology/automated-testing-with-selenium-grid-and-jenkins-in-3-steps
-    
-    KIJK NAAR BOVENSTE SITE!!!!!!!
+    %TODO: OPA test via Selenium: https://www.agiletrailblazers.com/blog/modernized-technology/automated-testing-with-selenium-grid-and-jenkins-in-3-steps
     
     
 \section{Conclusie}
