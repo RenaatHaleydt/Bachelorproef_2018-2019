@@ -22,7 +22,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {paragraph}{Continuous Delivery}{20}{section*.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Continuous Deployment}{21}{section*.8}
+\contentsline {paragraph}{Continuous Deployment}{22}{section*.8}
 \defcounter {refsection}{0}\relax 
 \contentsline {paragraph}{Automated Testing}{22}{section*.9}
 \defcounter {refsection}{0}\relax 
@@ -94,41 +94,43 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {paragraph}{Source Control \& Databank module}{46}{section*.24}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Node.js module}{50}{section*.25}
+\contentsline {paragraph}{Node.js module}{59}{section*.25}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.2.3}Automated testing binnen SAPUI5}{55}{subsection.5.2.3}
+\contentsline {subsection}{\numberline {5.2.3}UI5-applicatie}{60}{subsection.5.2.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {6}Proof-of-concept van een CI/CD pipeline}{61}{chapter.6}
+\contentsline {subsection}{\numberline {5.2.4}Automated testing binnen SAPUI5}{60}{subsection.5.2.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.1}Continuous Delivery principles}{61}{section.6.1}
+\contentsline {chapter}{\numberline {6}Proof-of-concept van een CI/CD pipeline}{67}{chapter.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.2}CI/CD pipeline op SAP Cloud Platform}{62}{section.6.2}
+\contentsline {section}{\numberline {6.1}Continuous Delivery principles}{67}{section.6.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.3}CI/CD pipeline volgens SAP}{62}{section.6.3}
+\contentsline {section}{\numberline {6.2}CI/CD pipeline op SAP Cloud Platform}{68}{section.6.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.4}Automated Tests voor CI}{62}{section.6.4}
+\contentsline {section}{\numberline {6.3}CI/CD pipeline volgens SAP}{68}{section.6.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Testing in SAPUI5}{63}{section*.26}
+\contentsline {section}{\numberline {6.4}Automated Tests voor CI}{68}{section.6.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.5}Short List}{63}{section.6.5}
+\contentsline {paragraph}{Testing in SAPUI5}{69}{section*.26}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Jenkins}{64}{section*.27}
+\contentsline {section}{\numberline {6.5}Short List}{69}{section.6.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.6}Conclusie}{66}{section.6.6}
+\contentsline {paragraph}{Jenkins}{70}{section*.27}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {7}Conclusie}{73}{chapter.7}
+\contentsline {section}{\numberline {6.6}Conclusie}{72}{section.6.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {A}Onderzoeksvoorstel}{75}{appendix.A}
+\contentsline {chapter}{\numberline {7}Conclusie}{79}{chapter.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.1}Introductie}{75}{section.A.1}
+\contentsline {chapter}{\numberline {A}Onderzoeksvoorstel}{81}{appendix.A}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.2}State-of-the-art}{76}{section.A.2}
+\contentsline {section}{\numberline {A.1}Introductie}{81}{section.A.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.3}Methodologie}{78}{section.A.3}
+\contentsline {section}{\numberline {A.2}State-of-the-art}{82}{section.A.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.4}Verwachte resultaten}{79}{section.A.4}
+\contentsline {section}{\numberline {A.3}Methodologie}{84}{section.A.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.5}Verwachte conclusies}{80}{section.A.5}
+\contentsline {section}{\numberline {A.4}Verwachte resultaten}{85}{section.A.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Bibliografie}{81}{appendix*.28}
+\contentsline {section}{\numberline {A.5}Verwachte conclusies}{86}{section.A.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{Bibliografie}{87}{appendix*.28}
 \contentsfinish 
