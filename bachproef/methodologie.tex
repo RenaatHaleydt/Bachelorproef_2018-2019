@@ -118,24 +118,30 @@ Deze thesis gaat aan de hand van een vergelijkende studie op zoek naar de beste 
             %TODO: https://www.tablesgenerator.com
             %TODO: Kijken voor de integratie met Karma ipv te vergelijken op het ondersteunen van OPA tests
             %TODO: Kijken of Travis enkel met GitHub kan samenwerken en ook niet bedoeld is om continuous delivery toe te passen
-           % Please add the following required packages to your document preamble:
-           % \usepackage{lscape}
-           \begin{landscape}
-               \begin{table}[]
-                   \centering
-                   \begin{tabular}{c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
-                       \cline{2-16}
-                       \textbf{} & \textbf{Must-haves} &  &  &  &  &  &  &  &  & \textbf{\begin{tabular}[c]{@{}c@{}}Should-\\ haves\end{tabular}} &  & \textbf{} & \textbf{} & \textbf{Nice-to-haves} & \textbf{} \\ \cline{2-16} 
-                       & \textbf{\begin{tabular}[c]{@{}c@{}}SAP CP\\ \& UI5\end{tabular}} & \textbf{Git} & \textbf{Bitbucket} & \textbf{\begin{tabular}[c]{@{}c@{}}On-\\ premise\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}CI/CD\\ pipeline\end{tabular}} & \textbf{Karma} & \textbf{Gebruik} & \textbf{Audit} & \textbf{Secure} & \textbf{Prijs} & \textbf{Trial} & \textbf{Skype for Business} & \textbf{Container support} & \textbf{Slack} & \textbf{Rapport} \\ \hline
-                       \multicolumn{1}{|c|}{\textbf{Jenkins}} & Ja & Ja & Ja & Ja & Ja & Ja & Makkelijk & Ja & Ja & Gratis & Gratis & Ja & Ja & Ja & Ja \\ \hline
-                       \multicolumn{1}{|c|}{\textbf{Circle CI}} & Geen info & Ja & Ja & Ja & Ja & Ja & Makkelijk & Basic & Meestal & \$35 / user & \begin{tabular}[c]{@{}c@{}}20 \\ dagen\end{tabular} & Nee & Ja & Ja & Ja \\ \hline
-                       \multicolumn{1}{|c|}{\textbf{Bamboo}} & 1 blogpost & Ja & Ja & Ja & Ja & Ja & Middelmatig & Ja & Nee & \begin{tabular}[c]{@{}c@{}}\$1100 / jaar voor \\ 1 remote agent en \\ ongelimiteerd aantal jobs\end{tabular} & \begin{tabular}[c]{@{}c@{}}30 \\ dagen\end{tabular} & Nee & Ja & \begin{tabular}[c]{@{}c@{}}Ja,\\ via derde partij\end{tabular} & Nee \\ \hline
-                       \multicolumn{1}{|c|}{\textbf{Travis CI}} & Ja & Ja & Nee & Ja & Ja & Ja & Makkelijk & Ja & Ja & \begin{tabular}[c]{@{}c@{}}\$2739 / jaar \\ voor 5 jobs\end{tabular} & \begin{tabular}[c]{@{}c@{}}Gratis \\ voor\\ open-source\end{tabular} & Ja & Ja & Ja & Ja \\ \hline
-                   \end{tabular}
-                   \caption{Long list van CI/CD tools}
-                   \label{tab:long-list}
-               \end{table}
-           \end{landscape}
+           \begin{table}[]
+               \centering
+               \begin{tabular}{c|c|c|c|c|c|}
+                   \cline{2-6}
+                   \textbf{} & \textbf{} & \textbf{Jenkins} & \textbf{Circle Ci} & \textbf{Bamboo} & \textbf{Travis} \\ \hline
+                   \multicolumn{1}{|c|}{\textbf{\begin{tabular}[c]{@{}c@{}}Must-\\ haves\end{tabular}}} & \textbf{\begin{tabular}[c]{@{}c@{}}SAP CP\\ \& UI5\end{tabular}} & Ja & Geen info & 1 blogpost & Ja \\ \hline
+                   \multicolumn{1}{|c|}{\textbf{}} & \textbf{Git} & Ja & Ja & Ja & Ja \\ \hline
+                   \multicolumn{1}{|c|}{\textbf{}} & \textbf{Bitbucket} & Ja & Ja & Ja & Nee \\ \hline
+                   \multicolumn{1}{|c|}{\textbf{}} & \textbf{\begin{tabular}[c]{@{}c@{}}On-\\ premise\end{tabular}} & Ja & Ja & Ja & Ja \\ \hline
+                   \multicolumn{1}{|c|}{\textbf{}} & \textbf{\begin{tabular}[c]{@{}c@{}}CI/CD \\ pipeline\end{tabular}} & Ja & Ja & Ja & Ja \\ \hline
+                   \multicolumn{1}{|c|}{} & \textbf{Karma} & Ja & Ja & Ja & Ja \\ \hline
+                   \multicolumn{1}{|c|}{} & \textbf{Gebruik} & Makkelijk & Makkelijk & Matig & Makkelijk \\ \hline
+                   \multicolumn{1}{|c|}{} & \textbf{Audit} & Ja & Basic & Ja & Ja \\ \hline
+                   \multicolumn{1}{|c|}{} & \textbf{Secure} & Ja & Meestal & Nee &  \\ \hline
+                   \multicolumn{1}{|c|}{\textbf{\begin{tabular}[c]{@{}c@{}}Should-\\ haves\end{tabular}}} & \textbf{Prijs} & Gratis & \$35 / user & \begin{tabular}[c]{@{}c@{}}\$1100 / jaar voor \\ 1 remote agent en \\ ongelimiteerd aantal jobs\end{tabular} & \begin{tabular}[c]{@{}c@{}}\$2739 / jaar \\ voor 5 jobs\end{tabular} \\ \hline
+                   \multicolumn{1}{|c|}{} & \textbf{Trial} & Gratis & 20 dagen & 30 dagen & \begin{tabular}[c]{@{}c@{}}Gratis voor \\ open-source\end{tabular} \\ \hline
+                   \multicolumn{1}{|c|}{} & \textbf{\begin{tabular}[c]{@{}c@{}}Skype for \\ Business\end{tabular}} & Ja & Nee & Nee & Ja \\ \hline
+                   \multicolumn{1}{|c|}{} & \textbf{\begin{tabular}[c]{@{}c@{}}Container \\ support\end{tabular}} & Ja & Ja & Ja & Ja \\ \hline
+                   \multicolumn{1}{|c|}{\textbf{\begin{tabular}[c]{@{}c@{}}Nice-to-\\ haves\end{tabular}}} & \textbf{Slack} & Ja & Ja & Ja, via derde partij & Ja \\ \hline
+                   \multicolumn{1}{|c|}{} & \textbf{Rapport} & Ja & Ja & Nee & Ja \\ \hline
+               \end{tabular}
+               \caption{Long list van CI/CD tools}
+               \label{tab:long-list}
+           \end{table}
 
     \section{Voorbeeldapplicatie dat Amista zal gebruiken}
     Hoe ziet de omgeving eruit waar Amista een CI/CD pipeline in wil opzetten? In de literatuurstudie worden de gebruikte tools uitgelegd, in dit hoofdstuk worden ze uitgewerkt en de onderliggende relaties besproken.
