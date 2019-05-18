@@ -1,14 +1,12 @@
 \chapter{\IfLanguageName{dutch}{Continuous Integration, Continuous Delivery \& Continuous Deployment}{Continuous Integration, Continuous Delivery \& Continuous Deployment}}
 \label{ch:ci-cd-cd}
-    \section{Algemeen}
-    \label{sec:algemeen}
-    Bedrijven zijn constant op zoek naar betere en snellere resultaten, maar in de wereld van IT is het vandaag soms nog lang wachten voor een wijziging effectief doorgevoerd wordt. Vaak wordt een enorme hoeveelheid software op het einde van een sprint opgeleverd, stukken code van verschillende developers moet op het laatste nippertje nog aan elkaar geplakt worden om toch een werkende applicatie te bezorgen, wat soms problemen met zich meebrengt. Met een vrij recente software development methode - Continuous Integration en Continuous Delivery genaamd - wil men hier verandering in brengen. Er wordt vaak gesproken van een CI/CD pipeline als het gaat over Continuous Integration en Continuous Delivery, maar er is nog een derde speler dat men kan invoeren: Continuous Deployment. Samen vormen zij de 3 musketiers om software projecten een grotere slaagkans te geven.
-    Om een duidelijker beeld te scheppen van een CI/CD pipeline zal dit hoofdstuk eerst uitleg verschaffen over DevOps, omdat dit de allesomvattende term is waar de 3 musketiers deel van uitmaken. Er wordt ook dieper ingegaan op Continuous Integration, Continuous Delivery, Continuous Deployment en tot slot komt Automated Testing aan bod.
-        \paragraph{DevOps}
+Bedrijven zijn constant op zoek naar betere en snellere resultaten, maar in de wereld van IT is het vandaag soms nog lang wachten voor een wijziging effectief doorgevoerd wordt. Vaak wordt een enorme hoeveelheid software op het einde van een sprint opgeleverd, stukken code van verschillende developers moet op het laatste nippertje nog aan elkaar geplakt worden om toch een werkende applicatie te bezorgen, wat soms problemen met zich meebrengt. Met een vrij recente software development methode - Continuous Integration en Continuous Delivery genaamd - wil men hier verandering in brengen. Er wordt vaak gesproken van een CI/CD pipeline als het gaat over Continuous Integration en Continuous Delivery, maar er is nog een derde speler dat men kan invoeren: Continuous Deployment. Samen vormen zij de 3 musketiers om software projecten een grotere slaagkans te geven.
+Om een duidelijker beeld te scheppen van een CI/CD pipeline zal dit hoofdstuk eerst uitleg verschaffen over DevOps, omdat dit de allesomvattende term is waar de 3 musketiers deel van uitmaken. Er wordt ook dieper ingegaan op Continuous Integration, Continuous Delivery, Continuous Deployment en tot slot komt Automated Testing aan bod.
+        \section{DevOps}
         DevOps is een samentrekking van development en operations en is een welbekend begrip binnen de informatica wereld. Het heeft als doel om de 'state of mind' binnen een bedrijf te veranderen zodat alle lagen/departementen vlotter samenwerken. Het is een praktische 'gids' dat bedrijven kunnen hanteren om de communicatie tussen developers en systeembeheerders vlotter te laten verlopen. Deze twee verschillende lagen in een bedrijf willen namelijk hetzelfde: zo snel mogelijk, kwaliteitsvolle software opleveren. DevOps is gebaseerd op Agile development, maar gaat verder dan dat. Het gaat dieper in op automatisatie, integratie, samenwerking en communicatie. 
         Continuous Integration, Delivery en Deployment zijn kenmerkend voor DevOps, omdat het mee inzet op snellere oplevering van kwaliteitsvolle software. ~\autocite{Riti2018}
     
-        \paragraph{Continuous Integration}
+        \section{Continuous Integration}
         Dit is de eerste laag van de pipeline die zelf uit verschillende stappen bestaat. Eerst moet de geschreven code verstuurd worden naar een 'repository management server' aan de hand van een commit. De 'source code' wordt automatisch gebuild en bekeken of ze slaagt voor de automatisch gestarte testen. De focus bij deze stap ligt bij de teamleden ~\autocite{Fowler2006}, van hen wordt verwacht dat ze - op regelmatige basis - hun code pushen (integreren met de master applicatie). Een goede samenwerking tussen de verschillende leden van het development team is broodnodig om tot het gewenste eindresultaat te komen.
         Het doel van een Continuous Integration is om de integratie feilloos te laten verlopen wanneer men software ontwikkelt en geen functionaliteiten verliest na een merge ~\autocite{Riti2018}.
         
@@ -24,7 +22,7 @@
             \caption{Voorbeeld van een Continuous Integration set-up ~\autocite{Riti2018}} \label{img-ci-example}
         \end{figure}
     
-        \paragraph{Continuous Delivery}
+        \section{Continuous Delivery}
         Eens het team met succes de Continuous Integration toepast kan men overschakelen naar de volgende stap: Continuous Delivery.
         Het is een manier dat ervoor zorgt dat de code die van de Continuous Integration stap komt, gebuild en voorbereid wordt voor een release.
         Er is echter wel nog een menselijke hand nodig om de build van deze stap te deployen en voor de buitenwereld beschikbaar te stellen ~\autocite{Fowler2013}.
@@ -39,12 +37,12 @@
             \caption{Continuous Delivery chain ~\autocite{Riti2018}} \label{img-cd-chain}
         \end{figure}
         
-        \paragraph{Continuous Deployment}
+        \section{Continuous Deployment}
         De gelijkenis met Continuous Deployment is treffend, maar er is wel degelijk een verschil.
         Hier gaat men automatisch de veranderde code naar productie brengen. De veranderingen gaan door de volledige pipeline en eens ze slagen voor alle testen wordt - zonder menselijke interactie - de code naar productie gebracht ~\autocite{Claps2015}.
         Dit wordt soms ook wel de 'train to production' genoemd, omdat elke code dat gepusht wordt naar de source-control automatisch tot bij de klant geraakt.
         
-        \paragraph{Automated Testing}
+        \section{Automated Testing}
         Zoals hierboven reeds aangegeven is er geen Continuous Integration pipeline zonder automated testing. Het grootste doel van deze fase is - zoals de naam het zegt - testen van de code. Als de CI/CD pipeline voorzien wordt van voldoende en goede testen, creëert dit een veiligheidsgevoel. Op deze manier voldoet de software aan bepaalde criteria, die in de testen verwerkt worden. Het is dus een heel belangrijk onderdeel van de pipeline waar veel aandacht aan besteed moet worden. 
         Om te voldoen aan de criteria van CI/CD moeten de testen automatisch gerund worden. Dit was tot voor kort echter vaak niet het geval. Er waren testers aangesteld om telkens opnieuw software te testen, door op de verschillende knoppen te drukken in de user interface (UI). Heel vaak slopen er fouten in omdat dit heel repetitief en saai werk was. Daar komt de automatisatie van pas ~\autocite{Vocke2018}.
         

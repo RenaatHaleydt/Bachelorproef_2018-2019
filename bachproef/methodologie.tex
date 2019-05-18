@@ -18,12 +18,11 @@ Deze thesis gaat aan de hand van een vergelijkende studie op zoek naar de beste 
         Bij polling builds wordt er, meestal op een zeer korte tijd zoals elke minuut bijvoorbeeld, gekeken of er veranderingen zijn aangebracht in de repository. Wanneer de build scheduler een verandering opmerkt zal hij automatisch de build uitvoeren.\\
         Bij scheduler builds wordt er, meestal op een dagelijkse basis, naar de veranderingen in de repository gekeken. Bij veranderingen worden de builds automatisch uitgevoerd. Deze manier is niet helemaal in regel met de principes van CI/CD omdat er op een dagelijkse basis feedback wordt voorzien in plaats van onmiddellijk na de commit, zoals bij polling builds.
         
-        Iedere developer weet dat testen een cruciale rol hebben binnen software. Het automatiseren van de tests gebeurd door een testing tool, %TODO: zoals Karma vaak gebruik wordt binnen SAPUI5 development. Deze tool zorgt ervoor dat de QUnit (Unit tests binnen SAPUI5) en OPA tests (Integration tests binnen SAPUI5) geautomatiseerd worden. Continuous Integration en Continuous Delivery draait allemaal rond het uitvoeren van de testen en het feedback geven over de resultaten ervan. Het is dan ook de taak van de build scheduler om voor een uitstekende samenwerking te zorgen met de gebruikte testing tool.
+        Iedere developer weet dat testen een cruciale rol hebben binnen software. Het automatiseren van de tests gebeurd door een testing tool, zoals Karma vaak gebruik wordt binnen SAPUI5 development. Deze tool zorgt ervoor dat de QUnit (Unit tests binnen SAPUI5) en OPA tests (Integration tests binnen SAPUI5) geautomatiseerd worden. Continuous Integration en Continuous Delivery draait allemaal rond het uitvoeren van de testen en het feedback geven over de resultaten ervan. Het is dan ook de taak van de build scheduler om voor een uitstekende samenwerking te zorgen met de gebruikte testing tool.
         
-        Het is ook de taak van de build scheduler om naadloos samen te werken met de gebruikte version control tool. Hij moet namelijk de commits kunnen ophalen via deze version control tool.
-        
+        Tevens moet de build scheduler naadloos samen werken met de gebruikte version control tool. Hij moet namelijk de commits kunnen ophalen via deze version control tool.\\
         Een build scheduler zorgt er ook voor dat het mogelijk is om de veranderingen aan de code te testen op een test server, indien deze aanwezig is. De build scheduler moet het mogelijk maken om de code te deployen naar de test server waar een realistische opstelling nagemaakt is om zo de code te testen.
-        De build scheduler heeft ook als belangrijke taak goede feedback te bezorgen aan de developers indien testen niet slagen. Hoe beter en sneller de feedback, hoe sneller het probleem opgelost kan worden. De developer verliest op deze manier weinig tijd en weet exact waar de code fout gelopen is.
+        Feedback bezorgen aan de developer is het eigenlijke doel van de build scheduler. Hoe beter en sneller de feedback, hoe sneller het probleem opgelost kan worden. De developer verliest op deze manier weinig tijd en weet exact waar de code fout gelopen is.
         
         
         
@@ -83,7 +82,14 @@ Deze thesis gaat aan de hand van een vergelijkende studie op zoek naar de beste 
 
         \subsection{Long list}
         Nu de verschillende criteria gekend zijn kan de effectieve vergelijking tussen de build schedulers gebeuren.
-        Eerst zal er een korte uitleg gegeven worden over welke programma's we gaan vergelijken en nadien vindt de vergelijking plaats in een overzichtelijke tabel.
+        Eerst zal er een korte uitleg gegeven worden over welke programma's we gaan vergelijken en nadien vindt de vergelijking plaats in een overzichtelijke tabel.\\
+        Enkele woordjes uitleg bij de titels van de tabel: 
+        \begin{itemize}
+            \item SAP CP \& UI5 staan voor de integratie met SAP Cloud Platform en UI5
+            \item Gebruik staat voor gebruiksgemak
+            \item Audit checkt of het mogelijk is om auditing toe te passen
+            \item Secure kijkt of er meerdere releases per maand worden uitgebracht. Zo ja is de build scheduler secure.
+        \end{itemize}
 
             %TODO: https://www.altexsoft.com/blog/engineering/comparison-of-most-popular-continuous-integration-tools-jenkins-teamcity-bamboo-travis-ci-and-more/
             
@@ -112,72 +118,45 @@ Deze thesis gaat aan de hand van een vergelijkende studie op zoek naar de beste 
             %TODO: https://www.tablesgenerator.com
             %TODO: Kijken voor de integratie met Karma ipv te vergelijken op het ondersteunen van OPA tests
             %TODO: Kijken of Travis enkel met GitHub kan samenwerken en ook niet bedoeld is om continuous delivery toe te passen
-            \begin{landscape}
-                \begin{table}[]
-                    \centering
-                    \begin{tabular}{c|c|cccccc}
-                        \cline{2-2}
-                        \textbf{} & \textbf{Must-have} & \textbf{} & \textbf{} & \textbf{} & \textbf{} & \textbf{} & \textbf{} \\ \cline{2-8} 
-                        & \textbf{SAP Cloud Platform \& UI5} & \multicolumn{1}{c|}{\textbf{Git}} & \multicolumn{1}{c|}{\textbf{Bitbucket}} & \multicolumn{1}{c|}{\textbf{On premise}} & \multicolumn{1}{c|}{\textbf{CI/CD pipeline}} & \multicolumn{1}{c|}{\textbf{Automated tests}} & \multicolumn{1}{c|}{\textbf{OPA tests}} \\ \hline
-                        \multicolumn{1}{|c|}{\textbf{Jenkins}} & Ja & \multicolumn{1}{c|}{Ja} & \multicolumn{1}{c|}{Ja} & \multicolumn{1}{c|}{Ja} & \multicolumn{1}{c|}{Ja} & \multicolumn{1}{c|}{Ja} & \multicolumn{1}{c|}{Geen info} \\ \hline
-                        \multicolumn{1}{|c|}{\textbf{Circle CI}} & Geen info & \multicolumn{1}{c|}{Ja} & \multicolumn{1}{c|}{Ja} & \multicolumn{1}{c|}{Ja} & \multicolumn{1}{c|}{Ja} & \multicolumn{1}{c|}{Ja} & \multicolumn{1}{c|}{Geen info} \\ \hline
-                        \multicolumn{1}{|c|}{\textbf{Bamboo}} & 1 blogpost & \multicolumn{1}{c|}{Ja} & \multicolumn{1}{c|}{Ja} & \multicolumn{1}{c|}{Ja} & \multicolumn{1}{c|}{Ja} & \multicolumn{1}{c|}{Ja} & \multicolumn{1}{c|}{Geen info} \\ \hline
-                        \multicolumn{1}{|c|}{\textbf{Travis CI}} & Ja & \multicolumn{1}{c|}{Ja} & \multicolumn{1}{c|}{Ja} & \multicolumn{1}{c|}{Ja} & \multicolumn{1}{c|}{Ja} & \multicolumn{1}{c|}{Ja} & \multicolumn{1}{c|}{Geen info} \\ \hline
-                    \end{tabular}
-                    \caption[Long list CI/CD tools, nummer 1]{Long list van vergelijking CI/CD tools, nummer 1}
-                    \label{tab:long-list1}
-                \end{table}
-            \end{landscape}
-        
-            \begin{landscape}
-                \begin{table}[]
-                    \centering
-                    \begin{tabular}{c|c|cc|c|l}
-                        \cline{2-2} \cline{5-5}
-                        \textbf{} & \textbf{Must-have} & \textbf{} & \textbf{} & \textbf{Should-haves} &  \\ \cline{2-6} 
-                        & \textbf{Gebruiksgemak} & \multicolumn{1}{c|}{\textbf{Auditing}} & \textbf{Meerdere releases / maand} & \textbf{Prijs} & \multicolumn{1}{l|}{\textbf{Trial}} \\ \hline
-                        \multicolumn{1}{|c|}{\textbf{Jenkins}} & Makkelijk & \multicolumn{1}{c|}{Ja} & Ja & Gratis & \multicolumn{1}{l|}{Gratis} \\ \hline
-                        \multicolumn{1}{|c|}{\textbf{Circle CI}} & Makkelijk & \multicolumn{1}{c|}{Basic} & Meestal & \$35 / user & \multicolumn{1}{l|}{20 dagen} \\ \hline
-                        \multicolumn{1}{|c|}{\textbf{Bamboo}} & Middelmatig & \multicolumn{1}{c|}{Ja} & Nee & \begin{tabular}[c]{@{}c@{}}\$1100 / jaar\\ voor 1 remote agent\\ en ongelimiteerd aantal jobs\end{tabular} & \multicolumn{1}{l|}{30 dagen} \\ \hline
-                        \multicolumn{1}{|c|}{\textbf{Travis CI}} & Makkelijk & \multicolumn{1}{c|}{Ja} & Ja & \begin{tabular}[c]{@{}c@{}}\$2739 / jaar\\ voor 5 jobs\end{tabular} & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}Gratis voor\\ open source\end{tabular}} \\ \hline
-                    \end{tabular}
-                    \caption[Long list CI/CD tools, nummer 2]{Long list van vergelijking CI/CD tools, nummer 2}
-                    \label{tab:long-list2}
-                \end{table}
-            \end{landscape}
-        
-            \begin{landscape}
-                \begin{table}[]
-                    \centering
-                    \begin{tabular}{c|c|c|c|c}
-                        \cline{2-2} \cline{4-4}
-                        \textbf{} & \textbf{Should-haves} & \textbf{} & \textbf{Nice-to-haves} & \textbf{} \\ \cline{2-5} 
-                        & \textbf{Skype for Business} & \textbf{Container support} & \textbf{Slack} & \multicolumn{1}{c|}{\textbf{Rapport}} \\ \hline
-                        \multicolumn{1}{|c|}{\textbf{Jenkins}} & Ja & Ja & Ja & \multicolumn{1}{c|}{Ja} \\ \hline
-                        \multicolumn{1}{|c|}{\textbf{Circle CI}} & Nee & Ja & Ja & \multicolumn{1}{c|}{Ja} \\ \hline
-                        \multicolumn{1}{|c|}{\textbf{Bamboo}} & Nee & Ja & \begin{tabular}[c]{@{}c@{}}Ja,\\ via derde partij\end{tabular} & \multicolumn{1}{c|}{Nee} \\ \hline
-                        \multicolumn{1}{|c|}{\textbf{Travis CI}} & Ja & Ja & Ja & \multicolumn{1}{c|}{Ja} \\ \hline
-                    \end{tabular}
-                    \caption[Long list CI/CD tools, nummer 3]{Long list van vergelijking CI/CD tools, nummer 3}
-                    \label{tab:long-list3}
-                \end{table}
-            \end{landscape}
-
+           % Please add the following required packages to your document preamble:
+           % \usepackage{lscape}
+           \begin{landscape}
+               \begin{table}[]
+                   \centering
+                   \begin{tabular}{c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+                       \cline{2-16}
+                       \textbf{} & \textbf{Must-haves} &  &  &  &  &  &  &  &  & \textbf{\begin{tabular}[c]{@{}c@{}}Should-\\ haves\end{tabular}} &  & \textbf{} & \textbf{} & \textbf{Nice-to-haves} & \textbf{} \\ \cline{2-16} 
+                       & \textbf{\begin{tabular}[c]{@{}c@{}}SAP CP\\ \& UI5\end{tabular}} & \textbf{Git} & \textbf{Bitbucket} & \textbf{\begin{tabular}[c]{@{}c@{}}On-\\ premise\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}CI/CD\\ pipeline\end{tabular}} & \textbf{Karma} & \textbf{Gebruik} & \textbf{Audit} & \textbf{Secure} & \textbf{Prijs} & \textbf{Trial} & \textbf{Skype for Business} & \textbf{Container support} & \textbf{Slack} & \textbf{Rapport} \\ \hline
+                       \multicolumn{1}{|c|}{\textbf{Jenkins}} & Ja & Ja & Ja & Ja & Ja & Ja & Makkelijk & Ja & Ja & Gratis & Gratis & Ja & Ja & Ja & Ja \\ \hline
+                       \multicolumn{1}{|c|}{\textbf{Circle CI}} & Geen info & Ja & Ja & Ja & Ja & Ja & Makkelijk & Basic & Meestal & \$35 / user & \begin{tabular}[c]{@{}c@{}}20 \\ dagen\end{tabular} & Nee & Ja & Ja & Ja \\ \hline
+                       \multicolumn{1}{|c|}{\textbf{Bamboo}} & 1 blogpost & Ja & Ja & Ja & Ja & Ja & Middelmatig & Ja & Nee & \begin{tabular}[c]{@{}c@{}}\$1100 / jaar voor \\ 1 remote agent en \\ ongelimiteerd aantal jobs\end{tabular} & \begin{tabular}[c]{@{}c@{}}30 \\ dagen\end{tabular} & Nee & Ja & \begin{tabular}[c]{@{}c@{}}Ja,\\ via derde partij\end{tabular} & Nee \\ \hline
+                       \multicolumn{1}{|c|}{\textbf{Travis CI}} & Ja & Ja & Nee & Ja & Ja & Ja & Makkelijk & Ja & Ja & \begin{tabular}[c]{@{}c@{}}\$2739 / jaar \\ voor 5 jobs\end{tabular} & \begin{tabular}[c]{@{}c@{}}Gratis \\ voor\\ open-source\end{tabular} & Ja & Ja & Ja & Ja \\ \hline
+                   \end{tabular}
+                   \caption{Long list van CI/CD tools}
+                   \label{tab:long-list}
+               \end{table}
+           \end{landscape}
 
     \section{Voorbeeldapplicatie dat Amista zal gebruiken}
-    Hoe ziet de omgeving eruit waar Amista een CI/CD pipeline in wil opzetten? In de literatuurstudie worden de gebruikte tools binnen SAP uitgelegd, in dit hoofdstuk worden de onderliggende relaties tussen de tools besproken.
-    Amista heeft een Ubuntu server ter beschikking gesteld om te experimenteren. Voor deze thesis wordt de server gebruikt als Continuous Integration server, zo kunnen de build schedulers op de beste manier vergeleken worden zonder veel externe factoren.
+    Hoe ziet de omgeving eruit waar Amista een CI/CD pipeline in wil opzetten? In de literatuurstudie worden de gebruikte tools uitgelegd, in dit hoofdstuk worden ze uitgewerkt en de onderliggende relaties besproken.
+    Amista heeft een Ubuntu server ter beschikking gesteld om te experimenteren. In deze thesis wordt de server gebruikt als Continuous Integration server.
+    
+    Om de leesbaarheid te bevorderen is er gekozen om de uitgewerkte handleiding in een apart bestand te schrijven. Er wordt namelijk vaak verwezen naar figuren. U kan de uitgewerkte handleiding terug vinden in het bestand proof-of-concept in de map 'bijlagen'.\\
+    Hieronder kan u de extra duiding terug vinden die bij de handleiding hoort.
     
         \subsection{Build scheduler server}
-        Amista heeft een Ubuntu server ter beschikking gesteld dat wordt gehost op Digital Ocean, een Amerikaanse hosting bedrijf. Digital Ocean was de derde grootse speler op de markt wanneer men spreekt over web-hosting computers. Ze zijn gespecialiseerd in cloud based oplossingen en hebben datacenters over heel de wereld verspreid. De server wordt gebruikt om de build schedulers op te draaien en zo te vergelijken. Eerst moeten er enkele belangrijke zaken ingesteld worden alvorens aan de slag te gaan, zoals security en dergelijke.
+        Amista heeft een Ubuntu server ter beschikking gesteld dat wordt gehost op Digital Ocean, een Amerikaanse hosting bedrijf. Digital Ocean was de derde grootse speler op de markt in 2018 wanneer men spreekt over web-hosting computers. Ze zijn gespecialiseerd in cloud based oplossingen en hebben datacenters over heel de wereld.
             
             \paragraph{Ubuntu server}
-            Ubuntu is een Linuxdistributie, gebaseerd op het bekende Debian en gekend is vanwege de open-source eigenschappen.
-            Deze versie van Linux wordt vooral gebruikt voor cloud computing, vandaar dat Digital Ocean voor kiest om met een Ubuntu 18.04 te werken.
+            Ubuntu is een Linux distributie, gebaseerd op het bekende Debian, en gekend vanwege zijn open-source eigenschappen.
+            Deze versie van Linux wordt vooral gebruikt voor cloud computing, vandaar dat Digital Ocean ervoor kiest om met een Ubuntu 18.04 te werken.
             De versie 18.04 wordt ook wel 'Bionic Beaver' genoemd.
-            Amista heeft voor de uitwerking van de proof-of-concept\ref{ch:proof-of-concept} een server voorzien met een x64-bit Operating System waar 1 CPU en 1GB RAM ter beschikking staat.
+            Amista heeft voor de uitwerking van de proof-of-concept \ref{ch:proof-of-concept} een server voorzien met een x64-bit Operating System waar 1 CPU en 1GB RAM ter beschikking staat.
             
-            \paragraph{Ubuntu server}
+            SSH staat voor secure shell en is een software protocol dat voor een veilige verbinding (tunnel) zorgt tussen de client en de server. Het wordt gebruikt voor het configureren van een server, het beheren van netwerken en operating systems. Alle gegevens dat tussen beiden worden uitgevoerd zijn geëncrypteerd waardoor het moeilijker wordt voor hackers om de data te bemachtigen.\\
+            Een server die gebruik maakt van SSH wordt ook wel een sshd server genoemd. 
+            
+%            \paragraph{Ubuntu server}
 %            Eerst maken we de Ubuntu server klaar voor gebruik om zo de nodige zaken te installeren.
 %            In figuur \ref{OpzettenServer1} in de bijlagen wordt er getoond wat er moet gebeuren als er voor de eerste keer ingelogd wordt op de server.
 %            Via de root account wordt er via SSH ingelogd op de server. 
@@ -188,8 +167,7 @@ Deze thesis gaat aan de hand van een vergelijkende studie op zoek naar de beste 
 %                \caption{Opzetten Server, stap 1} \label{OpzettenServer1}
 %            \end{figure}
             
-            SSH staat voor secure shell en is een software protocol dat voor een veilige verbinding (tunnel) zorgt tussen de client en de server. Het wordt gebruikt voor het configureren van een server, het beheren van netwerken en operating systems. Alle gegevens dat tussen beiden worden uitgevoerd zijn geëncrypteerd waardoor het moeilijker wordt voor hackers om de data te bemachtigen.\\
-            Een server die gebruik maakt van SSH wordt ook wel een sshd server genoemd. 
+            
 %            Eens ingelogd op de sshd server moeten er enkele zaken aangepast worden aan de ssh configuratie in de file '/etc/ssh/sshd\_config'. Omdat we hier via de root gebruiker werken moet de property PermitRootLogin op yes staan. Dit zorgt ervoor dat de root gebruiker kan inloggen.
 %            StrictMode moet ook op yes staan, zo kan er niemand inloggen als de authenticatie documenten leesbaar zijn voor iedereen. Dit voor het beveiligen van configuratie documenten. Deze configuratie kan u zien in figuur\ref{OpzettenServer2} hier onder.
 %            
@@ -199,8 +177,11 @@ Deze thesis gaat aan de hand van een vergelijkende studie op zoek naar de beste 
 %                \caption{Opzetten Server, stap 2} \label{OpzettenServer2}
 %            \end{figure}
             
-            De default manier om in te loggen via ssh is via een account en een paswoord, maar het is ook mogelijk om het account en het paswoord te vervangen door een private en een public key. Dit principe noemt key-based authentication en wordt vooral tijdens development en in scripts gebruikt of voor single sign-on. SSH genereert een private en een public key op de client wanneer deze stap wordt geconfigureerd. De private key moet veilig bewaard worden op de client computer. De public key moet doorgegeven worden aan de remote server. Wanneer de client wil inloggen op de server voert hij een request uit. De server maakt via zijn public key een bericht en stuurt dit als response door naar de client. De client leest het bericht aan de hand van zijn private key en stuurt dan een aangepaste response terug naar de remote server. De server valideert deze response. Bij een geldige private key zal er een goede response verstuurd worden, bij een ongeldige private key een foute response.
+            De default manier om in te loggen is via een account en een paswoord, maar het is ook mogelijk om het account en het paswoord te vervangen door een private en een publieke sleutel. Dit principe noemt key-based authentication en wordt vooral tijdens development en in scripts gebruikt of voor single sign-on. SSH genereert een private en een publieke sleutel op de client bij configuratie. De private key moet veilig bewaard worden op de client computer. De public key moet doorgegeven worden aan de remote server om de verbinding te kunnen maken.\\
+            Wanneer de client wil inloggen op de server voert hij een request uit. De server maakt via zijn public key een bericht en stuurt dit als response door naar de client. De client leest het bericht aan de hand van zijn private key en stuurt dan een aangepaste response terug naar de remote server. De server valideert deze response.\\
+            Bij een geldige private key zal er een goede response verstuurd worden, bij een ongeldige private key een foute response.
 %            In deze thesis gaat men ervan uit dat de client computer een ssh key heeft die gebruikt kan worden. Zoals u in figuur\ref{OpzettenServer3} kan zien heeft de client die gebruikt werd tijdens het schrijven van deze thesis enkel lees- en schrijfrechten voor de file 'id\_rsa', dit om het als secret te bewaren.
+            \\
             De 'id\_rsa.pub' is de publieke key van de client die op de server moet komen om zo de ssh validatie te voorzien, dit wordt ook wel een ssh session genoemd. Eens de ssh session geconfigureerd is zal het niet nodig zijn om via een paswoord in te loggen op de remote server via deze client.
 %            In figuur\ref{OpzettenServer4} in de bijlagen is te zien hoe de ssh session wordt opgezet tussen de client en de remote server voor de root user.
             Om veiligheidsredenen is het uiteraard beter om enkel via key-based authenticatie in te loggen en zo het paswoord uit te sluiten.
@@ -225,8 +206,8 @@ Deze thesis gaat aan de hand van een vergelijkende studie op zoek naar de beste 
 %                \caption{Opzetten Server, stap 5} \label{OpzettenServer5}
 %            \end{figure}
             
-            Om de remote server nog meer te beschermen tegen cyber aanvallen is het nodig om een firewall op te zetten. In deze voorbeeldapplicatie maken we gebruik van de UFW Firewall, wat staat voor Uncomplicated Firewall. Dit is een gebruiksvriendelijke tool dat helpt om de IP Tables onder controle te houden om zo te zorgen dat maar bepaalde services toegelaten worden tot onze server.
-            In Linux maken ze gebruik van het protocol SSH via de service OpenSSH, deze heeft ook een profiel bij UFW.
+            Om de remote server nog meer te beschermen tegen cyber aanvallen is het nodig om een firewall op te zetten. In de voorbeeldapplicatie maken we gebruik van de UFW Firewall, wat staat voor Uncomplicated Firewall. Dit is een gebruiksvriendelijke tool dat helpt om de IP Tables onder controle te houden en zo te zorgen dat maar bepaalde services toegelaten worden tot onze server.
+            In Linux maken ze gebruik van het protocol SSH via de service OpenSSH. Deze heeft tevens ook een profiel bij UFF wat het makkelijk maakt om de firewall op te zetten en enkel de SSH toe te laten die geconfigureerd is.
 %            In Figuur\ref{OpzettenServer6} in de bijlagen is te zien hoe de firewall de SSH service toelaat. Het is enkel mogelijk om de server te bereiken via deze service. Later worden er uiteraard meerdere services toegelaten.
 %            
 %            \begin{figure}
@@ -241,8 +222,8 @@ Deze thesis gaat aan de hand van een vergelijkende studie op zoek naar de beste 
 %            Als je wil uitloggen is het nodig om in de command line van de server exit te typen.
 %    
         \subsection{Database}
-        Binnen SAP wordt een HANA database aangeraden om te gebruiken. Momenteel is versie 2.0 van SAP HANA op de markt en deze versie biedt tal van extra mogelijkheden ten opzichte van de vorige versie. SAP HANA wordt zeer goed ondersteund door de andere programma's binnen SAP en wordt daarom ook wel veel gebruikt.
-        Voor de database maken we gebruik van een Multi-Target Application Project, dit is een template die SAP ons geeft en is een goede uitvalsbasis om te gebruiken in de voorbeeldapplicatie.
+        Binnen SAP wordt een HANA database aangeraden om te gebruiken. Momenteel is versie 2.0 van SAP HANA op de markt en deze versie biedt tal van extra mogelijkheden ten opzichte van de vorige versie. SAP HANA wordt zeer goed ondersteund door de andere programma's binnen SAP.\\
+        Voor de database maken we gebruik van een Multi-Target Application Project, dit is een template dat SAP voorziet en is een goede uitvalsbasis om te gebruiken in de voorbeeldapplicatie.
         
 %            \paragraph{Source Control \& Databank module}
 %            In figuur\ref{SourceControl1} kan u waarnemen hoe een repository gemaakt wordt in Bitbucket.
@@ -299,7 +280,7 @@ Deze thesis gaat aan de hand van een vergelijkende studie op zoek naar de beste 
             
             Een realistische opstelling van een CI/CD voorbeeldapplicatie start bijna nooit vanaf nul, het bouwt meestal voort op bestaande, geschreven software.
             Daarom zal er in deze voorbeeldapplicatie manueel een basis gelegd worden, zo kan er aan de hand van een build scheduler voortgebouwd worden op deze geschreven software.
-            De bescheiden database waar we naartoe willen gaan bestaat uit twee entiteiten: een Artiest en een Album. Een artiest kan meerdere albums hebben, maar een album kan maar tot één artiest behoren. De entiteit Artiest heeft volgende properties: ID, Naam, JaarVanOorsprong en Stad. Album heeft ID, Naam, Beschrijving, Genre, Jaar en Studio als properties. Als basis maken we de entiteit Artiest enkel met ID, Naam en JaarVanOorsprong.
+            De bescheiden database waar we naartoe willen, bestaat uit slechts één entiteit: een Artiest en heeft volgende properties: ID, Naam en JaarVanOorsprong.
             
             De Artiest wordt via een HDB CDS Artifact, een Core Data Services document dat definities bevat om objecten te creëren in de database, gedefinieerd.
 %            Eerst maken we een HANA Database Module zoals in figuren \ref{HANA7}, \ref{HANA8} en \ref{HANA9} te zien zijn. Daarna wordt een HDB CDS Artifact gemaakt. Dit is een Core Data Services document dat defenities bevat om objecten te creëeren in de database. Hoe de Artiest gedefinieerd wordt kan u zien in figuren \ref{HANA10}, \ref{HANA11}, \ref{HANA12} en \ref{HANA13}.
@@ -415,8 +396,8 @@ Deze thesis gaat aan de hand van een vergelijkende studie op zoek naar de beste 
             \paragraph{Node.js module}
             Om de models te gebruiken dat gecreëerd zijn, moeten we een tweede module toevoegen aan de HANA database: een Node.js module om de data als OData service te kunnen gebruiken.
             Deze module implementeert XSJS en XSODATA die op hun beurt zorgen voor de transformatie van het data model en de bereikbaarheid naar de buitenwereld.\\
-            Het is nodig om op de data CRUD (Create, Read, Update en Delete) operaties uit te kunnen voeren en als OData naar buiten gaat, dit is de taak van XSODATA.\\
-            XSJS zorgt dan weer voor de integratie met SAPUI5. Het laat toe dat SAPUI5 applicaties de data kan lezen en kan bewerken.
+            CRUD (Create, Read, Update en Delete) operaties uitvoeren op de data beschikbaar stellen als OData is de taak van XSODATA.\\
+            XSJS zorgt dan weer voor de integratie met SAPUI5 en laat toe dat SAPUI5 applicaties de data kunnen lezen en bewerken.
 %            Zoals u in figuur \ref{HANA24} ziet moeten de instellingen aangepast worden. De feature Tools For Node.js Development moet beschikbaar zijn om te gebruiken in het project. Dit moet gesaved worden en het project moet opnieuw geladen worden. De volgende stap is de module maken door op het project met de rechtermuisknop te klikken, new en dan Node.js Module kiezen. Geef het een goede naam (js is good practice) en zorg ervoor dat Enable XSJX support aangevinkt is alvorens op Finish te klikken, zoals te zien is in figuur \ref{HANA25}, \ref{HANA26} en \ref{HANA27}.
 %            Databeveiliging is zeer belangrijk. Binnen HANA wordt er gebruik gemaakt van UAA (User Account en Authentication) om de Node.js module te beveiligen. Deze service moet samen met de database module en de HDI container, achter de db module, toegevoegd worden als resource zoals te zien valt in figuur \ref{HANA28}.
 %            Om een OData service te maken moeten volgende stappen gebeuren: in de js-module in de lib folder, moet een xsodata-file gemaakt worden in een nieuwe folder, xsodata genaamd. De link met de data moet in deze nieuwe file gemaakt worden. Later zal er ook de associatie moeten gemaakt worden tussen Artiest en Album. Deze stappen zijn te zien in figuren \ref{HANA29} en \ref{HANA30}.
@@ -513,4 +494,4 @@ Deze thesis gaat aan de hand van een vergelijkende studie op zoek naar de beste 
 %            \end{figure} 
             
         \subsection{UI5-applicatie}
-        Hoe een SAPUI5 applicatie eruit ziet en hoe deze tot stand gekomen is kan men bekijken in de handleiding in het hoofdstuk UI5 applicatie
+        Hoe een SAPUI5 applicatie eruit ziet en hoe deze tot stand gekomen is kan men bekijken in de handleiding in het hoofdstuk UI5 applicatie.

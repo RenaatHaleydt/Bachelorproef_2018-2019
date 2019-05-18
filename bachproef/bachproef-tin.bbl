@@ -330,28 +330,6 @@
       \field{year}{2018}
       \field{dateera}{ce}
     \endentry
-    \entry{SAPERP2019}{online}{}
-      \name{author}{1}{}{%
-        {{uniquename=0,hash=dff150d176ea6633050f5ce153ec20f8}{%
-           family={SAPERP},
-           familyi={S\bibinitperiod}}}%
-      }
-      \strng{namehash}{dff150d176ea6633050f5ce153ec20f8}
-      \strng{fullhash}{dff150d176ea6633050f5ce153ec20f8}
-      \strng{authornamehash}{dff150d176ea6633050f5ce153ec20f8}
-      \strng{authorfullhash}{dff150d176ea6633050f5ce153ec20f8}
-      \field{sortinit}{S}
-      \field{sortinithash}{3c1547c63380458f8ca90e40ed14b83e}
-      \field{labeldatesource}{year}
-      \true{uniqueprimaryauthor}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{Proven, time-tested on-premise ERP}
-      \field{year}{2019}
-      \verb{url}
-      \verb https://www.sap.com/products/enterprise-management-erp.html
-      \endverb
-    \endentry
     \entry{SAPSEa}{online}{}
       \name{author}{1}{}{%
         {{uniquename=0,hash=a8fdc4d4089d2e7c3046b1da9fa45a47}{%
@@ -404,6 +382,37 @@
       \endverb
       \verb{url}
       \verb https://dzone.com/guides/continuous-delivery-1
+      \endverb
+    \endentry
+    \entry{Smart2017}{online}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,hash=20a60c6edeae9eee6da226a2084ec11b}{%
+           family={Smart},
+           familyi={S\bibinitperiod},
+           given={John\bibnamedelima Ferguson},
+           giveni={J\bibinitperiod\bibinitdelim F\bibinitperiod}}}%
+      }
+      \strng{namehash}{20a60c6edeae9eee6da226a2084ec11b}
+      \strng{fullhash}{20a60c6edeae9eee6da226a2084ec11b}
+      \strng{authornamehash}{20a60c6edeae9eee6da226a2084ec11b}
+      \strng{authorfullhash}{20a60c6edeae9eee6da226a2084ec11b}
+      \field{sortinit}{S}
+      \field{sortinithash}{3c1547c63380458f8ca90e40ed14b83e}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{18}
+      \field{month}{1}
+      \field{title}{Test Pyramid Heresy}
+      \field{urlday}{18}
+      \field{urlmonth}{5}
+      \field{urlyear}{2019}
+      \field{year}{2017}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{url}
+      \verb https://dzone.com/articles/a-test-pyramid-heresy
       \endverb
     \endentry
     \entry{Tuli2018}{online}{}

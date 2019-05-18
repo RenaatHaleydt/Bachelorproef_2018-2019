@@ -4,7 +4,8 @@
 
 \chapter{\IfLanguageName{dutch}{Proof-of-concept van een CI/CD pipeline}{Setting up a CI/CD pipeline}}
 \label{ch:proof-of-concept}
-Uit vorig hoofdstuk is gebleken dat (SCHRAPPEN WAT NIET PAST): Jenkins \& Travis \& Bamboo de tools zijn die aan het meeste must-haves, should-haves en nice-to-haves voldoen. In dit hoofdstuk worden deze tools extra onder de loep genomen door ze op te stellen in een realistische omgeving zoals in hoofdstuk/ref{ch:voorbeeldapplicatie} besproken is. Door de tools te vergelijken in zo'n omgeving krijgen we een meer realistisch beeld welke build-scheduler het beste zal functioneren in deze omgeving. Op het einde van dit hoofdstuk zal er een conclusie worden gemaakt welke build-scheduler Amista moet kiezen en waarom. Maar beginnen doen we met enkele tips te geven van SAP hoe een CI/CD pipeline opgestart moet worden.
+Uit vorig hoofdstuk is gebleken dat Jenkins de tool is die aan het meeste must-haves, should-haves en nice-to-haves voldoet. In dit hoofdstuk wordt deze tool extra onder de loep genomen door hem op te stellen in een realistische omgeving zoals in hoofdstuk \ref{ch:methodologie} besproken is. Door Jenkins in zo'n omgeving op te zetten krijgen we een meer realistisch beeld of deze build scheduler effectief doet wat er van hem verwacht wordt. Op het einde van dit hoofdstuk zal er een conclusie worden gemaakt of Jenkins aan te bevelen valt om in de specifieke omgeving op te zetten.\\
+Maar eerst worden enkele tips uitgewerkt van SAP, hoe een CI/CD pipeline opgestart moet worden.
 
 \section{Continuous Delivery principles}
 \label{sec:continuous-delivery-principles}
@@ -18,7 +19,7 @@ Volgens \textcite{Riti2018} is het uitermate belangrijk om volgende stappen te v
 
 \section{CI/CD pipeline op SAP Cloud Platform}
 \label{sec:ci-cd-op-sap-cloud-platform}
-SAP Cloud Platform biedt de mogelijkheid om verschillende omgevingen op te stellen waarin je kan werken als developer. Het vergt enige vereisten om te voldoen aan de regels van Continuous Integration ~\autocite{Kramer2018}:
+Het vergt enige vereisten om te voldoen aan de regels van Continuous Integration volgens ~\textcite{Kramer2018}:
 \begin{itemize}
     \item Hou alles goed bij via een version control systeem
     \item Automatiseer de build
@@ -27,7 +28,7 @@ SAP Cloud Platform biedt de mogelijkheid om verschillende omgevingen op te stell
     \item Elke verandering moet gebuild worden
     \item Als er errors tevoorschijn komen tijdens de build, moeten die opgelost worden
     \item De build moet uitgetest worden op een kopie van de productieomgeving
-    \item Automatiseer de deployment
+    \item Automatiseer het deployment
 \end{itemize}
 Eens deze regels zijn toegepast, kunnen we spreken van een CI implementatie.
 Vaak wordt CI in combinatie gebracht met Continuous Delivery. Om dit in een vloeiende lijn te laten lopen, spreekt men van een CI/CD pipeline.
@@ -43,25 +44,24 @@ Bij Continuous Deployment worden de wijzigingen dus automatisch naar buiten gebr
 \section{Automated Tests voor CI}
 \label{sec:automated-test-voor-ci}
 Om te zorgen dat de automated tests aan de noden van Continuous Integration voldoen, moet er rekening gehouden worden met enkele criteria: snelheid, betrouwbaarheid, hoeveelheid en onderhoud.
-Bij Continuous Integration draait alles rond feedback, hierbij speelt snelheid een niet te onderschatten rol. Wanneer het runnen van de automated tests enige tijd vergt, zal de developer pas laat feedback terug krijgen waar de pipeline gefaald is. Daarom is het belangrijk rekening te houden met de test piramide bij het ontwerpen van de test omgeving. Er moet telkens een goede afweging gemaakt worden in welke categorie elke test gestoken kan worden.
-~\autocite{Jones2019}.
+Bij Continuous Integration draait alles rond feedback, hierbij speelt snelheid een niet te onderschatten rol. Wanneer het runnen van de automated tests enige tijd vergt, zal de developer pas laat feedback terug krijgen waar de pipeline gefaald is. Daarom is het belangrijk rekening te houden met de test piramide bij het ontwerpen van de test omgeving. Er moet telkens een goede afweging gemaakt worden in welke categorie elke test gestoken kan worden ~\autocite{Jones2019}.
 
-Betrouwbaarheid wordt tegenwoordig als 'normaal' beschouwd, maar dit is niet zo vanzelfsprekend. Het kan gebeuren dat de automated tests niet zo betrouwbaar zijn waardoor de developers met valse informatie moeten werken. Dit is niet bevorderlijk voor de verdere productie en het vertrouwen in een Continuous Integration en Continuous Delivery pipeline. Er zijn wel enkele tips om de automated tests betrouwbaar te maken door de UI elements een degelijke identifier geven. Zo hoeven de testen niet de onbetrouwbare css selectors te gebruiken om aan de elementen te kunnen. 
+Betrouwbaarheid wordt tegenwoordig als 'normaal' beschouwd, maar dit is niet zo vanzelfsprekend. Het kan gebeuren dat de automated tests niet zo betrouwbaar zijn waardoor de developers met valse informatie moeten werken. Dit is niet bevorderlijk voor de verdere productie en het vertrouwen in een Continuous Integration en Continuous Delivery pipeline. Er zijn wel enkele tips om de automated tests betrouwbaar te maken: door de UI elements een degelijke identifier geven. Zo hoeven de testen niet de onbetrouwbare css selectors te gebruiken om aan de elementen te kunnen. 
 
-De test data onderhouden is ook een belangrijke tip. Dit kan door één bron van informatie te voorzien voor test data, vooral in het bijzonder wanneer testen - die dezelfde data aanpassen en controleren - tegelijk runnen. Rekening houden met de asynchrone acties bij Service en UI tests uit de Test Pyramid (Figuur \ref{img-test-pyramid}) door bepaalde situaties te vermijden. We hebben het over situaties waarbij de applicatie zich in de verkeerde staat bevindt, zodat de asynchrone test foute resultaten teruggeeft.
+De test data van één bron van informatie voorzien is nog een belangrijke tip. Vooral in het bijzonder wanneer testen - die dezelfde data aanpassen en controleren - tegelijk runnen. Er moet ook rekening gehouden worden met de asynchrone acties bij Service en UI tests (zie de Test Pyramid in Figuur \ref{img-test-pyramid}) door bepaalde situaties te vermijden. We hebben het over situaties waarbij de applicatie zich in de verkeerde staat bevindt, zodat de asynchrone test foute resultaten teruggeeft.
 
-De hoeveelheid aan tests moet beperkt blijven om zo de snelheid van de execution times, de hoge waarde van tests en het onderhoudsgemak te bewaren.
+De hoeveelheid aan tests moet beperkt blijven om zo de snelheid van de execution times en het onderhoudsgemak te bewaren.
 Als men automated tests schrijft voor een CI/CD pipeline, moet men zaken testen die de integratie en het deployen van de applicatie kunnen verstoren.
 Ook kritieke functionaliteiten, nieuwe informatie, zaken die de voorbije builds fout liepen moeten getest worden. 
 De testen groeperen per functionaliteit is een goede tip, zo moet er niet telkens elke functionaliteit opnieuw getest worden. Maar kan de build scheduler beslissen welke groep test moet runnen bij de nieuwe code. 
-Angie Jones \textcite{Jones2019} geeft ook nog als tip mee om af en toe wat onnodige testen te verwijderen.
+Angie Jones \textcite{Jones2019} geeft ook nog als tip om af en toe wat onnodige testen te verwijderen.
 
 Voor het onderhoud van de testen moet je rekening houden met de staat van je applicatie. Deze verandert doorheen de tijd en je testen moeten deze verandering ook doorstaan.
 
     \paragraph{Testing in SAPUI5}
     Binnen SAPUI5 wordt er gebruik gemaakt van QUnit tests en OPA5, One-Page Acceptance tests\\
-    QUnit is een JavaScript unit testing framework dat bekend staat voor zijn ou-of-the-box asynchronous capaciteiten. Dit is handig wanneer er UI functionaliteit, zoals animaties na het laden van bepaalde zaken, moeten getest worden. Omdat QUnit ook gebruik maakt van JQuery, net zoals SAPUI5, maakt dit het de perfecte tool om testen mee uit te voeren.\\
-    OPA5 daarentegen bant elke vorm van asynchroon werk en kan makkelijk de elementen in de UI gebruiken om te testen. Dit maakt OPA5 de ideale tool om interactie met de gebruiker, integratie met SAPUI5 en navigatie te testen \footnote{https://sapui5.hana.ondemand.com/sdk/#/topic/7cdee404cac441888539ed7bfe076e57}.
+    QUnit is een JavaScript unit testing framework dat bekend staat voor zijn ou-of-the-box asynchronous capaciteiten. Dit is handig wanneer er UI functionaliteit, zoals animaties na het laden van bepaalde zaken, getest moeten worden. Omdat QUnit ook gebruik maakt van JQuery, net zoals SAPUI5, maakt dit het de perfecte tool om testen mee uit te voeren.\\
+    OPA5 daarentegen bant elke vorm van asynchroon werk en kan makkelijk de elementen in de UI gebruiken om te testen. Dit maakt OPA5 de ideale tool om interactie met de gebruiker, integratie met SAPUI5 en navigatie te testen\footnote{https://sapui5.hana.ondemand.com/sdk}.
     %TODO: https://blogs.sap.com/2018/10/03/testing-your-sapui5-application-with-opa5/
     %TODO: Automatic testing with OPA on Jenkins and Travis: https://stackoverflow.com/questions/24934012/automated-ui-tests-for-sap-ui5 (onderste post)
     %TODO: https://github.com/SAP/karma-ui5/issues/1
