@@ -177,341 +177,340 @@ Deze thesis gaat aan de hand van een vergelijkende studie op zoek naar de beste 
             De versie 18.04 wordt ook wel 'Bionic Beaver' genoemd.
             Amista heeft voor de uitwerking van de proof-of-concept\ref{ch:proof-of-concept} een server voorzien met een x64-bit Operating System waar 1 CPU en 1GB RAM ter beschikking staat.
             
-            \paragraph{Installatie Ubuntu server}
-            Eerst maken we de Ubuntu server klaar voor gebruik om zo de nodige zaken te installeren.
-            In figuur \ref{OpzettenServer1} in de bijlagen wordt er getoond wat er moet gebeuren als er voor de eerste keer ingelogd wordt op de server.
-            Via de root account wordt er via SSH ingelogd op de server. 
+            \paragraph{Ubuntu server}
+%            Eerst maken we de Ubuntu server klaar voor gebruik om zo de nodige zaken te installeren.
+%            In figuur \ref{OpzettenServer1} in de bijlagen wordt er getoond wat er moet gebeuren als er voor de eerste keer ingelogd wordt op de server.
+%            Via de root account wordt er via SSH ingelogd op de server. 
+%            
+%            \begin{figure}
+%                \centering
+%                \includegraphics[scale=0.7]{OpzettenServer1}
+%                \caption{Opzetten Server, stap 1} \label{OpzettenServer1}
+%            \end{figure}
             
-            \begin{figure}
-                \centering
-                \includegraphics[scale=0.7]{OpzettenServer1}
-                \caption{Opzetten Server, stap 1} \label{OpzettenServer1}
-            \end{figure}
-            
-            SSH staat voor secure shell en is een software protocol dat voor een veilige verbinding (tunnel) zorgt tussen de client en de server. Het wordt gebruikt voor het configureren van een server, het beheren van netwerken en operating systems. Alle gegevens dat tussen beiden worden uitgevoerd zijn geëncrypteerd waardoor het moeilijker wordt voor hackers om de data te bemachtigen.
-            
-            Een server die gebruik maakt van SSH wordt ook wel een sshd server genoemd. Eens ingelogd op de sshd server moeten er enkele zaken aangepast worden aan de ssh configuratie in de file '/etc/ssh/sshd\_config'. Omdat we hier via de root gebruiker werken moet de property PermitRootLogin op yes staan. Dit zorgt ervoor dat de root gebruiker kan inloggen.
-            StrictMode moet ook op yes staan, zo kan er niemand inloggen als de authenticatie documenten leesbaar zijn voor iedereen. Dit voor het beveiligen van configuratie documenten. Deze configuratie kan u zien in figuur\ref{OpzettenServer2} hier onder.
-            
-            \begin{figure}
-                \centering
-                \includegraphics[scale=0.75]{OpzettenServer2}
-                \caption{Opzetten Server, stap 2} \label{OpzettenServer2}
-            \end{figure}
+            SSH staat voor secure shell en is een software protocol dat voor een veilige verbinding (tunnel) zorgt tussen de client en de server. Het wordt gebruikt voor het configureren van een server, het beheren van netwerken en operating systems. Alle gegevens dat tussen beiden worden uitgevoerd zijn geëncrypteerd waardoor het moeilijker wordt voor hackers om de data te bemachtigen.\\
+            Een server die gebruik maakt van SSH wordt ook wel een sshd server genoemd. 
+%            Eens ingelogd op de sshd server moeten er enkele zaken aangepast worden aan de ssh configuratie in de file '/etc/ssh/sshd\_config'. Omdat we hier via de root gebruiker werken moet de property PermitRootLogin op yes staan. Dit zorgt ervoor dat de root gebruiker kan inloggen.
+%            StrictMode moet ook op yes staan, zo kan er niemand inloggen als de authenticatie documenten leesbaar zijn voor iedereen. Dit voor het beveiligen van configuratie documenten. Deze configuratie kan u zien in figuur\ref{OpzettenServer2} hier onder.
+%            
+%            \begin{figure}
+%                \centering
+%                \includegraphics[scale=0.75]{OpzettenServer2}
+%                \caption{Opzetten Server, stap 2} \label{OpzettenServer2}
+%            \end{figure}
             
             De default manier om in te loggen via ssh is via een account en een paswoord, maar het is ook mogelijk om het account en het paswoord te vervangen door een private en een public key. Dit principe noemt key-based authentication en wordt vooral tijdens development en in scripts gebruikt of voor single sign-on. SSH genereert een private en een public key op de client wanneer deze stap wordt geconfigureerd. De private key moet veilig bewaard worden op de client computer. De public key moet doorgegeven worden aan de remote server. Wanneer de client wil inloggen op de server voert hij een request uit. De server maakt via zijn public key een bericht en stuurt dit als response door naar de client. De client leest het bericht aan de hand van zijn private key en stuurt dan een aangepaste response terug naar de remote server. De server valideert deze response. Bij een geldige private key zal er een goede response verstuurd worden, bij een ongeldige private key een foute response.
-            In deze thesis gaat men ervan uit dat de client computer een ssh key heeft die gebruikt kan worden. Zoals u in figuur\ref{OpzettenServer3} kan zien heeft de client die gebruikt werd tijdens het schrijven van deze thesis enkel lees- en schrijfrechten voor de file 'id\_rsa', dit om het als secret te bewaren.
+%            In deze thesis gaat men ervan uit dat de client computer een ssh key heeft die gebruikt kan worden. Zoals u in figuur\ref{OpzettenServer3} kan zien heeft de client die gebruikt werd tijdens het schrijven van deze thesis enkel lees- en schrijfrechten voor de file 'id\_rsa', dit om het als secret te bewaren.
             De 'id\_rsa.pub' is de publieke key van de client die op de server moet komen om zo de ssh validatie te voorzien, dit wordt ook wel een ssh session genoemd. Eens de ssh session geconfigureerd is zal het niet nodig zijn om via een paswoord in te loggen op de remote server via deze client.
-            In figuur\ref{OpzettenServer4} in de bijlagen is te zien hoe de ssh session wordt opgezet tussen de client en de remote server voor de root user.
-            Voor deze thesis en om veiligheidsredenen is het beter om enkel via key-based authenticatie in te loggen en het paswoord uit te sluiten.
-            In figuur\ref{OpzettenServer5} is te zien welke aanpassingen in de sshd\_config file van de sshd server moeten gebeuren om het niet meer mogelijk te maken om in te loggen via een paswoord. PasswordAuthentication en ChallengeResponseAuthentication moeten naar no verandert worden. PubKeyAuthentication moet naar yes verandert worden.
-            Nu moet de 'sshd\_config' file opgeslagen worden (\^x + y + enter) en de ssh daemon herstart worden door het commando 'sudo systemctl restart ssh' in te geven.
+%            In figuur\ref{OpzettenServer4} in de bijlagen is te zien hoe de ssh session wordt opgezet tussen de client en de remote server voor de root user.
+            Om veiligheidsredenen is het uiteraard beter om enkel via key-based authenticatie in te loggen en zo het paswoord uit te sluiten.
+%            In figuur\ref{OpzettenServer5} is te zien welke aanpassingen in de sshd\_config file van de sshd server moeten gebeuren om het niet meer mogelijk te maken om in te loggen via een paswoord. PasswordAuthentication en ChallengeResponseAuthentication moeten naar no verandert worden. PubKeyAuthentication moet naar yes verandert worden.
+%            Nu moet de 'sshd\_config' file opgeslagen worden (\^x + y + enter) en de ssh daemon herstart worden door het commando 'sudo systemctl restart ssh' in te geven.
+%            
+%            \begin{figure}
+%                \centering
+%                \includegraphics{OpzettenServer3}
+%                \caption{Opzetten Server, stap 3} \label{OpzettenServer3}
+%            \end{figure}
+%        
+%            \begin{figure}
+%                \centering
+%                \includegraphics[scale=0.65]{OpzettenServer4}
+%                \caption{Opzetten Server, stap 4} \label{OpzettenServer4}
+%            \end{figure}
+%        
+%            \begin{figure}
+%                \centering
+%                \includegraphics[scale=0.75]{OpzettenServer5}
+%                \caption{Opzetten Server, stap 5} \label{OpzettenServer5}
+%            \end{figure}
             
-            \begin{figure}
-                \centering
-                \includegraphics{OpzettenServer3}
-                \caption{Opzetten Server, stap 3} \label{OpzettenServer3}
-            \end{figure}
-        
-            \begin{figure}
-                \centering
-                \includegraphics[scale=0.65]{OpzettenServer4}
-                \caption{Opzetten Server, stap 4} \label{OpzettenServer4}
-            \end{figure}
-        
-            \begin{figure}
-                \centering
-                \includegraphics[scale=0.75]{OpzettenServer5}
-                \caption{Opzetten Server, stap 5} \label{OpzettenServer5}
-            \end{figure}
-            
-            Om de remote server nog meer te beschermen tegen cyber aanvallen is het nodig om een firewall op te zetten. In deze voorbeeldapplicatie maken we gebruik van de UFW Firewall. Dis staat voor Uncomplicated Firewall en is een gebruiksvriendelijke tool dat helpt om de iptables onder controle te houden om zo te zorgen dat bepaalde services toegelaten worden tot onze server.
+            Om de remote server nog meer te beschermen tegen cyber aanvallen is het nodig om een firewall op te zetten. In deze voorbeeldapplicatie maken we gebruik van de UFW Firewall, wat staat voor Uncomplicated Firewall. Dit is een gebruiksvriendelijke tool dat helpt om de IP Tables onder controle te houden om zo te zorgen dat maar bepaalde services toegelaten worden tot onze server.
             In Linux maken ze gebruik van het protocol SSH via de service OpenSSH, deze heeft ook een profiel bij UFW.
-            In Figuur\ref{OpzettenServer6} in de bijlagen is te zien hoe de firewall de SSH service toelaat. Het is enkel mogelijk om de server te bereiken via deze service. Later worden er uiteraard meerdere services toegelaten.
-            
-            \begin{figure}
-                \centering
-                \includegraphics[scale=0.9]{OpzettenServer6}
-                \caption{Opzetten Server, stap 6} \label{OpzettenServer6}
-            \end{figure}
-            
-            Nu alle stappen voor de configuratie van de server gedaan zijn is het zeer makkelijk om in te loggen op de server.
-            Het is hetzelfde als de eerste keer, maar nu vraagt de server niet meer naar een paswoord, maar gebruikt hij de ssh-key. Het is voldoende om 
-            'ssh root@188.166.61.128' te typen om in te loggen.
-            Als je wil uitloggen is het nodig om in de command line van de server exit te typen.
-    
+%            In Figuur\ref{OpzettenServer6} in de bijlagen is te zien hoe de firewall de SSH service toelaat. Het is enkel mogelijk om de server te bereiken via deze service. Later worden er uiteraard meerdere services toegelaten.
+%            
+%            \begin{figure}
+%                \centering
+%                \includegraphics[scale=0.9]{OpzettenServer6}
+%                \caption{Opzetten Server, stap 6} \label{OpzettenServer6}
+%            \end{figure}
+%            
+%            Nu alle stappen voor de configuratie van de server gedaan zijn is het zeer makkelijk om in te loggen op de server.
+%            Het is hetzelfde als de eerste keer, maar nu vraagt de server niet meer naar een paswoord, maar gebruikt hij de ssh-key. Het is voldoende om 
+%            'ssh root@188.166.61.128' te typen om in te loggen.
+%            Als je wil uitloggen is het nodig om in de command line van de server exit te typen.
+%    
         \subsection{Database}
         Binnen SAP wordt een HANA database aangeraden om te gebruiken. Momenteel is versie 2.0 van SAP HANA op de markt en deze versie biedt tal van extra mogelijkheden ten opzichte van de vorige versie. SAP HANA wordt zeer goed ondersteund door de andere programma's binnen SAP en wordt daarom ook wel veel gebruikt.
         Voor de database maken we gebruik van een Multi-Target Application Project, dit is een template die SAP ons geeft en is een goede uitvalsbasis om te gebruiken in de voorbeeldapplicatie.
-        Zoals eerder al aangegeven is een Source Code Repository van groot belang voor een CI/CD pipeline en development in het algemeen.
         
-            \paragraph{Source Control \& Databank module}
-            In figuur\ref{SourceControl1} kan u waarnemen hoe een repository gemaakt wordt in Bitbucket.
-            Eens de repository aangemaakt is heb je het webadres nodig om de clone te maken op je lokale machine.
+%            \paragraph{Source Control \& Databank module}
+%            In figuur\ref{SourceControl1} kan u waarnemen hoe een repository gemaakt wordt in Bitbucket.
+%            Eens de repository aangemaakt is heb je het webadres nodig om de clone te maken op je lokale machine.
+%            
+%            \begin{figure}
+%                \centering
+%                \includegraphics[scale=0.5]{SourceControl1}
+%                \caption{Source Control, stap 1} \label{SourceControl1}
+%            \end{figure}
             
-            \begin{figure}
-                \centering
-                \includegraphics[scale=0.5]{SourceControl1}
-                \caption{Source Control, stap 1} \label{SourceControl1}
-            \end{figure}
-            
-            De volgende stap is het project aanmaken. In de Web IDE voor HANA development is het belangrijk om eerst enkele instellingen aan te passen.
-            Alle nodige features die nodig zijn kan u terug vinden in figuur\ref{HANA1}. Nu is het ook belangrijk om je Git account te connecteren met de Web IDE door het Git email adres en Git username in te voeren in de Git Settings.
-            Zoals eerder vermeld maken we het project aan de hand van het Multi-Target Application Project template. na de creatie van het project is het nodig om een build uit te voeren (figuur\ref{HANA2}).
-            Om het project aan het account op Bitbucket te linken klikt u op het project met de rechter muisknop, gaat u naar 'Git' en dan 'Initialize Local Repository' (figuur\ref{HANA3}).
-            Nu linken we de gemaakte repository aan het project door via rechter muisklik op het project op Git en dan Set Remote te klikken. Hier moet je de gekopieerde Bitbucket link plakken in het veld voor URL. Na het ingeven van het juiste wachtwoord, is het nodig om op 'OK' te klikken wanneer het 'Changes Fetched' window opent. Deze stappen zijn te volgen in figuren \ref{HANA4} en \ref{HANA5}.
-            Na deze stap is het project gelinkt met de repository op Bitbucket. Het maken van het project heeft voor changes gezorgd in de repository, deze moeten eerst gecommit en gepusht worden. In figuur\ref{HANA6} is te zien wat er allemaal moet gebeuren om een commit en push te doen naar de repository.
-    
-            \begin{figure}
-                \centering
-                \includegraphics[scale=0.25]{HANA1}
-                \caption{Opzetten HANA, stap 1} \label{HANA1}
-            \end{figure}
-        
-            \begin{figure}	
-                \centering
-                \includegraphics[scale=0.35]{HANA2}
-                \caption{Opzetten HANA, stap 2} \label{HANA2}
-            \end{figure}
-            
-            \begin{figure}	
-                \centering
-                \includegraphics[scale=0.35]{HANA3}
-                \caption{Opzetten HANA, stap 3} \label{HANA3}
-            \end{figure}
-        
-            \begin{figure}	
-                \centering
-                \includegraphics[scale=0.35]{HANA4}
-                \caption{Opzetten HANA, stap 4} \label{HANA4}
-            \end{figure}
-        
-            \begin{figure}	
-                \centering
-                \includegraphics[scale=0.35]{HANA5}
-                \caption{Opzetten HANA, stap 5} \label{HANA5}
-            \end{figure}
-        
-            \begin{figure}	
-                \centering
-                \includegraphics[scale=0.2]{HANA6}
-                \caption{Opzetten HANA, stap 6} \label{HANA6}
-            \end{figure}
+%            De volgende stap is het project aanmaken. In de Web IDE voor HANA development is het belangrijk om eerst enkele instellingen aan te passen.
+%            Alle nodige features die nodig zijn kan u terug vinden in figuur\ref{HANA1}. Nu is het ook belangrijk om je Git account te connecteren met de Web IDE door het Git email adres en Git username in te voeren in de Git Settings.
+%            Zoals eerder vermeld maken we het project aan de hand van het Multi-Target Application Project template. na de creatie van het project is het nodig om een build uit te voeren (figuur\ref{HANA2}).
+%            Om het project aan het account op Bitbucket te linken klikt u op het project met de rechter muisknop, gaat u naar 'Git' en dan 'Initialize Local Repository' (figuur\ref{HANA3}).
+%            Nu linken we de gemaakte repository aan het project door via rechter muisklik op het project op Git en dan Set Remote te klikken. Hier moet je de gekopieerde Bitbucket link plakken in het veld voor URL. Na het ingeven van het juiste wachtwoord, is het nodig om op 'OK' te klikken wanneer het 'Changes Fetched' window opent. Deze stappen zijn te volgen in figuren \ref{HANA4} en \ref{HANA5}.
+%            Na deze stap is het project gelinkt met de repository op Bitbucket. Het maken van het project heeft voor changes gezorgd in de repository, deze moeten eerst gecommit en gepusht worden. In figuur\ref{HANA6} is te zien wat er allemaal moet gebeuren om een commit en push te doen naar de repository.
+%    
+%            \begin{figure}
+%                \centering
+%                \includegraphics[scale=0.25]{HANA1}
+%                \caption{Opzetten HANA, stap 1} \label{HANA1}
+%            \end{figure}
+%        
+%            \begin{figure}	
+%                \centering
+%                \includegraphics[scale=0.35]{HANA2}
+%                \caption{Opzetten HANA, stap 2} \label{HANA2}
+%            \end{figure}
+%            
+%            \begin{figure}	
+%                \centering
+%                \includegraphics[scale=0.35]{HANA3}
+%                \caption{Opzetten HANA, stap 3} \label{HANA3}
+%            \end{figure}
+%        
+%            \begin{figure}	
+%                \centering
+%                \includegraphics[scale=0.35]{HANA4}
+%                \caption{Opzetten HANA, stap 4} \label{HANA4}
+%            \end{figure}
+%        
+%            \begin{figure}	
+%                \centering
+%                \includegraphics[scale=0.35]{HANA5}
+%                \caption{Opzetten HANA, stap 5} \label{HANA5}
+%            \end{figure}
+%        
+%            \begin{figure}	
+%                \centering
+%                \includegraphics[scale=0.2]{HANA6}
+%                \caption{Opzetten HANA, stap 6} \label{HANA6}
+%            \end{figure}
             
             Een realistische opstelling van een CI/CD voorbeeldapplicatie start bijna nooit vanaf nul, het bouwt meestal voort op bestaande, geschreven software.
             Daarom zal er in deze voorbeeldapplicatie manueel een basis gelegd worden, zo kan er aan de hand van een build scheduler voortgebouwd worden op deze geschreven software.
-            De bescheiden database waar we naartoe willen gaan bestaat uit twee entiteiten: een Artiest en een Album. Een artiest kan meerdere albums hebben, maar een album kan maar tot één artiest behoren. De entiteit Artiest heeft volgende properties: ID, Naam, JaarVanOorsprong en Stad. Album heeft ID, Naam, Beschrijving, Genre, Jaar en Studio als properties. Als basis maken we de entiteit Artiest enkel met ID, Naam en JaarVanOorsprong. De rest zal later toegevoegd worden aan de hand van de pipeline.
-            Eerst maken we een HANA Database Module zoals in figuren \ref{HANA7}, \ref{HANA8} en \ref{HANA9} te zien zijn. Daarna wordt een HDB CDS Artifact gemaakt. Dit is een Core Data Services document dat defenities bevat om objecten te creëeren in de database. Hoe de Artiest gedefinieerd wordt kan u zien in figuren \ref{HANA10}, \ref{HANA11}, \ref{HANA12} en \ref{HANA13}.
-            Nu alle gegevens ingevoerd zijn, moeten we de database effectief aanmaken. In de meest linkse tab is er een knop 'Database Explorer' genaamd. Als je daar op klikt zie je een lege kolom verschijnen. Je moet op het +-teken klikken om een database aan te maken. Kies uit de lijst de optie met jouw naam en geef een realistische naam bij het veld 'How to Show in Display'. Laat de rest van de setting zoals ze zijn.
-            Dan is het de bedoeling om de gegevens die we hierboven hebben ingevoerd in de net aangemaakte database komen. Dit doe je door terug te gaan naar de 'Development' omgeving (in meest linkse tab), daar met de rechter muisknop op 'data.hdbcds' file te klikken en voor de optie 'Build Selected Files' te kiezen. De stappen kan je volgen in figuren \ref{HANA14} en \ref{HANA15}.
-            Er moet natuurlijk ook data in de database zitten om deze te gebruiken in de SAPUI5 applicatie. Een manier om dit te doen is via het uploaden van csv-bestanden waar de data gescheiden is door een komma. Om dit te kunnen uploaden moet er een nieuwe file aangemaakt worden in de data map van de db-module, 'load.hdbtabledata' genaamd. De inhoud kan u ook vinden in figuur \ref{HANA16}.
-            In dit voorbeeld wordt er gebruik gemaakt van een csv-bestand dat nog aangemaakt moet worden. De inhoud van dit bestand is te zien in figuur \ref{HANA17}. Deze gemaakte file moet geïmporteerd worden in de map data van de db-module zoals te zien is in figuur \ref{HANA18}. Om dit te controleren open je best de file nog eens, de inhoud moet overeenkomen met wat in figuur \ref{HANA19} te zien is. Eens deze stappen volbracht zijn is het tijd om de module te builden (figuur \ref{HANA20}). Om te kijken of de data er juist inzit moet je terug gaan naar de 'Database Explorer' en daar de map 'tables' openen. Links vanonder verschijnt een venster met de verschillende tabellen, hier in dit voorbeeld is er maar één, dus we kunnen niet verkeerd zijn. Er rest ons enkel nog op de juiste tabel te klikken met de rechter muisknop en dan op 'Generate SELECT statement' aan te klikken. Er opent zich een nieuwe file die moet uitgevoerd worden zoals in figuren \ref{HANA21}, \ref{HANA22} en \ref{HANA23} te zien zijn.
-            Eens deze gegevens ingevoerd zijn moeten we alle veranderingen toevoegen aan de commit om dan te pushen naar de repository.
+            De bescheiden database waar we naartoe willen gaan bestaat uit twee entiteiten: een Artiest en een Album. Een artiest kan meerdere albums hebben, maar een album kan maar tot één artiest behoren. De entiteit Artiest heeft volgende properties: ID, Naam, JaarVanOorsprong en Stad. Album heeft ID, Naam, Beschrijving, Genre, Jaar en Studio als properties. Als basis maken we de entiteit Artiest enkel met ID, Naam en JaarVanOorsprong.
             
-            
-            \begin{figure}	
-                \centering
-                \includegraphics[scale=0.35]{HANA7}
-                \caption{Opzetten HANA, stap 7} \label{HANA7}
-            \end{figure}
-            
-            \begin{figure}	
-                \centering
-                \includegraphics[scale=0.35]{HANA8}
-                \caption{Opzetten HANA, stap 8} \label{HANA8}
-            \end{figure}
-            
-            \begin{figure}	
-                \centering
-                \includegraphics[scale=0.35]{HANA9}
-                \caption{Opzetten HANA, stap 9} \label{HANA9}
-            \end{figure}
-            
-            \begin{figure}	
-                \centering
-                \includegraphics[scale=0.35]{HANA10}
-                \caption{Opzetten HANA, stap 10} \label{HANA10}
-            \end{figure}
-            
-            \begin{figure}	
-                \centering
-                \includegraphics[scale=0.35]{HANA11}
-                \caption{Opzetten HANA, stap 11} \label{HANA11}
-            \end{figure}
-            
-            \begin{figure}	
-                \centering
-                \includegraphics[scale=0.35]{HANA12}
-                \caption{Opzetten HANA, stap 12} \label{HANA12}
-            \end{figure}
-        
-            \begin{figure}	
-                \centering
-                \includegraphics[scale=0.35]{HANA13}
-                \caption{Opzetten HANA, stap 13} \label{HANA13}
-            \end{figure}
-            
-            \begin{figure}	
-                \centering
-                \includegraphics[scale=0.35]{HANA14}
-                \caption{Opzetten HANA, stap 14} \label{HANA14}
-            \end{figure}
-            
-            \begin{figure}	
-                \centering
-                \includegraphics[scale=0.35]{HANA15}
-                \caption{Opzetten HANA, stap 15} \label{HANA15}
-            \end{figure}
-        
-            \begin{figure}	
-                \centering
-                \includegraphics[scale=0.35]{HANA16}
-                \caption{Opzetten HANA, stap 16} \label{HANA16}
-            \end{figure}
-            
-            \begin{figure}	
-                \centering
-                \includegraphics[scale=0.35]{HANA17}
-                \caption{Opzetten HANA, stap 17} \label{HANA17}
-            \end{figure}
-        
-            \begin{figure}	
-                \centering
-                \includegraphics[scale=0.35]{HANA18}
-                \caption{Opzetten HANA, stap 18} \label{HANA18}
-            \end{figure}
-            
-            \begin{figure}	
-                \centering
-                \includegraphics[scale=0.35]{HANA19}
-                \caption{Opzetten HANA, stap 19} \label{HANA19}
-            \end{figure}
-        
-            \begin{figure}	
-                \centering
-                \includegraphics[scale=0.35]{HANA20}
-                \caption{Opzetten HANA, stap 20} \label{HANA20}
-            \end{figure}
-            
-            \begin{figure}	
-                \centering
-                \includegraphics[scale=0.35]{HANA21}
-                \caption{Opzetten HANA, stap 21} \label{HANA21}
-            \end{figure}
-        
-            \begin{figure}	
-                \centering
-                \includegraphics[scale=0.35]{HANA22}
-                \caption{Opzetten HANA, stap 22} \label{HANA22}
-            \end{figure}
-            
-            \begin{figure}	
-                \centering
-                \includegraphics[scale=0.35]{HANA23}
-                \caption{Opzetten HANA, stap 23} \label{HANA23}
-            \end{figure}
+            De Artiest wordt via een HDB CDS Artifact, een Core Data Services document dat definities bevat om objecten te creëren in de database, gedefinieerd.
+%            Eerst maken we een HANA Database Module zoals in figuren \ref{HANA7}, \ref{HANA8} en \ref{HANA9} te zien zijn. Daarna wordt een HDB CDS Artifact gemaakt. Dit is een Core Data Services document dat defenities bevat om objecten te creëeren in de database. Hoe de Artiest gedefinieerd wordt kan u zien in figuren \ref{HANA10}, \ref{HANA11}, \ref{HANA12} en \ref{HANA13}.
+%            Nu alle gegevens ingevoerd zijn, moeten we de database effectief aanmaken. In de meest linkse tab is er een knop 'Database Explorer' genaamd. Als je daar op klikt zie je een lege kolom verschijnen. Je moet op het +-teken klikken om een database aan te maken. Kies uit de lijst de optie met jouw naam en geef een realistische naam bij het veld 'How to Show in Display'. Laat de rest van de setting zoals ze zijn.
+%            Dan is het de bedoeling om de gegevens die we hierboven hebben ingevoerd in de net aangemaakte database komen. Dit doe je door terug te gaan naar de 'Development' omgeving (in meest linkse tab), daar met de rechter muisknop op 'data.hdbcds' file te klikken en voor de optie 'Build Selected Files' te kiezen. De stappen kan je volgen in figuren \ref{HANA14} en \ref{HANA15}.
+%            Er moet natuurlijk ook data in de database zitten om deze te gebruiken in de SAPUI5 applicatie. Een manier om dit te doen is via het uploaden van csv-bestanden waar de data gescheiden is door een komma. Om dit te kunnen uploaden moet er een nieuwe file aangemaakt worden in de data map van de db-module, 'load.hdbtabledata' genaamd. De inhoud kan u ook vinden in figuur \ref{HANA16}.
+%            In dit voorbeeld wordt er gebruik gemaakt van een csv-bestand dat nog aangemaakt moet worden. De inhoud van dit bestand is te zien in figuur \ref{HANA17}. Deze gemaakte file moet geïmporteerd worden in de map data van de db-module zoals te zien is in figuur \ref{HANA18}. Om dit te controleren open je best de file nog eens, de inhoud moet overeenkomen met wat in figuur \ref{HANA19} te zien is. Eens deze stappen volbracht zijn is het tijd om de module te builden (figuur \ref{HANA20}). Om te kijken of de data er juist inzit moet je terug gaan naar de 'Database Explorer' en daar de map 'tables' openen. Links vanonder verschijnt een venster met de verschillende tabellen, hier in dit voorbeeld is er maar één, dus we kunnen niet verkeerd zijn. Er rest ons enkel nog op de juiste tabel te klikken met de rechter muisknop en dan op 'Generate SELECT statement' aan te klikken. Er opent zich een nieuwe file die moet uitgevoerd worden zoals in figuren \ref{HANA21}, \ref{HANA22} en \ref{HANA23} te zien zijn.
+%            Eens deze gegevens ingevoerd zijn moeten we alle veranderingen toevoegen aan de commit om dan te pushen naar de repository.
+%            
+%            
+%            \begin{figure}	
+%                \centering
+%                \includegraphics[scale=0.35]{HANA7}
+%                \caption{Opzetten HANA, stap 7} \label{HANA7}
+%            \end{figure}
+%            
+%            \begin{figure}	
+%                \centering
+%                \includegraphics[scale=0.35]{HANA8}
+%                \caption{Opzetten HANA, stap 8} \label{HANA8}
+%            \end{figure}
+%            
+%            \begin{figure}	
+%                \centering
+%                \includegraphics[scale=0.35]{HANA9}
+%                \caption{Opzetten HANA, stap 9} \label{HANA9}
+%            \end{figure}
+%            
+%            \begin{figure}	
+%                \centering
+%                \includegraphics[scale=0.35]{HANA10}
+%                \caption{Opzetten HANA, stap 10} \label{HANA10}
+%            \end{figure}
+%            
+%            \begin{figure}	
+%                \centering
+%                \includegraphics[scale=0.35]{HANA11}
+%                \caption{Opzetten HANA, stap 11} \label{HANA11}
+%            \end{figure}
+%            
+%            \begin{figure}	
+%                \centering
+%                \includegraphics[scale=0.35]{HANA12}
+%                \caption{Opzetten HANA, stap 12} \label{HANA12}
+%            \end{figure}
+%        
+%            \begin{figure}	
+%                \centering
+%                \includegraphics[scale=0.35]{HANA13}
+%                \caption{Opzetten HANA, stap 13} \label{HANA13}
+%            \end{figure}
+%            
+%            \begin{figure}	
+%                \centering
+%                \includegraphics[scale=0.35]{HANA14}
+%                \caption{Opzetten HANA, stap 14} \label{HANA14}
+%            \end{figure}
+%            
+%            \begin{figure}	
+%                \centering
+%                \includegraphics[scale=0.35]{HANA15}
+%                \caption{Opzetten HANA, stap 15} \label{HANA15}
+%            \end{figure}
+%        
+%            \begin{figure}	
+%                \centering
+%                \includegraphics[scale=0.35]{HANA16}
+%                \caption{Opzetten HANA, stap 16} \label{HANA16}
+%            \end{figure}
+%            
+%            \begin{figure}	
+%                \centering
+%                \includegraphics[scale=0.35]{HANA17}
+%                \caption{Opzetten HANA, stap 17} \label{HANA17}
+%            \end{figure}
+%        
+%            \begin{figure}	
+%                \centering
+%                \includegraphics[scale=0.35]{HANA18}
+%                \caption{Opzetten HANA, stap 18} \label{HANA18}
+%            \end{figure}
+%            
+%            \begin{figure}	
+%                \centering
+%                \includegraphics[scale=0.35]{HANA19}
+%                \caption{Opzetten HANA, stap 19} \label{HANA19}
+%            \end{figure}
+%        
+%            \begin{figure}	
+%                \centering
+%                \includegraphics[scale=0.35]{HANA20}
+%                \caption{Opzetten HANA, stap 20} \label{HANA20}
+%            \end{figure}
+%            
+%            \begin{figure}	
+%                \centering
+%                \includegraphics[scale=0.35]{HANA21}
+%                \caption{Opzetten HANA, stap 21} \label{HANA21}
+%            \end{figure}
+%        
+%            \begin{figure}	
+%                \centering
+%                \includegraphics[scale=0.35]{HANA22}
+%                \caption{Opzetten HANA, stap 22} \label{HANA22}
+%            \end{figure}
+%            
+%            \begin{figure}	
+%                \centering
+%                \includegraphics[scale=0.35]{HANA23}
+%                \caption{Opzetten HANA, stap 23} \label{HANA23}
+%            \end{figure}
            
             \paragraph{Node.js module}
             Om de models te gebruiken dat gecreëerd zijn, moeten we een tweede module toevoegen aan de HANA database: een Node.js module om de data als OData service te kunnen gebruiken.
-            Deze module implementeert XSJS en XSODATA die op hun beurt zorgen voor de transformatie van het data model en de bereikbaarheid naar de buitenwereld. het is nodig om op de data CRUD (Create, Read, Update en Delete) operaties uit te voeren en als OData naar buiten gaat, dit is de taak van XSODATA. XSJS zorgt dan weer voor de integratie met SAPUI5. Het laat toe dat SAPUI5 applicaties de data kan lezen en kan bewerken.
-            Zoals u in figuur \ref{HANA24} ziet moeten de instellingen aangepast worden. De feature Tools For Node.js Development moet beschikbaar zijn om te gebruiken in het project. Dit moet gesaved worden en het project moet opnieuw geladen worden. De volgende stap is de module maken door op het project met de rechtermuisknop te klikken, new en dan Node.js Module kiezen. Geef het een goede naam (js is good practice) en zorg ervoor dat Enable XSJX support aangevinkt is alvorens op Finish te klikken, zoals te zien is in figuur \ref{HANA25}, \ref{HANA26} en \ref{HANA27}.
-            Databeveiliging is zeer belangrijk. Binnen HANA wordt er gebruik gemaakt van UAA (User Account en Authentication) om de Node.js module te beveiligen. Deze service moet samen met de database module en de HDI container, achter de db module, toegevoegd worden als resource zoals te zien valt in figuur \ref{HANA28}.
-            Om een OData service te maken moeten volgende stappen gebeuren: in de js-module in de lib folder, moet een xsodata-file gemaakt worden in een nieuwe folder, xsodata genaamd. De link met de data moet in deze nieuwe file gemaakt worden. Later zal er ook de associatie moeten gemaakt worden tussen Artiest en Album. Deze stappen zijn te zien in figuren \ref{HANA29} en \ref{HANA30}.
-            De volgende stap is de xsjs service maken door in de lib folder een nieuwe folder, xsjs genaamd, te maken met de nieuwe hdb.xsjs file. Zie figuur \ref{HANA31}. De inhoud van deze nieuwe file is te zien in figuur \ref{HANA32}.
-            De nieuwe Node.js module moet gebuild worden door op de module met de rechtermuisknop te klikken, Run, Run As en dan Node.js Application te kiezen zoals te zien is in figuur \ref{HANA33}.\\
-            Eens de Node.js module runt, is de data beschikbaar voor gebruik. Er opent onderaan het scherm een nieuw venster waar je op een link kan klikken zoals te zien is in figuur \ref{HANA34}. De index.html wordt geopend in de browser. Het is mogelijk om de metadata te bekijken door in de url de '/index.html' te vervangen door '/xsodata/services.xsodata/\$metadata'.\\
-            Om de OData van de entiteit in de database te bekijken moet '/\$metadata' vervangen worden door '/Artiesten'. Op deze manier verschijnt de OData van de tabel Artiest zoals te zien is in figuur \ref{HANA35}.
-            
-            Als voorgaande stappen gelukt zijn, kan men de OData-service gebruiken als een destination in SAP Cloud Platform. Om dit te doen zijn er enkele stappen nodig: ga naar SAP Cloud Platform om een nieuwe destination toe te voegen. Volg de stappen in figuren \ref{HANA36} en \ref{HANA37}.
-            
-            
-            \begin{figure}	
-                \centering
-                \includegraphics[scale=0.35]{HANA24}
-                \caption{Opzetten HANA, stap 24} \label{HANA24}
-            \end{figure}
-            
-            \begin{figure}	
-                \centering
-                \includegraphics[scale=0.35]{HANA25}
-                \caption{Opzetten HANA, stap 25} \label{HANA25}
-            \end{figure}
-            
-            \begin{figure}	
-                \centering
-                \includegraphics[scale=0.35]{HANA26}
-                \caption{Opzetten HANA, stap 26} \label{HANA26}
-            \end{figure}
-            
-            \begin{figure}	
-                \centering
-                \includegraphics[scale=0.35]{HANA27}
-                \caption{Opzetten HANA, stap 27} \label{HANA27}
-            \end{figure}
-            
-            \begin{figure}	
-                \centering
-                \includegraphics[scale=0.35]{HANA28}
-                \caption{Opzetten HANA, stap 28} \label{HANA28}
-            \end{figure}
-            
-            \begin{figure}	
-                \centering
-                \includegraphics[scale=0.35]{HANA29}
-                \caption{Opzetten HANA, stap 29} \label{HANA29}
-            \end{figure}
-        
-            \begin{figure}	
-                \centering
-                \includegraphics[scale=0.35]{HANA30}
-                \caption{Opzetten HANA, stap 30} \label{HANA30}
-            \end{figure}
-            
-            \begin{figure}	
-                \centering
-                \includegraphics[scale=0.35]{HANA31}
-                \caption{Opzetten HANA, stap 31} \label{HANA31}
-            \end{figure}
-            
-            \begin{figure}	
-                \centering
-                \includegraphics[scale=0.35]{HANA32}
-                \caption{Opzetten HANA, stap 32} \label{HANA32}
-            \end{figure}
-            
-            \begin{figure}	
-                \centering
-                \includegraphics[scale=0.35]{HANA33}
-                \caption{Opzetten HANA, stap 33} \label{HANA33}
-            \end{figure} 
-        
-            \begin{figure}	
-                \centering
-                \includegraphics[scale=0.35]{HANA34}
-                \caption{Opzetten HANA, stap 34} \label{HANA34}
-            \end{figure}
-            
-            \begin{figure}	
-                \centering
-                \includegraphics[scale=0.35]{HANA35}
-                \caption{Opzetten HANA, stap 35} \label{HANA35}
-            \end{figure}
-            
-            \begin{figure}	
-                \centering
-                \includegraphics[scale=0.35]{HANA36}
-                \caption{Opzetten HANA, stap 36} \label{HANA36}
-            \end{figure}
-            
-            \begin{figure}	
-                \centering
-                \includegraphics[scale=0.35]{HANA37}
-                \caption{Opzetten HANA, stap 37} \label{HANA37}
-            \end{figure} 
+            Deze module implementeert XSJS en XSODATA die op hun beurt zorgen voor de transformatie van het data model en de bereikbaarheid naar de buitenwereld.\\
+            Het is nodig om op de data CRUD (Create, Read, Update en Delete) operaties uit te kunnen voeren en als OData naar buiten gaat, dit is de taak van XSODATA.\\
+            XSJS zorgt dan weer voor de integratie met SAPUI5. Het laat toe dat SAPUI5 applicaties de data kan lezen en kan bewerken.
+%            Zoals u in figuur \ref{HANA24} ziet moeten de instellingen aangepast worden. De feature Tools For Node.js Development moet beschikbaar zijn om te gebruiken in het project. Dit moet gesaved worden en het project moet opnieuw geladen worden. De volgende stap is de module maken door op het project met de rechtermuisknop te klikken, new en dan Node.js Module kiezen. Geef het een goede naam (js is good practice) en zorg ervoor dat Enable XSJX support aangevinkt is alvorens op Finish te klikken, zoals te zien is in figuur \ref{HANA25}, \ref{HANA26} en \ref{HANA27}.
+%            Databeveiliging is zeer belangrijk. Binnen HANA wordt er gebruik gemaakt van UAA (User Account en Authentication) om de Node.js module te beveiligen. Deze service moet samen met de database module en de HDI container, achter de db module, toegevoegd worden als resource zoals te zien valt in figuur \ref{HANA28}.
+%            Om een OData service te maken moeten volgende stappen gebeuren: in de js-module in de lib folder, moet een xsodata-file gemaakt worden in een nieuwe folder, xsodata genaamd. De link met de data moet in deze nieuwe file gemaakt worden. Later zal er ook de associatie moeten gemaakt worden tussen Artiest en Album. Deze stappen zijn te zien in figuren \ref{HANA29} en \ref{HANA30}.
+%            De volgende stap is de xsjs service maken door in de lib folder een nieuwe folder, xsjs genaamd, te maken met de nieuwe hdb.xsjs file. Zie figuur \ref{HANA31}. De inhoud van deze nieuwe file is te zien in figuur \ref{HANA32}.
+%            De nieuwe Node.js module moet gebuild worden door op de module met de rechtermuisknop te klikken, Run, Run As en dan Node.js Application te kiezen zoals te zien is in figuur \ref{HANA33}.\\
+%            Eens de Node.js module runt, is de data beschikbaar voor gebruik. Er opent onderaan het scherm een nieuw venster waar je op een link kan klikken zoals te zien is in figuur \ref{HANA34}. De index.html wordt geopend in de browser. Het is mogelijk om de metadata te bekijken door in de url de '/index.html' te vervangen door '/xsodata/services.xsodata/\$metadata'.\\
+%            Om de OData van de entiteit in de database te bekijken moet '/\$metadata' vervangen worden door '/Artiesten'. Op deze manier verschijnt de OData van de tabel Artiest zoals te zien is in figuur \ref{HANA35}.
+%            
+%            Als voorgaande stappen gelukt zijn, kan men de OData-service gebruiken als een destination in SAP Cloud Platform. Om dit te doen zijn er enkele stappen nodig: ga naar SAP Cloud Platform om een nieuwe destination toe te voegen. Volg de stappen in figuren \ref{HANA36} en \ref{HANA37}.
+%            
+%            
+%            \begin{figure}	
+%                \centering
+%                \includegraphics[scale=0.35]{HANA24}
+%                \caption{Opzetten HANA, stap 24} \label{HANA24}
+%            \end{figure}
+%            
+%            \begin{figure}	
+%                \centering
+%                \includegraphics[scale=0.35]{HANA25}
+%                \caption{Opzetten HANA, stap 25} \label{HANA25}
+%            \end{figure}
+%            
+%            \begin{figure}	
+%                \centering
+%                \includegraphics[scale=0.35]{HANA26}
+%                \caption{Opzetten HANA, stap 26} \label{HANA26}
+%            \end{figure}
+%            
+%            \begin{figure}	
+%                \centering
+%                \includegraphics[scale=0.35]{HANA27}
+%                \caption{Opzetten HANA, stap 27} \label{HANA27}
+%            \end{figure}
+%            
+%            \begin{figure}	
+%                \centering
+%                \includegraphics[scale=0.35]{HANA28}
+%                \caption{Opzetten HANA, stap 28} \label{HANA28}
+%            \end{figure}
+%            
+%            \begin{figure}	
+%                \centering
+%                \includegraphics[scale=0.35]{HANA29}
+%                \caption{Opzetten HANA, stap 29} \label{HANA29}
+%            \end{figure}
+%        
+%            \begin{figure}	
+%                \centering
+%                \includegraphics[scale=0.35]{HANA30}
+%                \caption{Opzetten HANA, stap 30} \label{HANA30}
+%            \end{figure}
+%            
+%            \begin{figure}	
+%                \centering
+%                \includegraphics[scale=0.35]{HANA31}
+%                \caption{Opzetten HANA, stap 31} \label{HANA31}
+%            \end{figure}
+%            
+%            \begin{figure}	
+%                \centering
+%                \includegraphics[scale=0.35]{HANA32}
+%                \caption{Opzetten HANA, stap 32} \label{HANA32}
+%            \end{figure}
+%            
+%            \begin{figure}	
+%                \centering
+%                \includegraphics[scale=0.35]{HANA33}
+%                \caption{Opzetten HANA, stap 33} \label{HANA33}
+%            \end{figure} 
+%        
+%            \begin{figure}	
+%                \centering
+%                \includegraphics[scale=0.35]{HANA34}
+%                \caption{Opzetten HANA, stap 34} \label{HANA34}
+%            \end{figure}
+%            
+%            \begin{figure}	
+%                \centering
+%                \includegraphics[scale=0.35]{HANA35}
+%                \caption{Opzetten HANA, stap 35} \label{HANA35}
+%            \end{figure}
+%            
+%            \begin{figure}	
+%                \centering
+%                \includegraphics[scale=0.35]{HANA36}
+%                \caption{Opzetten HANA, stap 36} \label{HANA36}
+%            \end{figure}
+%            
+%            \begin{figure}	
+%                \centering
+%                \includegraphics[scale=0.35]{HANA37}
+%                \caption{Opzetten HANA, stap 37} \label{HANA37}
+%            \end{figure} 
             
         \subsection{UI5-applicatie}
-        
-        
-        \subsection{Automated testing binnen SAPUI5}
-        %TODO: https://help.sap.com/viewer/468a97775123488ab3345a0c48cadd8f/7.52.1/en-US/ae448243822448d8ba04b4784f4b09a0.html
-        %TODO: https://blogs.sap.com/2016/11/21/headless-opa5-testing-with-karma-and-phantomjs/
+        Hoe een SAPUI5 applicatie eruit ziet en hoe deze tot stand gekomen is kan men bekijken in de handleiding in het hoofdstuk UI5 applicatie
