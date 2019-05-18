@@ -49,7 +49,6 @@
         Om te voldoen aan de criteria van CI/CD moeten de testen automatisch gerund worden. Dit was tot voor kort echter vaak niet het geval. Er waren testers aangesteld om telkens opnieuw software te testen, door op de verschillende knoppen te drukken in de user interface (UI). Heel vaak slopen er fouten in omdat dit heel repetitief en saai werk was. Daar komt de automatisatie van pas ~\autocite{Vocke2018}.
         
         Mike Cohn kwam met het idee om testen op te delen in drie grote categorieën: Unit Tests, Service Tests en UI tests zoals u kan zien in figuur \ref{img-test-pyramid}.
-        Vandaag zijn deze categorieën iets te simplistisch voorgesteld, vanwege de toenemende complexiteit van de software. Maar het is wel nog altijd een uitstekende referentie om de opbouw van testen uit te leggen.
         Twee zaken zijn belangrijk om te onthouden: testen moeten uit verschillende lagen van detail bestaan en er moeten minder testen geschreven worden wanneer het team minder gedetailleerde code schrijft (high-level testing). Omdat bij high-level testen de requirements goed begrepen zijn door het test team.
         
         De grootste laag binnen de test omgeving zijn de Unit tests en staat het dichts bij de software code. Deze testen zijn snel om te schrijven en te runnen en kunnen gedetailleerde feedback geven wanneer een test faalt.\\
@@ -60,3 +59,9 @@
             \includegraphics[scale=0.65]{test-pyramid}
             \caption{Test piramide ~\autocite{Vocke2018}} \label{img-test-pyramid}
         \end{figure}
+    
+        Vandaag zijn deze categorieën iets te simplistisch voorgesteld, vanwege de toenemende complexiteit van de software. Maar het is wel nog altijd een uitstekende referentie om de opbouw van testen uit te leggen.
+        De Automated Test Quadrant is een voorbeeld waarop een test omgeving gebaseerd kan worden. Het is ook model, net zoals de test piramide en is bedoeld als gids. Er bestaan verschillende modellen waarop je je kan baseren.\\
+        De Automated Test Quadrant baseert deelt de testen op in vier categorieën op basis van hun rol en complexiteit.\\
+        De eerste kwadrant focust op de logica aan de business-zijde en zijn high-level (bevatten weinig details). De tweede testen veel details die te maken hebben met de business logica die de klant wenst.\\
+        De derde kwadrant zijn testen die geschreven zijn met de toekomst in het achterhoofd. Ze testen of de applicatie makkelijk uitbreidbaar is. De vierde soort test de technische zaken zoals het gebruik van de API enzovoort ~\autocite{Smart2017}.
