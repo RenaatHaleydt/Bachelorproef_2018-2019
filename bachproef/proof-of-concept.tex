@@ -4,7 +4,7 @@
 
 \chapter{\IfLanguageName{dutch}{Proof-of-concept van een CI/CD pipeline}{Setting up a CI/CD pipeline}}
 \label{ch:proof-of-concept}
-Uit vorig hoofdstuk is gebleken dat Jenkins de tool is die aan de meeste must-haves, should-haves en nice-to-haves voldoet. In dit hoofdstuk wordt deze tool extra onder de loep genomen door hem op te stellen in een realistische omgeving zoals in hoofdstuk \ref{ch:methodologie} besproken is. Door Jenkins in zo'n omgeving op te zetten krijgen we een meer realistisch beeld of deze build scheduler effectief doet wat er van hem verwacht wordt. Op het einde van dit hoofdstuk zal er een conclusie worden gemaakt of Jenkins aan te bevelen valt om in de specifieke omgeving op te zetten.\\
+Uit vorig hoofdstuk is gebleken dat Jenkins de tool is die aan de meeste must-haves, should-haves en nice-to-haves voldoet. In dit hoofdstuk wordt deze tool extra onder de loep genomen door hem op te stellen in een realistische omgeving zoals in hoofdstuk \ref{ch:methodologie} besproken is. Door Jenkins in zo'n omgeving op te zetten wordt er een meer realistisch beeld geschetst of deze build scheduler effectief voldoet aan de verwachtingen. Op het einde van dit hoofdstuk zal er een conclusie worden gemaakt of Jenkins aan te bevelen valt om in de specifieke omgeving op te zetten.\\
 Maar eerst worden enkele tips uitgewerkt van SAP, hoe een CI/CD pipeline opgestart moet worden.
 
 \section{Continuous Delivery principles}
@@ -30,7 +30,7 @@ Het vergt enige vereisten om te voldoen aan de regels van Continuous Integration
     \item De build moet worden uitgetest op een kopie van de productieomgeving
     \item Automatiseer het deployment
 \end{itemize}
-Eens deze regels zijn toegepast, kunnen we spreken van een CI implementatie.
+Eens deze regels zijn toegepast, kan men spreken van een CI implementatie.
 Vaak wordt CI in combinatie gebracht met Continuous Delivery. Om dit in een vloeiende lijn te laten lopen, spreekt men van een CI/CD pipeline.
 
 \section{CI/CD pipeline volgens SAP}
@@ -48,7 +48,7 @@ Bij Continuous Integration draait alles rond feedback, hierbij speelt snelheid e
 
 Betrouwbaarheid wordt tegenwoordig als 'normaal' beschouwd, maar dit is niet zo vanzelfsprekend. Het kan gebeuren dat de automated tests niet zo betrouwbaar zijn waardoor de developers met valse informatie moeten werken. Dit is niet bevorderlijk voor de verdere productie en het vertrouwen in een Continuous Integration en Continuous Delivery pipeline. Er zijn wel enkele tips om de automated tests betrouwbaar te maken: door de UI elements een degelijke identifier geven. Zo hoeven de testen niet de onbetrouwbare css selectors te gebruiken om aan de elementen te kunnen. 
 
-De test data van één bron van informatie voorzien is nog een belangrijke tip. Vooral in het bijzonder wanneer testen - die dezelfde data aanpassen en controleren - tegelijk runnen. Er moet ook rekening gehouden worden met de asynchrone acties bij Service en UI tests (zie de Test Pyramid in Figuur \ref{img-test-pyramid}) door bepaalde situaties te vermijden. We hebben het over situaties waarbij de applicatie zich in de verkeerde staat bevindt, zodat de asynchrone test foute resultaten teruggeeft.
+De test data van één bron van informatie voorzien is nog een belangrijke tip. Vooral in het bijzonder wanneer testen - die dezelfde data aanpassen en controleren - tegelijk runnen. Er moet ook rekening gehouden worden met de asynchrone acties bij Service en UI tests (zie de Test Pyramid in Figuur \ref{img-test-pyramid}) door bepaalde situaties te vermijden. Situaties waarbij de applicatie zich in de verkeerde staat bevindt, zodat de asynchrone test foute resultaten teruggeeft.
 
 De hoeveelheid aan tests moet beperkt blijven om zo de snelheid van de execution times en het onderhoudsgemak te bewaren.
 Als men automated tests schrijft voor een CI/CD pipeline, moet men zaken testen die de integratie en het deployen van de applicatie kunnen verstoren.
@@ -65,8 +65,8 @@ Voor het onderhoud van de testen moet je rekening houden met de staat van je app
     
 \section{Jenkins}
 \label{sec:short-list}
-Uit het hoofdstuk\ref{ch:methodologie} hebben we in grote lijnen de vergelijking gemaakt tussen verschillende build schedulers. Jenkins kwam daar als absolute winnaar naar boven. Deze gaan we dus ook gebruiken om onze CI/CD pipeline uit te werken.
-In het vorige hoofdstuk hebben we de Ubuntu server helemaal klaargezet voor het gebruik met een build scheduler. De opzet van Jenkins wordt in het hoofdstuk Continuous Integration uitgelegd in het extra document dat te vinden is bij deze thesis.
+Uit het hoofdstuk\ref{ch:methodologie} is, in grote lijnen, de vergelijking gemaakt tussen verschillende build schedulers. Jenkins kwam daar als absolute winnaar naar boven. Deze wordt dus ook gebruikt om onze CI/CD pipeline uit te werken.
+Na het vorige hoofdstuk staat de Ubuntu server helemaal klaar voor het gebruik met een build scheduler. De opzet van Jenkins wordt in het hoofdstuk Continuous Integration uitgelegd in het extra document dat te vinden is bij deze thesis.
     
 \section{Conclusie}
 \label{sec:conclusie}
