@@ -4,17 +4,17 @@
 
 \chapter{\IfLanguageName{dutch}{Proof-of-concept van een CI/CD pipeline}{Setting up a CI/CD pipeline}}
 \label{ch:proof-of-concept}
-Uit vorig hoofdstuk is gebleken dat Jenkins de tool is die aan het meeste must-haves, should-haves en nice-to-haves voldoet. In dit hoofdstuk wordt deze tool extra onder de loep genomen door hem op te stellen in een realistische omgeving zoals in hoofdstuk \ref{ch:methodologie} besproken is. Door Jenkins in zo'n omgeving op te zetten krijgen we een meer realistisch beeld of deze build scheduler effectief doet wat er van hem verwacht wordt. Op het einde van dit hoofdstuk zal er een conclusie worden gemaakt of Jenkins aan te bevelen valt om in de specifieke omgeving op te zetten.\\
+Uit vorig hoofdstuk is gebleken dat Jenkins de tool is die aan de meeste must-haves, should-haves en nice-to-haves voldoet. In dit hoofdstuk wordt deze tool extra onder de loep genomen door hem op te stellen in een realistische omgeving zoals in hoofdstuk \ref{ch:methodologie} besproken is. Door Jenkins in zo'n omgeving op te zetten krijgen we een meer realistisch beeld of deze build scheduler effectief doet wat er van hem verwacht wordt. Op het einde van dit hoofdstuk zal er een conclusie worden gemaakt of Jenkins aan te bevelen valt om in de specifieke omgeving op te zetten.\\
 Maar eerst worden enkele tips uitgewerkt van SAP, hoe een CI/CD pipeline opgestart moet worden.
 
 \section{Continuous Delivery principles}
 \label{sec:continuous-delivery-principles}
 Volgens \textcite{Riti2018} is het uitermate belangrijk om volgende stappen te volbrengen om tot een goede Continuous Delivery omgeving te komen.
 \begin{itemize}
-    \item Er moeten goede branching strategieën bepaald worden om het team goed te laten samenwerken
+    \item Er moeten goede branching strategieën worden bepaald om het team goed te laten samenwerken
     \item Een belangrijk onderdeel van Continuous Integration is natuurlijk testen, deze zijn in Continuous Delivery niet te vergeten
     \item Een stap verder is het automatisch uitvoeren van deze testen
-    \item Na het slagen van de testen en het automatisch builden van de software moet de build klaar gemaakt worden voor release
+    \item Na het slagen van de testen en het automatisch builden van de software moet de build worden klaargemaakt voor release
 \end{itemize}
 
 \section{CI/CD pipeline op SAP Cloud Platform}
@@ -26,8 +26,8 @@ Het vergt enige vereisten om te voldoen aan de regels van Continuous Integration
     \item Zorg ervoor dat tijdens de build er Unit testen lopen
     \item Het team moet op regelmatige basis commits uitvoeren
     \item Elke verandering moet gebuild worden
-    \item Als er errors tevoorschijn komen tijdens de build, moeten die opgelost worden
-    \item De build moet uitgetest worden op een kopie van de productieomgeving
+    \item Als er errors tevoorschijn komen tijdens de build, moeten die worden opgelost
+    \item De build moet worden uitgetest op een kopie van de productieomgeving
     \item Automatiseer het deployment
 \end{itemize}
 Eens deze regels zijn toegepast, kunnen we spreken van een CI implementatie.
@@ -35,15 +35,15 @@ Vaak wordt CI in combinatie gebracht met Continuous Delivery. Om dit in een vloe
 
 \section{CI/CD pipeline volgens SAP}
 \label{sec:ci-cd-pipeling-volgens-sap}
-Een programmeur schrijft nieuwe code voor een verandering die de klant wil uitvoeren. Idealiter zou dit - voor het mergen naar de masterapplication - eens door een voter build moeten gaan, waar automatische tests aanwezig zijn die kijken of de code geen problemen zou geven als je die zou mergen met de master. Een laatste stap voor de code naar de master gemerged wordt, is het toepassen van code reviews door collega developers (het 4-ogen principe).
-Na het samenvoegen wordt automatisch de CI-build geactiveerd. De code gaat door de automatische tests. Eens de testen slagen worden de wijzigingen geïntegreerd op de master. 
+Een programmeur schrijft nieuwe code voor een verandering die de klant wil uitvoeren. Idealiter zou dit - voor het mergen naar de masterapplication - eens door een voter build moeten gaan, waar automatische tests aanwezig zijn, die kijken of de code geen problemen zou geven als je die zou mergen met de master. Een laatste stap voor de code naar de master gemerged wordt, is het toepassen van code reviews door collega developers (het 4-ogen principe).
+Na het samenvoegen wordt automatisch de CI-build geactiveerd. De code gaat door de automatische tests. Eens de testen slagen, worden de wijzigingen geïntegreerd op de master. 
 
-Dan komt de Continuous Delivery fase, waarbij de code nog eens door een testsysteem gaat. Deze fase gebeurt volledig automatisch, maar er kunnen ook manueel testen uitgevoerd worden. Eens de code door deze fase raakt, is ze klaar om te deployen. 
+Dan komt de Continuous Delivery fase, waarbij de code nog eens door een testsysteem gaat. Deze fase gebeurt volledig automatisch, maar er kunnen ook manueel testen worden uitgevoerd. Eens de code door deze fase raakt, is ze klaar om te deployen. 
 Bij Continuous Deployment worden de wijzigingen dus automatisch naar buiten gebracht ~\autocite{Kramer2018}.
 
 \section{Automated Tests voor CI}
 \label{sec:automated-test-voor-ci}
-Om te zorgen dat de automated tests aan de noden van Continuous Integration voldoen, moet er rekening gehouden worden met enkele criteria: snelheid, betrouwbaarheid, hoeveelheid en onderhoud.
+Om te zorgen dat de automated tests aan de noden van Continuous Integration voldoen, moet er worden rekening gehouden met enkele criteria: snelheid, betrouwbaarheid, hoeveelheid en onderhoud.
 Bij Continuous Integration draait alles rond feedback, hierbij speelt snelheid een niet te onderschatten rol. Wanneer het runnen van de automated tests enige tijd vergt, zal de developer pas laat feedback terug krijgen waar de pipeline gefaald is. Daarom is het belangrijk rekening te houden met de test piramide bij het ontwerpen van de test omgeving. Er moet telkens een goede afweging gemaakt worden in welke categorie elke test gestoken kan worden ~\autocite{Jones2019}.
 
 Betrouwbaarheid wordt tegenwoordig als 'normaal' beschouwd, maar dit is niet zo vanzelfsprekend. Het kan gebeuren dat de automated tests niet zo betrouwbaar zijn waardoor de developers met valse informatie moeten werken. Dit is niet bevorderlijk voor de verdere productie en het vertrouwen in een Continuous Integration en Continuous Delivery pipeline. Er zijn wel enkele tips om de automated tests betrouwbaar te maken: door de UI elements een degelijke identifier geven. Zo hoeven de testen niet de onbetrouwbare css selectors te gebruiken om aan de elementen te kunnen. 
@@ -52,32 +52,22 @@ De test data van één bron van informatie voorzien is nog een belangrijke tip. 
 
 De hoeveelheid aan tests moet beperkt blijven om zo de snelheid van de execution times en het onderhoudsgemak te bewaren.
 Als men automated tests schrijft voor een CI/CD pipeline, moet men zaken testen die de integratie en het deployen van de applicatie kunnen verstoren.
-Ook kritieke functionaliteiten, nieuwe informatie, zaken die de voorbije builds fout liepen moeten getest worden. 
-De testen groeperen per functionaliteit is een goede tip, zo moet er niet telkens elke functionaliteit opnieuw getest worden. Maar kan de build scheduler beslissen welke groep test moet runnen bij de nieuwe code. 
+Ook kritieke functionaliteiten, nieuwe informatie, zaken die de voorbije builds fout liepen, moeten getest worden. 
+De testen groeperen per functionaliteit is een goede tip, zo moet niet telkens elke functionaliteit opnieuw worden getest. Maar kan de build scheduler beslissen welke groep test moet runnen bij de nieuwe code. 
 Angie Jones \textcite{Jones2019} geeft ook nog als tip om af en toe wat onnodige testen te verwijderen.
 
 Voor het onderhoud van de testen moet je rekening houden met de staat van je applicatie. Deze verandert doorheen de tijd en je testen moeten deze verandering ook doorstaan.
 
     \paragraph{Testing in SAPUI5}
     Binnen SAPUI5 wordt er gebruik gemaakt van QUnit tests en OPA5, One-Page Acceptance tests\\
-    QUnit is een JavaScript unit testing framework dat bekend staat voor zijn ou-of-the-box asynchronous capaciteiten. Dit is handig wanneer er UI functionaliteit, zoals animaties na het laden van bepaalde zaken, getest moeten worden. Omdat QUnit ook gebruik maakt van JQuery, net zoals SAPUI5, maakt dit het de perfecte tool om testen mee uit te voeren.\\
+    QUnit is een JavaScript unit testing framework dat bekend staat voor zijn ou-of-the-box asynchronous capaciteiten. Dit is handig wanneer er UI functionaliteiten, zoals animaties na het laden van bepaalde zaken, getest moeten worden. Omdat QUnit ook gebruik maakt van JQuery, net zoals SAPUI5, maakt dit het de perfecte tool om testen mee uit te voeren.\\
     OPA5 daarentegen bant elke vorm van asynchroon werk en kan makkelijk de elementen in de UI gebruiken om te testen. Dit maakt OPA5 de ideale tool om interactie met de gebruiker, integratie met SAPUI5 en navigatie te testen\footnote{https://sapui5.hana.ondemand.com/sdk}.
-    %TODO: https://blogs.sap.com/2018/10/03/testing-your-sapui5-application-with-opa5/
-    %TODO: Automatic testing with OPA on Jenkins and Travis: https://stackoverflow.com/questions/24934012/automated-ui-tests-for-sap-ui5 (onderste post)
-    %TODO: https://github.com/SAP/karma-ui5/issues/1
-    %TODO: https://help.sap.com/viewer/468a97775123488ab3345a0c48cadd8f/7.52.1/en-US/ae448243822448d8ba04b4784f4b09a0.html
-    %TODO: https://blogs.sap.com/2016/11/21/headless-opa5-testing-with-karma-and-phantomjs/
-
+    
 \section{Jenkins}
 \label{sec:short-list}
-Uit het hoofdstuk\ref{ch:methodologie} hebben we in grote lijnen de vergelijking gemaakt tussen verschillende build schedulers. Jenkins kwas daar als absolute winnaar naar boven. Deze gaan we dus ook gebruiken om onze CI/CD pipeline uit te werken.
-In het vorige hoofdstuk hebben we de Ubuntu server helemaal klaar gezet voor het gebruik met een build scheduler. De opzet van Jenkins wordt in het hoofdstuk Continuous Integration uitgelegd in het extra document dat te vinden is bij deze thesis.
-    
-    %TODO: https://sap.github.io/jenkins-library/scenarios/ui5-sap-cp/Readme/!!!!!!!!!
-    %TODO: https://blogs.sap.com/2017/11/21/continuous-delivery-with-jenkins-pipelines/
-    %TODO: http://www.sapspot.com/ci-cd-for-sapui5-on-scp-neo-with-gitlab/
-    %TODO: OPA test via Selenium: https://www.agiletrailblazers.com/blog/modernized-technology/automated-testing-with-selenium-grid-and-jenkins-in-3-steps
-    
+Uit het hoofdstuk\ref{ch:methodologie} hebben we in grote lijnen de vergelijking gemaakt tussen verschillende build schedulers. Jenkins kwam daar als absolute winnaar naar boven. Deze gaan we dus ook gebruiken om onze CI/CD pipeline uit te werken.
+In het vorige hoofdstuk hebben we de Ubuntu server helemaal klaargezet voor het gebruik met een build scheduler. De opzet van Jenkins wordt in het hoofdstuk Continuous Integration uitgelegd in het extra document dat te vinden is bij deze thesis.
     
 \section{Conclusie}
 \label{sec:conclusie}
+%TODO: Nog schrijven!!!!!!!!!!!!!!!!!!!
