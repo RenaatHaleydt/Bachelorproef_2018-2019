@@ -38,9 +38,25 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.2.4}Artifact Repository Manager}{29}{subsection.3.2.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.3}Voordelen}{29}{section.3.3}
+\contentsline {section}{\numberline {3.3}Voordelen}{30}{section.3.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.4}Nadelen}{30}{section.3.4}
+\contentsline {paragraph}{Maak wat de klant wil}{30}{section.3.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Minder bugs}{30}{section.3.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Tijdsbesparing}{30}{section.3.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Niet 2x zelfde fout}{30}{section.3.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Geen QA team}{30}{section.3.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Minder downtime}{31}{section.3.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Hogere productiviteit}{31}{section.3.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Geen schrik voor release}{31}{section.3.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.4}Nadelen}{31}{section.3.4}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {4}SAP}{33}{chapter.4}
 \defcounter {refsection}{0}\relax 
@@ -68,61 +84,61 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {paragraph}{Should-Haves}{38}{subsection.5.1.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Nice-to-Haves}{38}{subsection.5.1.3}
+\contentsline {paragraph}{Nice-to-Haves}{39}{subsection.5.1.3}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {5.1.4}Long list}{39}{subsection.5.1.4}
 \defcounter {refsection}{0}\relax 
 \contentsline {paragraph}{Jenkins}{39}{subsection.5.1.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Circle CI}{39}{subsection.5.1.4}
+\contentsline {paragraph}{Circle CI}{40}{subsection.5.1.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Bamboo}{39}{subsection.5.1.4}
+\contentsline {paragraph}{Bamboo}{40}{subsection.5.1.4}
 \defcounter {refsection}{0}\relax 
 \contentsline {paragraph}{Travis CI}{40}{subsection.5.1.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.2}Voorbeeldapplicatie dat Amista zal gebruiken}{40}{section.5.2}
+\contentsline {section}{\numberline {5.2}Voorbeeldapplicatie waar Amista gebruik van maakt}{40}{section.5.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.2.1}Build scheduler server}{41}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.1}Build scheduler server}{40}{subsection.5.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Ubuntu server}{41}{subsection.5.2.1}
+\contentsline {paragraph}{Ubuntu server}{40}{subsection.5.2.1}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {5.2.2}Database}{42}{subsection.5.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Node.js module}{42}{subsection.5.2.2}
+\contentsline {paragraph}{Node.js module}{43}{subsection.5.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.2.3}UI5-applicatie}{42}{subsection.5.2.3}
+\contentsline {subsection}{\numberline {5.2.3}UI5-applicatie}{43}{subsection.5.2.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {6}Proof-of-concept van een CI/CD pipeline}{43}{chapter.6}
+\contentsline {chapter}{\numberline {6}Proof-of-concept van een CI/CD pipeline}{45}{chapter.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.1}Continuous Delivery principles}{43}{section.6.1}
+\contentsline {section}{\numberline {6.1}Continuous Delivery principles}{45}{section.6.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.2}CI/CD pipeline op SAP Cloud Platform}{44}{section.6.2}
+\contentsline {section}{\numberline {6.2}CI/CD pipeline op SAP Cloud Platform}{46}{section.6.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.3}CI/CD pipeline volgens SAP}{44}{section.6.3}
+\contentsline {section}{\numberline {6.3}CI/CD pipeline volgens SAP}{46}{section.6.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.4}Automated Tests voor CI}{44}{section.6.4}
+\contentsline {section}{\numberline {6.4}Automated Tests voor CI}{46}{section.6.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Testing in SAPUI5}{45}{section.6.4}
+\contentsline {paragraph}{Testing in SAPUI5}{47}{section.6.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.5}Jenkins}{45}{section.6.5}
+\contentsline {section}{\numberline {6.5}Jenkins}{47}{section.6.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.6}Conclusie}{46}{section.6.6}
+\contentsline {section}{\numberline {6.6}Conclusie}{48}{section.6.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {7}Conclusie}{47}{chapter.7}
+\contentsline {chapter}{\numberline {7}Conclusie}{49}{chapter.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {A}Onderzoeksvoorstel}{49}{appendix.A}
+\contentsline {chapter}{\numberline {A}Onderzoeksvoorstel}{51}{appendix.A}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.1}Introductie}{49}{section.A.1}
+\contentsline {section}{\numberline {A.1}Introductie}{51}{section.A.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.2}State-of-the-art}{50}{section.A.2}
+\contentsline {section}{\numberline {A.2}State-of-the-art}{52}{section.A.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.3}Methodologie}{52}{section.A.3}
+\contentsline {section}{\numberline {A.3}Methodologie}{54}{section.A.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.4}Verwachte resultaten}{53}{section.A.4}
+\contentsline {section}{\numberline {A.4}Verwachte resultaten}{55}{section.A.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.5}Verwachte conclusies}{54}{section.A.5}
+\contentsline {section}{\numberline {A.5}Verwachte conclusies}{56}{section.A.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {B}{dutch}{Handleiding}{Guideline}}{55}{appendix.B}
+\contentsline {chapter}{\numberline {B}{dutch}{Handleiding}{Guideline}}{57}{appendix.B}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Bibliografie}{79}{appendix*.6}
+\contentsline {chapter}{Bibliografie}{81}{appendix*.6}
 \contentsfinish 
