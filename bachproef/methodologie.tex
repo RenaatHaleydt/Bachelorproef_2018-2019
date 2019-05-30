@@ -5,32 +5,32 @@
 \chapter{\IfLanguageName{dutch}{Methodologie}{Methodology}}
 \label{ch:methodologie}
 
-Deze thesis gaat aan de hand van een vergelijkende studie op zoek naar de beste build scheduler voor de specifieke set-up die ze bij Amista hanteren. De omgeving waar de build-scheduler overweg mee moet kunnen ziet er als volgt uit: een SAPUI5 webapplicatie met een SAP HANA database draaiend via Node.js en alles gehost op SAP Cloud Platform. Er worden aan de hand van criteria enkele build-schedulers gekozen die worden opgezet in bovenstaande omgeving, de stappen die hierbij komen kijken worden zorgvuldig uitgeschreven en in een handleiding gegoten. Zo is deze proof-of-concept reproduceerbaar en heeft Amista een mooi voorbeeld om een CI/CD pipeline op te zetten.
+Deze thesis gaat aan de hand van een vergelijkende studie op zoek naar de beste build scheduler voor de specifieke set-up waar Amista gebruik van maakt. De omgeving waar de build-scheduler mee overweg moet kunnen, ziet er als volgt uit: een SAPUI5 webapplicatie met een SAP HANA database draaiend via Node.js en alles gehost op SAP Cloud Platform. Er worden aan de hand van verschillende criteria enkele build-schedulers gekozen die worden opgezet in bovenstaande omgeving. De stappen die hierbij komen kijken, worden zorgvuldig uitgeschreven en in een handleiding gegoten. Zo is deze proof-of-concept reproduceerbaar en heeft Amista een mooi voorbeeld om een CI/CD pipeline op te zetten.
 
     \section{Vergelijkende studie van de build schedulers}
-    We beginnen met een klein stukje theorie over de build scheduler, om nadien tot de vergelijking over te gaan. Hier worden ook de verschillende criteria die Amista aangaf als belangrijk en minder belangrijk opgedeeld in twee delen: de functionele en de niet-functionele requirements. Binnen beide categorieën wordt er nog een opsplitsing gemaakt tussen: must-haves, should-haves en nice-to-haves.
-    Met deze informatie kunnen we al een eerste vergelijking maken tussen de build-schedulers die vandaag op de markt te vinden zijn. Als resultaat krijgen we een long list waar de tools naast elkaar worden gezet en vergeleken kunnen worden aan de hand van criteria. 
-    Uit deze eerste vergelijking nemen we de beste tools eruit om te testen in een realistische omgeving. Dit zal in hoofdstuk \ref{ch:proof-of-concept} gebeuren.
+    Er wordt gestart met een klein stukje theorie over de build scheduler, om nadien tot de vergelijking over te gaan. Hier worden ook de verschillende criteria die Amista aangaf als belangrijk en minder belangrijk opgedeeld in twee delen: de functionele en de niet-functionele requirements. Binnen beide categorieën wordt er nog een opsplitsing gemaakt tussen: must-haves, should-haves en nice-to-haves.
+    Met deze informatie is het mogelijk een eerste vergelijking te maken tussen de build-schedulers die vandaag op de markt te vinden zijn. Het resultaat is een long list waar de tools naast elkaar worden gezet en vergeleken kunnen worden aan de hand van criteria. 
+    Uit deze eerste vergelijking wordt de beste tools gekozen om te testen in een realistische omgeving. Dit zal in hoofdstuk \ref{ch:proof-of-concept} gebeuren.
 
         \subsection{Build Scheduler}
-        In Hoofdstuk~\ref{ch:ci-cd-cd} wordt er kort even aangehaald wat een build scheduler is en doet. Om hier toch een beter beeld van te krijgen, kaarten we nog een stukje theorie aan, om nadien aan de technische vergelijking te beginnen.
+        In Hoofdstuk~\ref{ch:ci-cd-cd} wordt er aangehaald wat een build scheduler is en doet. Wat volgt is nog een stukje theorie, om nadien aan de technische vergelijking te beginnen.
         De belangrijkste taak van een build scheduler is het uitvoeren van de builds. Met de principes van Continuous Integration in het achterhoofd weten we dat deze build uitgevoerd wordt na elke commit in de version control repository. Maar in praktijk zijn er twee verschillende categorieën: polling builds en scheduler builds.\\
         Bij polling builds wordt er, meestal op een zeer korte tijd zoals elke minuut bijvoorbeeld, gekeken of er veranderingen zijn aangebracht in de repository. Wanneer de build scheduler een verandering opmerkt zal hij automatisch de build uitvoeren.\\
         Bij scheduler builds wordt er, meestal op een dagelijkse basis, naar de veranderingen in de repository gekeken. Bij veranderingen worden de builds automatisch uitgevoerd. Deze manier is niet helemaal in regel met de principes van CI/CD omdat er op een dagelijkse basis feedback wordt voorzien in plaats van onmiddellijk na de commit, zoals bij polling builds.
         
-        Iedere developer weet dat testen een cruciale rol hebben binnen software. Het automatiseren van de tests gebeurd door een testing tool, zoals Karma vaak gebruik wordt binnen SAPUI5 development. Deze tool zorgt ervoor dat de QUnit (Unit tests binnen SAPUI5) en OPA tests (Integration tests binnen SAPUI5) geautomatiseerd worden. Continuous Integration en Continuous Delivery draait allemaal rond het uitvoeren van de testen en het feedback geven over de resultaten ervan. Het is dan ook de taak van de build scheduler om voor een uitstekende samenwerking te zorgen met de gebruikte testing tool.
+        Testen spelen een cruciale rol binnen software. Het automatiseren van de tests gebeurd door een testing tool, zoals Karma vaak gebruik wordt binnen SAPUI5 development. Deze tool zorgt ervoor dat de QUnit (Unit tests binnen SAPUI5) en OPA tests (Integration tests binnen SAPUI5) geautomatiseerd worden. Continuous Integration en Continuous Delivery draait allemaal rond het uitvoeren van de testen en het feedback geven over de resultaten ervan. Het is dan ook de taak van de build scheduler om voor een uitstekende samenwerking te zorgen met de gebruikte testing tool.
         
-        Tevens moet de build scheduler naadloos samen werken met de gebruikte version control tool. Hij moet namelijk de commits kunnen ophalen via deze version control tool.\\
+        Daarnaast moet de build scheduler naadloos samenwerken met de gebruikte version control tool. Hij moet namelijk de commits kunnen ophalen via deze version control tool.\\
         Een build scheduler zorgt er ook voor dat het mogelijk is om de veranderingen aan de code te testen op een test server, indien deze aanwezig is. De build scheduler moet het mogelijk maken om de code te deployen naar de test server waar een realistische opstelling nagemaakt is om zo de code te testen.
         Feedback bezorgen aan de developer is het eigenlijke doel van de build scheduler. Hoe beter en sneller de feedback, hoe sneller het probleem opgelost kan worden. De developer verliest op deze manier weinig tijd en weet exact waar de code fout gelopen is.
         
         
         
         \subsection{Requirements}
-        Nu we weten hoe een build scheduler werkt is het belangrijk om te weten naar welke criteria er moet gekeken worden om de beste tool eruit te kiezen. De functionele en niet-functionele requirements worden opgelijst om een beter beeld te krijgen hoe we een vergelijking moeten toepassen.
+        Na de uitleg over de werking van een build scheduler is het goed om te weten naar welke criteria er moet gekeken worden om de beste tool eruit te kiezen. De functionele en niet-functionele requirements worden opgelijst om een beter beeld te krijgen hoe de vergelijking toegepast moet worden.
 
             \paragraph{Functionele requirements}
-            Een functionele requirement is een functie wat het systeem moet doen.
+            Een functionele requirement is een functie van wat het systeem moet doen.
             De punten die in deze sectie worden aangehaald komen uit hoofdstuk \ref{ch:cicd-pipeline}. Om een duidelijk beeld te krijgen wat de build scheduler moet doen worden de functionele requirements hier nog eens kort besproken.
             \begin{itemize}
                 \item De build scheduler moet de aanpassingen aan de code sneller naar de klant brengen
@@ -39,26 +39,27 @@ Deze thesis gaat aan de hand van een vergelijkende studie op zoek naar de beste 
             \end{itemize}
             
             \paragraph{Niet-functionele requirements}
-            Een niet-functionele requirement legt uit hoe het systeem een bepaalde functie moet uitvoeren. Voor Amista is het belangrijk dat de build scheduler voldoet aan hoge security eisen. Vaak wordt er met hele grote projecten gewerkt die gevoelige data en broncode beschikken. Om optimale veiligheid te garanderen wordt gewerkt met een build scheduler die op een on-premise systeem zal draaien. Een andere mogelijkheid, waar vandaag de dag veel in wordt geïnvesteerd, is een cloud build scheduler. Dit zorgt ervoor dat de code buiten de onderneming gaat, wat toch een zeker risico met zich meebrengt.
+            Een niet-functionele requirement legt uit hoe het systeem een bepaalde functie moet uitvoeren. Voor Amista is het belangrijk dat de build scheduler voldoet aan hoge security eisen. Vaak wordt er met hele grote projecten gewerkt die over gevoelige data en broncode beschikken. Om optimale veiligheid te garanderen wordt gewerkt met een build scheduler die op een on-premise systeem zal draaien. Een andere mogelijkheid, waar vandaag de dag veel in wordt geïnvesteerd, is een cloud build scheduler. Dit zorgt ervoor dat de code buiten de onderneming gaat, wat toch een zeker risico met zich meebrengt.
 
         \subsection{Criteria}
             \paragraph{Must-haves}
-            De must-haves van de build scheduler zullen vooral te maken hebben met de omgeving waarin ze moeten werken. Zoals in de literatuurstudie al beschreven staat, moet een build scheduler gebruikt worden met een SAPUI5 applicatie, samen met een SAP HANA database gehost op SAP Cloud Platform.
+            De must-haves van de build scheduler zullen vooral te maken hebben met de omgeving waarin ze moeten werken. Zoals in de literatuurstudie al beschreven staat, moet een build scheduler worden gebruikt met een SAPUI5 applicatie, samen met een SAP HANA database gehost op SAP Cloud Platform.
             
-            In deze thesis wordt dezelfde source control manager gebruikt als bij Amista. Het is niet van toepassing om zelf een source control system en repository manager te kiezen, er moet gebruik gemaakt worden van Git en Bitbucket. Het is vanzelfsprekend dat de build scheduler moet kunnen integreren met Git en Bitbucket.
+            In deze thesis wordt dezelfde source control manager gebruikt als bij Amista. Het is niet van toepassing om zelf een source control system en repository manager te kiezen, er moet gebruik worden gemaakt van Git en Bitbucket. Het is vanzelfsprekend dat de build scheduler moet kunnen integreren met Git en Bitbucket.
 
             Om een betere vergelijking te kunnen maken heeft Amista een Ubuntu server voorzien voor de uitwerking van de proof-of-concept, zie hoofdstuk \ref{ch:proof-of-concept}. Deze dient ook als simulatie voor de realistische on-premise set-up. Het is dus noodzakelijk dat de build scheduler op een Unix-based systeem kan draaien.
             
             De build scheduler moet ook deel kunnen uitmaken van een Continuous Delivery pipeline en automated tests kunnen uitvoeren. Een belangrijk onderdeel van de automated tests binnen SAPUI5 zijn OPA en QUnit  tests, deze moeten zeker uitgevoerd kunnen worden door de build scheduler.
             Binnen SAPUI5 wordt er vaak gebruik gemaakt van Karma om bovenstaande tests te automatiseren, daarom is het een must-have dat de build-scheduler de werking van Karma ondersteunt.
             
-            Het is voor Amista heel belangrijk dat de build scheduler makkelijk in gebruik is. Ondanks dat deze technologieën vaak nieuw zijn voor de developers zou het leerproces niet lang mogen duren. Ze redeneren dan ook op volgende manier: ze spenderen liever wat meer geld aan een build scheduler waar de developers snel mee weg zijn, dan een goedkopere waar de softwareontwikkelaars een hele tijd over doen om het proces onder de knie te krijgen. Het geld dat ze spenderen aan de duurdere, maar makkelijkere build scheduler is kleiner dan de lonen die ze moeten uitbetalen aan de programmeurs om de tool onder de knie te krijgen.
+            Het is voor Amista heel belangrijk dat de build scheduler makkelijk in gebruik is. Ondanks dat deze technologieën vaak nieuw zijn voor de developers, zou het leerproces niet lang mogen duren. Ze redeneren dan ook op volgende manier: ze spenderen liever wat meer geld aan een build scheduler waar de developers snel mee weg zijn, dan een goedkopere waar de softwareontwikkelaars een hele tijd over doen om het proces onder de knie te krijgen. Het geld dat ze spenderen aan de duurdere, maar makkelijkere build scheduler is kleiner dan de lonen die ze moeten uitbetalen aan de programmeurs om de tool onder de knie te krijgen.
             
-            De tools die we gaan vergelijken moeten ook getest worden op de mogelijkheid tot een audit. Dit omdat Amista ook vaak voor voedingsbedrijven werkt en dit wettelijk verplicht is.
+            De tools die vergeleken zullen worden, moeten ook getest worden op de mogelijkheid tot een audit. Dit omdat Amista ook vaak voor voedingsbedrijven werkt en dit wettelijk verplicht is.
 
-            Veiligheid is ook een belangrijk punt voor Amista, omdat ze heel vaak met zeer gevoelige data van hun klanten werken. Daarom is het belangrijk dat de tools goed omgaan met security. Hoe valt dit te testen? Als de tool meerdere malen per maand een nieuwe versie van de software uitbrengt zijn ze begaan met de veiligheid. Als de build scheduler de source code bereikt via een SSH key is dit ook een goede referentie op veiligheid. Bij het toepassen van Continuous Delivery is het ook belangrijk dat de security getest wordt. Dit doe je het beste door de security/penetration tests te automatiseren aan de hand van een tool.
+            Veiligheid is ook een belangrijk punt voor Amista, omdat ze heel vaak met zeer gevoelige data van hun klanten werken. Daarom is het belangrijk dat de tools goed omgaan met security. Hoe valt dit te testen? Als de tool meerdere malen per maand een nieuwe versie van de software uitbrengt zijn ze begaan met de veiligheid. Als de build scheduler de source code bereikt via een SSH key is dit ook een goede referentie op veiligheid. Bij het toepassen van Continuous Delivery is het ook belangrijk dat de security getest wordt. Dit doe je het beste door de security/penetration tests te automatiseren aan de hand van een tool.\\
+            Bij een open source tool wordt uiteraard code gebruikt die door anderen geschreven zijn. Dergelijke tool heeft een grotere kwetsbaarheid ten opzichte van andere tools.
             
-            Als we bovenstaande punten even kort samenvatten moet de build scheduler aan volgende vereisten voldoen:
+            Hier volgt een korte samenvatting van punten waar de build scheduler aan moet voldoen:
             \begin{itemize}
                 \item Hij moet bruikbaar zijn met een SAPUI5 applicatie, een SAP HANA database gehost op SAP Cloud Platform
                 \item Hij moet kunnen integreren met Git \& Bitbucket
@@ -67,23 +68,26 @@ Deze thesis gaat aan de hand van een vergelijkende studie op zoek naar de beste 
                 \item Gebruiksgemak moet centraal staan
                 \item Het moet mogelijk zijn om auditing toe te passen
                 \item Security is belangrijk, zijn er maandelijks meerdere releases ter beschikking?
+                \item Maakt de build scheduler gebruik van een SSH key om de connectie te ondersteunen?
+                \item Kan de build scheduler gebruik maken van een tool die automatisch de penetration tests runt?
+                \item Is de build scheduler open source?
             \end{itemize}
             
             
             \paragraph{Should-Haves}
-            De build scheduler zou moeten beschikken over gratis gebruik van de software om te experimenteren. Het is de bedoeling dat we in het volgende hoofdstuk een proof-of-concept kunnen uitwerken om bepaalde build schedulers te installeren. Daarom is het nodig om een gratis versie te hebben die de opstelling mogelijk maakt.\\
+            De build scheduler zou moeten beschikken over gratis gebruik van de software om te experimenteren. In het volgende hoofdstuk moet een proof-of-concept uitgewerkt worden om een bepaalde build scheduler te installeren. Daarom is het nodig om een gratis versie te hebben die de opstelling mogelijk maakt.\\
             Amista communiceert vaak via Skype For Business, ze zouden het leuk vinden om via dit kanaal ook feedback te krijgen over de staat van de build.
             
             
             \paragraph{Nice-to-Haves}
-            De build scheduler moet niet per se op een cloud draaien, het belangrijkste is dat de data lokaal gehouden kan worden door de build scheduler op een on-premise installatie op te zetten. Maar Amista wil graag deze optie openhouden voor de toekomst. Daarom is het mooi meegenomen als de gekozen build scheduler aan deze vereiste voldoet, maar het is geen breekpunt.\\
+            De build scheduler moet niet per se op een cloud draaien, het belangrijkste is dat de data lokaal kan worden gehouden door de build scheduler op een on-premise installatie op te zetten. Maar Amista wil graag deze optie openhouden voor de toekomst. Daarom is het mooi meegenomen als de gekozen build scheduler aan deze vereiste voldoet, maar het is geen breekpunt.\\
             Bij Amista denken ze aan de toekomst. Het zou leuk zijn als de tool kan integreren met Docker om de builds te bouwen. Omdat dit toch een handige, opkomende tool is binnen de informatica.\\
             Het is geen noodzaak om de build scheduler informatie via Slack of WhatsApp te versturen, maar een pluspunt.\\
             De CTO van Amista zou het ook als een pluspunt zien als de build scheduler het mogelijk maakt om een rapport te genereren wat er de voorbije week/maand gebeurd is in de code. Wie heeft wat gedaan, wie maakt de meeste fouten, ...? Zo'n zaken zijn handig om de prestaties van de developers binnen een team te kennen en te versterken.
 
         \subsection{Long list}
         Nu de verschillende criteria gekend zijn kan de effectieve vergelijking tussen de build schedulers gebeuren.
-        Eerst zal er een korte uitleg gegeven worden over welke programma's we gaan vergelijken en nadien vindt de vergelijking plaats in een overzichtelijke tabel.\\
+        Eerst zal er een korte uitleg gegeven worden over welke programma's in de vergelijking voorkomen. Nadien vindt de vergelijking plaats in een overzichtelijke tabel.\\
         Enkele woordjes uitleg bij de titels van de tabel: 
         \begin{itemize}
             \item SAP CP \& UI5 staan voor de integratie met SAP Cloud Platform en UI5
@@ -91,11 +95,9 @@ Deze thesis gaat aan de hand van een vergelijkende studie op zoek naar de beste 
             \item Audit checkt of het mogelijk is om auditing toe te passen
             \item Secure kijkt of er meerdere releases per maand worden uitgebracht. Zo ja is de build scheduler secure.
         \end{itemize}
-
-            %TODO: https://www.altexsoft.com/blog/engineering/comparison-of-most-popular-continuous-integration-tools-jenkins-teamcity-bamboo-travis-ci-and-more/
             
             \paragraph{Jenkins}
-            Jenkins is de meest gekende build scheduler binnen de IT-wereld. Het is een op zichzelf staande, open source automation server dat ontstaan is in 2011 na een afscheiding van het Hudson project. Jenkins is vooral bekend om de vele plug-ins die het mogelijk maken om met bijna alle talen en platformen te integreren. Jenkins is geschreven in Java en draait op een Java platform.
+            Jenkins is de meest gekende build scheduler binnen de IT-wereld. Het is een op zichzelf staande, open source automation server, ontstaan in 2011 na een afscheiding van het Hudson project. Jenkins is vooral bekend om de vele plug-ins die het mogelijk maken om met bijna alle talen en platformen te integreren. Jenkins is geschreven in Java en draait op een Java platform.
             
             \paragraph{Circle CI}
             Circle CI is opgericht in 2011 in San Francisco en wordt door vele grote bedrijven gebruikt in hun Continuous Integration pipeline. Het grootste deel van Circle CI is geschreven in Clojure en de Frontend in ClojureScript. 
@@ -104,40 +106,38 @@ Deze thesis gaat aan de hand van een vergelijkende studie op zoek naar de beste 
             Bamboo, een Java-based Continuous Integration en Continuous Delivery tool, werd opgericht in 2007 door het bedrijf Atlassian dat ook Bitbucket onder zijn hoede heeft.
             
             \paragraph{Travis CI}
-            Travis CI is een integration tool dat geschreven is in Ruby en opgericht in 2011 in Duitsland. Het staat bekend om zijn samenwerking met GitHub.
+            Travis CI is een integration tool, geschreven in Ruby en opgericht in 2011 in Duitsland. Het staat bekend om zijn samenwerking met GitHub.
             
             
-            %TODO: https://www.tablesgenerator.com
-            %TODO: Kijken voor de integratie met Karma ipv te vergelijken op het ondersteunen van OPA tests
-            %TODO: Kijken of Travis enkel met GitHub kan samenwerken en ook niet bedoeld is om continuous delivery toe te passen
             \begin{table}[]
-               \centering
-               \begin{tabular}{c|c|c|c|c|c|}
-                   \cline{2-6}
-                   \textbf{} & \textbf{} & \textbf{Jenkins} & \textbf{Circle Ci} & \textbf{Bamboo} & \textbf{Travis} \\ \hline
-                   \multicolumn{1}{|c|}{\textbf{\begin{tabular}[c]{@{}c@{}}Must-\\ haves\end{tabular}}} & \textbf{\begin{tabular}[c]{@{}c@{}}SAP CP\\ \& UI5\end{tabular}} & Ja & Geen info & 1 blogpost & Ja \\ \hline
-                   \multicolumn{1}{|c|}{\textbf{}} & \textbf{Git} & Ja & Ja & Ja & Ja \\ \hline
-                   \multicolumn{1}{|c|}{\textbf{}} & \textbf{Bitbucket} & Ja & Ja & Ja & Nee \\ \hline
-                   \multicolumn{1}{|c|}{\textbf{}} & \textbf{\begin{tabular}[c]{@{}c@{}}On-\\ premise\end{tabular}} & Ja & Ja & Ja & Ja \\ \hline
-                   \multicolumn{1}{|c|}{\textbf{}} & \textbf{\begin{tabular}[c]{@{}c@{}}CI/CD \\ pipeline\end{tabular}} & Ja & Ja & Ja & Ja \\ \hline
-                   \multicolumn{1}{|c|}{} & \textbf{Karma} & Ja & Ja & Ja & Ja \\ \hline
-                   \multicolumn{1}{|c|}{} & \textbf{Gebruik} & Makkelijk & Makkelijk & Matig & Makkelijk \\ \hline
-                   \multicolumn{1}{|c|}{} & \textbf{Audit} & Ja & Basic & Ja & Ja \\ \hline
-                   \multicolumn{1}{|c|}{} & \textbf{\begin{tabular}[c]{@{}c@{}}Releases\\ /maand\end{tabular}} & +++ & + & - & ++ \\ \hline
-                   \multicolumn{1}{|c|}{} & \textbf{SSH key} & Ja & Ja & Ja & Ja \\ \hline
-                   \multicolumn{1}{|c|}{} & \textbf{\begin{tabular}[c]{@{}c@{}}Automated\\ Penetration\\ Tests\end{tabular}} & Ja & Ja & Ja & Ja \\ \hline
-                   \multicolumn{1}{|c|}{\textbf{\begin{tabular}[c]{@{}c@{}}Should-\\ haves\end{tabular}}} & \textbf{Prijs} & Gratis & \$35 / user & \begin{tabular}[c]{@{}c@{}}\$1100 / jaar voor \\ 1 remote agent en \\ ongelimiteerd aantal jobs\end{tabular} & \begin{tabular}[c]{@{}c@{}}\$2739 / jaar \\ voor 5 jobs\end{tabular} \\ \hline
-                   \multicolumn{1}{|c|}{} & \textbf{Trial} & Gratis & 20 dagen & 30 dagen & \begin{tabular}[c]{@{}c@{}}Gratis voor \\ open-source\end{tabular} \\ \hline
-                   \multicolumn{1}{|c|}{} & \textbf{\begin{tabular}[c]{@{}c@{}}Skype for \\ Business\end{tabular}} & Ja & Nee & Nee & Ja \\ \hline
-                   \multicolumn{1}{|c|}{} & \textbf{\begin{tabular}[c]{@{}c@{}}Container \\ support\end{tabular}} & Ja & Ja & Ja & Ja \\ \hline
-                   \multicolumn{1}{|c|}{\textbf{\begin{tabular}[c]{@{}c@{}}Nice-to-\\ haves\end{tabular}}} & \textbf{Slack} & Ja & Ja & Ja, via derde partij & Ja \\ \hline
-                   \multicolumn{1}{|c|}{} & \textbf{Rapport} & Ja & Ja & Nee & Ja \\ \hline
-               \end{tabular}
-               \caption{Long list van CI/CD tools}
-               \label{tab:long-list}
+                \centering
+                \begin{tabular}{c|c|c|c|c|c|}
+                    \cline{2-6}
+                    \textbf{} & \textbf{} & \textbf{Jenkins} & \textbf{Circle Ci} & \textbf{Bamboo} & \textbf{Travis} \\ \hline
+                    \multicolumn{1}{|c|}{\textbf{\begin{tabular}[c]{@{}c@{}}Must-\\ haves\end{tabular}}} & \textbf{\begin{tabular}[c]{@{}c@{}}SAP CP\\ \& UI5\end{tabular}} & Ja & Geen info & 1 blogpost & Ja \\ \hline
+                    \multicolumn{1}{|c|}{\textbf{}} & \textbf{Git} & Ja & Ja & Ja & Ja \\ \hline
+                    \multicolumn{1}{|c|}{\textbf{}} & \textbf{Bitbucket} & Ja & Ja & Ja & Nee \\ \hline
+                    \multicolumn{1}{|c|}{\textbf{}} & \textbf{\begin{tabular}[c]{@{}c@{}}On-\\ premise\end{tabular}} & Ja & Ja & Ja & Ja \\ \hline
+                    \multicolumn{1}{|c|}{\textbf{}} & \textbf{\begin{tabular}[c]{@{}c@{}}CI/CD \\ pipeline\end{tabular}} & Ja & Ja & Ja & Ja \\ \hline
+                    \multicolumn{1}{|c|}{} & \textbf{Karma} & Ja & Ja & Ja & Ja \\ \hline
+                    \multicolumn{1}{|c|}{} & \textbf{Gebruik} & Makkelijk & Makkelijk & Matig & Makkelijk \\ \hline
+                    \multicolumn{1}{|c|}{} & \textbf{Audit} & Ja & Basic & Ja & Ja \\ \hline
+                    \multicolumn{1}{|c|}{} & \textbf{\begin{tabular}[c]{@{}c@{}}Releases\\ /maand\end{tabular}} & +++ & + & - & ++ \\ \hline
+                    \multicolumn{1}{|c|}{} & \textbf{SSH key} & Ja & Ja & Ja & Ja \\ \hline
+                    \multicolumn{1}{|c|}{} & \textbf{\begin{tabular}[c]{@{}c@{}}Automated\\ Penetration\\ Tests\end{tabular}} & Ja & Ja & Ja & Ja \\ \hline
+                    \multicolumn{1}{|l|}{} & \textbf{Open source} & Ja & Nee & Nee & Nee \\ \hline
+                    \multicolumn{1}{|c|}{\textbf{\begin{tabular}[c]{@{}c@{}}Should-\\ haves\end{tabular}}} & \textbf{Prijs} & Gratis & \$35 / user & \begin{tabular}[c]{@{}c@{}}\$1100 / jaar voor \\ 1 remote agent en \\ ongelimiteerd aantal jobs\end{tabular} & \begin{tabular}[c]{@{}c@{}}\$2739 / jaar \\ voor 5 jobs\end{tabular} \\ \hline
+                    \multicolumn{1}{|c|}{} & \textbf{Trial} & Gratis & 20 dagen & 30 dagen & \begin{tabular}[c]{@{}c@{}}Gratis voor \\ open-source\end{tabular} \\ \hline
+                    \multicolumn{1}{|c|}{} & \textbf{\begin{tabular}[c]{@{}c@{}}Skype for \\ Business\end{tabular}} & Ja & Nee & Nee & Ja \\ \hline
+                    \multicolumn{1}{|c|}{} & \textbf{\begin{tabular}[c]{@{}c@{}}Container \\ support\end{tabular}} & Ja & Ja & Ja & Ja \\ \hline
+                    \multicolumn{1}{|c|}{\textbf{\begin{tabular}[c]{@{}c@{}}Nice-to-\\ haves\end{tabular}}} & \textbf{Slack} & Ja & Ja & Ja, via derde partij & Ja \\ \hline
+                    \multicolumn{1}{|c|}{} & \textbf{Rapport} & Ja & Ja & Nee & Ja \\ \hline
+                \end{tabular}
+                \caption{Long list van CI/CD tools}
+                \label{tab:long-list}
             \end{table}
 
-    \section{Voorbeeldapplicatie dat Amista zal gebruiken}
+    \section{Voorbeeldapplicatie waar Amista gebruik van maakt}
     Hoe ziet de omgeving eruit waar Amista een CI/CD pipeline in wil opzetten? In de literatuurstudie worden de gebruikte tools uitgelegd, in dit hoofdstuk worden ze uitgewerkt en de onderliggende relaties besproken.
     Amista heeft een Ubuntu server ter beschikking gesteld om te experimenteren. In deze thesis wordt de server gebruikt als Continuous Integration server.
     
@@ -163,22 +163,22 @@ Deze thesis gaat aan de hand van een vergelijkende studie op zoek naar de beste 
             De 'id\_rsa.pub' is de publieke key van de client die op de server moet komen om zo de ssh validatie te voorzien, dit wordt ook wel een ssh session genoemd. Eens de ssh session geconfigureerd is zal het niet nodig zijn om via een paswoord in te loggen op de remote server via deze client.
             Om veiligheidsredenen is het uiteraard beter om enkel via key-based authenticatie in te loggen en zo het paswoord uit te sluiten.
             
-            Om de remote server nog meer te beschermen tegen cyber aanvallen is het nodig om een firewall op te zetten. In de voorbeeldapplicatie maken we gebruik van de UFW Firewall, wat staat voor Uncomplicated Firewall. Dit is een gebruiksvriendelijke tool dat helpt om de IP Tables onder controle te houden en zo te zorgen dat maar bepaalde services toegelaten worden tot onze server.
+            Om de remote server nog meer te beschermen tegen cyber aanvallen is het nodig om een firewall op te zetten. In de voorbeeldapplicatie wordt gebruik gemaakt van de UFW Firewall, wat staat voor Uncomplicated Firewall. Dit is een gebruiksvriendelijke tool dat helpt om de IP Tables onder controle te houden en zo te zorgen dat slechts bepaalde services toegelaten worden tot onze server.
             In Linux maken ze gebruik van het protocol SSH via de service OpenSSH. Deze heeft tevens ook een profiel bij UFF wat het makkelijk maakt om de firewall op te zetten en enkel de SSH toe te laten die geconfigureerd is.
             
         \subsection{Database}
         Binnen SAP wordt een HANA database aangeraden om te gebruiken. Momenteel is versie 2.0 van SAP HANA op de markt en deze versie biedt tal van extra mogelijkheden ten opzichte van de vorige versie. SAP HANA wordt zeer goed ondersteund door de andere programma's binnen SAP.\\
-        Voor de database maken we gebruik van een Multi-Target Application Project, dit is een template dat SAP voorziet en is een goede uitvalsbasis om te gebruiken in de voorbeeldapplicatie.
+        Voor de database wordt een Multi-Target Application Project gebruikt, dit is een template dat SAP voorziet en is een goede uitvalsbasis om te gebruiken in de voorbeeldapplicatie.
         
             
             Een realistische opstelling van een CI/CD voorbeeldapplicatie start bijna nooit vanaf nul, het bouwt meestal voort op bestaande, geschreven software.
-            Daarom zal er in deze voorbeeldapplicatie manueel een basis gelegd worden, zo kan er aan de hand van een build scheduler voortgebouwd worden op deze geschreven software.
-            De bescheiden database waar we naartoe willen, bestaat uit slechts één entiteit: een Artiest en heeft volgende properties: ID, Naam en JaarVanOorsprong.
+            Daarom zal er in deze voorbeeldapplicatie manueel een basis worden gelegd, zo kan er aan de hand van een build scheduler worden voortgebouwd op deze geschreven software.
+            De bescheiden database waar naartoe gewerkt wordt, bestaat uit slechts één entiteit: een Artiest en heeft volgende properties: ID, Naam en JaarVanOorsprong.
             
             De Artiest wordt via een HDB CDS Artifact, een Core Data Services document dat definities bevat om objecten te creëren in de database, gedefinieerd.
            
             \paragraph{Node.js module}
-            Om de models te gebruiken dat gecreëerd zijn, moeten we een tweede module toevoegen aan de HANA database: een Node.js module om de data als OData service te kunnen gebruiken.
+            Om de models te gebruiken die gecreëerd zijn, moet er een tweede module worden toegevoegd aan de HANA database: een Node.js module om de data als OData service te kunnen gebruiken.
             Deze module implementeert XSJS en XSODATA die op hun beurt zorgen voor de transformatie van het data model en de bereikbaarheid naar de buitenwereld.\\
             CRUD (Create, Read, Update en Delete) operaties uitvoeren op de data beschikbaar stellen als OData is de taak van XSODATA.\\
             XSJS zorgt dan weer voor de integratie met SAPUI5 en laat toe dat SAPUI5 applicaties de data kunnen lezen en bewerken.
