@@ -55,7 +55,8 @@ Deze thesis gaat aan de hand van een vergelijkende studie op zoek naar de beste 
             Het is voor Amista heel belangrijk dat de build scheduler makkelijk in gebruik is. Ondanks dat deze technologieën vaak nieuw zijn voor de developers zou het leerproces niet lang mogen duren. Ze redeneren dan ook op volgende manier: ze spenderen liever wat meer geld aan een build scheduler waar de developers snel mee weg zijn, dan een goedkopere waar de softwareontwikkelaars een hele tijd over doen om het proces onder de knie te krijgen. Het geld dat ze spenderen aan de duurdere, maar makkelijkere build scheduler is kleiner dan de lonen die ze moeten uitbetalen aan de programmeurs om de tool onder de knie te krijgen.
             
             De tools die we gaan vergelijken moeten ook getest worden op de mogelijkheid tot een audit. Dit omdat Amista ook vaak voor voedingsbedrijven werkt en dit wettelijk verplicht is.
-            Veiligheid is ook een belangrijk punt voor Amista, omdat ze heel vaak met zeer gevoelige data van hun klanten werken. Daarom is het belangrijk dat de tools goed omgaan met security. Hoe valt dit te testen? Als de tool meerdere malen per maand een nieuwe versie van de software uitbrengt zijn ze begaan met de veiligheid.
+
+            Veiligheid is ook een belangrijk punt voor Amista, omdat ze heel vaak met zeer gevoelige data van hun klanten werken. Daarom is het belangrijk dat de tools goed omgaan met security. Hoe valt dit te testen? Als de tool meerdere malen per maand een nieuwe versie van de software uitbrengt zijn ze begaan met de veiligheid. Als de build scheduler de source code bereikt via een SSH key is dit ook een goede referentie op veiligheid. Bij het toepassen van Continuous Delivery is het ook belangrijk dat de security getest wordt. Dit doe je het beste door de security/penetration tests te automatiseren aan de hand van een tool.
             
             Als we bovenstaande punten even kort samenvatten moet de build scheduler aan volgende vereisten voldoen:
             \begin{itemize}
@@ -96,15 +97,6 @@ Deze thesis gaat aan de hand van een vergelijkende studie op zoek naar de beste 
             \paragraph{Jenkins}
             Jenkins is de meest gekende build scheduler binnen de IT-wereld. Het is een op zichzelf staande, open source automation server dat ontstaan is in 2011 na een afscheiding van het Hudson project. Jenkins is vooral bekend om de vele plug-ins die het mogelijk maken om met bijna alle talen en platformen te integreren. Jenkins is geschreven in Java en draait op een Java platform.
             
-            %Links gevonden voor tabel: 
-            %\begin{itemize}
-            %    \item https://sap.github.io/jenkins-library/scenarios/ui5-sap-cp/Readme/
-            %    \item https://qxf2.com/blog/blog-post-on-how-to-connect-bitbucket-with-jenkins/
-            %    \item https://www.digitalocean.com/community/tutorials/how-to-install-jenkins-on-ubuntu-18-04
-            %    \item https://wiki.jenkins.io/display/JENKINS/Delivery+Pipeline+Plugin
-            %    \item Auditing: https://wiki.jenkins.io/display/JENKINS/Audit+Trail+Plugin
-            %\end{itemize}
-            
             \paragraph{Circle CI}
             Circle CI is opgericht in 2011 in San Francisco en wordt door vele grote bedrijven gebruikt in hun Continuous Integration pipeline. Het grootste deel van Circle CI is geschreven in Clojure en de Frontend in ClojureScript. 
 
@@ -118,7 +110,7 @@ Deze thesis gaat aan de hand van een vergelijkende studie op zoek naar de beste 
             %TODO: https://www.tablesgenerator.com
             %TODO: Kijken voor de integratie met Karma ipv te vergelijken op het ondersteunen van OPA tests
             %TODO: Kijken of Travis enkel met GitHub kan samenwerken en ook niet bedoeld is om continuous delivery toe te passen
-           \begin{table}[]
+            \begin{table}[]
                \centering
                \begin{tabular}{c|c|c|c|c|c|}
                    \cline{2-6}
@@ -131,7 +123,9 @@ Deze thesis gaat aan de hand van een vergelijkende studie op zoek naar de beste 
                    \multicolumn{1}{|c|}{} & \textbf{Karma} & Ja & Ja & Ja & Ja \\ \hline
                    \multicolumn{1}{|c|}{} & \textbf{Gebruik} & Makkelijk & Makkelijk & Matig & Makkelijk \\ \hline
                    \multicolumn{1}{|c|}{} & \textbf{Audit} & Ja & Basic & Ja & Ja \\ \hline
-                   \multicolumn{1}{|c|}{} & \textbf{Secure} & Ja & Meestal & Nee &  \\ \hline
+                   \multicolumn{1}{|c|}{} & \textbf{\begin{tabular}[c]{@{}c@{}}Releases\\ /maand\end{tabular}} & +++ & + & - & ++ \\ \hline
+                   \multicolumn{1}{|c|}{} & \textbf{SSH key} & Ja & Ja & Ja & Ja \\ \hline
+                   \multicolumn{1}{|c|}{} & \textbf{\begin{tabular}[c]{@{}c@{}}Automated\\ Penetration\\ Tests\end{tabular}} & Ja & Ja & Ja & Ja \\ \hline
                    \multicolumn{1}{|c|}{\textbf{\begin{tabular}[c]{@{}c@{}}Should-\\ haves\end{tabular}}} & \textbf{Prijs} & Gratis & \$35 / user & \begin{tabular}[c]{@{}c@{}}\$1100 / jaar voor \\ 1 remote agent en \\ ongelimiteerd aantal jobs\end{tabular} & \begin{tabular}[c]{@{}c@{}}\$2739 / jaar \\ voor 5 jobs\end{tabular} \\ \hline
                    \multicolumn{1}{|c|}{} & \textbf{Trial} & Gratis & 20 dagen & 30 dagen & \begin{tabular}[c]{@{}c@{}}Gratis voor \\ open-source\end{tabular} \\ \hline
                    \multicolumn{1}{|c|}{} & \textbf{\begin{tabular}[c]{@{}c@{}}Skype for \\ Business\end{tabular}} & Ja & Nee & Nee & Ja \\ \hline
@@ -141,7 +135,7 @@ Deze thesis gaat aan de hand van een vergelijkende studie op zoek naar de beste 
                \end{tabular}
                \caption{Long list van CI/CD tools}
                \label{tab:long-list}
-           \end{table}
+            \end{table}
 
     \section{Voorbeeldapplicatie dat Amista zal gebruiken}
     Hoe ziet de omgeving eruit waar Amista een CI/CD pipeline in wil opzetten? In de literatuurstudie worden de gebruikte tools uitgelegd, in dit hoofdstuk worden ze uitgewerkt en de onderliggende relaties besproken.
