@@ -25,16 +25,40 @@
 % Wie zijn bachelorproef in het Nederlands schrijft, kan dit negeren, de inhoud
 % wordt niet in het document ingevoegd.
 
-\IfLanguageName{english}{%
-\selectlanguage{dutch}
-\chapter*{Samenvatting}
-%\lipsum[1-4]
-\selectlanguage{english}
-}{}
+%\IfLanguageName{english}{%
+%\selectlanguage{dutch}
+%\chapter*{Samenvatting}
+%\selectlanguage{english}
+%}{}
 
 %%---------- Samenvatting -----------------------------------------------------
 % De samenvatting in de hoofdtaal van het document
 
 \chapter*{\IfLanguageName{dutch}{Samenvatting}{Abstract}}
+Betere, redundante projecten opleveren, dit is waar ieder bedrijf naar streeft.\\
+Amista is een consultancy bedrijf dat op zoek gaat, samen met hun klanten, naar oplossingen binnen de wereld van SAP.
+Bij Amista weten ze heel goed waar de noden van hun klanten liggen en zouden hier dan ook graag op inspelen.\\
+Klanten willen namelijk de gewenste veranderingen onmiddellijk te zien krijgen, de wachttijd op een oplevering die ze willen doorvoeren moet minimaal blijven.
 
-%\lipsum[1-4]
+Meestal werkt een heel team aan de oplevering van een project, dit leidt tot verschillende versies van de code. Men weet niet precies op welk punt de code 'echt werkt'. \\
+Continuous Integration en Continuous Delivery kan een hulpmiddel zijn om bij elke push werkende software te hebben. Er wordt namelijk gecontroleerd of de code voldoet aan criteria om het als 'werkende' te beschouwen.
+
+Deze studie biedt een weg aan bedrijven die eraan denken om een CI/CD pipeline te integreren op SAP Cloud Platform. \\
+De voor- en nadelen van een CI/CD worden uitvoerig besproken, er wordt gekeken of het wel mogelijk is om een pipeline te bouwen voor de specifieke set-up die Amista hanteert: een SAPUI5 webapplicaties die wordt gecombineerd met een SAP HANA database dat gebruik maakt van Node.js en gehost wordt op SAP Cloud Platform.
+
+Er worden vandaag heel wat build schedulers aangeboden om te gebruiken in de pipeline. Zo is er keuze tussen Travis CI, Circle CI, Jenkins, Bamboo, ... Wat is nu de beste keuze als men rekening houdt met de specifieke set-up, security en gebruiksgemak?
+Als laatste wil deze thesis een gids zijn om een CI/CD pipeline te integreren binnen deze bepaalde set-up.
+
+Voor bepaalde projecten wegen de voordelen die worden besproken niet op tegen de nadelen. De tijd die men steekt in het opzetten van een CI/CD pipeline wordt zeker terug verdient bij grotere projecten.\\
+Jenkins komt als de grote winnaar uit de bus wanneer we de verschillende build schedulers vergelijken, het voldoet aan de meeste must-haves, should-haves en nice-to-haves in vergelijking met de andere tools.\\
+%TODO: Kiezen:
+ALS HET NIET SLAAGT:\\
+Om een Continuous Integration omgeving op te zetten waarbij automated tests worden uitgevoerd biedt deze thesis een mooie handleiding. 
+Voor een Continuous Delivery pipeline biedt deze thesis een algemene guideline die alle stappen aanraakt die moeten voorzien worden. Het is echter niet in de praktijk gelukt om deze stappen uit te voeren, daarom worden ze kort aangehaald en voorzien van nodige uitleg.
+
+Na het lezen van deze thesis rest de vraag hoe we een Continuous Delivery scenario kunnen vormen met een andere build scheduler of wanneer de SAPUI5 gehost wordt op een ander platform zoals Cloud Foundry bijvoorbeeld.
+
+ALS HET SLAAGT:\\
+Deze scriptie biedt een mooie gids om het avontuur aan te gaan om een Continuous Integration en Continuous Delivery pipeline op te stellen. Alle stappen die bij de opzet komen kijken worden aangehaald en voorzien van de nodige uitleg.
+
+Uit deze scriptie blijkt dat het mogelijk is om een Continuous Integration en Continuous Delivery pipeline op te bouwen met technologieën zoals SAPUI5 en SAP Cloud Platform. Ondanks dat dit zeer moeilijk is om het op te zetten helpt deze thesis om dit voor elkaar te krijgen.
