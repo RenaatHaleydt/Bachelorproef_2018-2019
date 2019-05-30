@@ -5,7 +5,7 @@
 \chapter{\IfLanguageName{dutch}{Methodologie}{Methodology}}
 \label{ch:methodologie}
 
-Deze thesis gaat aan de hand van een vergelijkende studie op zoek naar de beste build scheduler voor de specifieke set-up waar Amista gebruik van maakt. De omgeving waar de build-scheduler mee overweg moet kunnen, ziet er als volgt uit: een SAPUI5 webapplicatie met een SAP HANA database draaiend via Node.js en alles gehost op SAP Cloud Platform. Er worden aan de hand van verschillende criteria enkele build-schedulers gekozen die worden opgezet in bovenstaande omgeving. De stappen die hierbij komen kijken, worden zorgvuldig uitgeschreven en in een handleiding gegoten. Zo is deze proof-of-concept reproduceerbaar en heeft Amista een mooi voorbeeld om een CI/CD pipeline op te zetten.
+Deze bachelorproef gaat aan de hand van een vergelijkende studie op zoek naar de beste build scheduler voor de specifieke set-up waar Amista gebruik van maakt. De omgeving waar de build-scheduler mee overweg moet kunnen, ziet er als volgt uit: een SAPUI5 webapplicatie met een SAP HANA database draaiend via Node.js en alles gehost op SAP Cloud Platform. Er worden aan de hand van verschillende criteria enkele build-schedulers gekozen die worden opgezet in bovenstaande omgeving. De stappen die hierbij komen kijken, worden zorgvuldig uitgeschreven en in een handleiding gegoten. Zo is deze proof-of-concept reproduceerbaar en heeft Amista een mooi voorbeeld om een CI/CD pipeline op te zetten.
 
     \section{Vergelijkende studie van de build schedulers}
     Er wordt gestart met een klein stukje theorie over de build scheduler, om nadien tot de vergelijking over te gaan. Hier worden ook de verschillende criteria die Amista aangaf als belangrijk en minder belangrijk opgedeeld in twee delen: de functionele en de niet-functionele requirements. Binnen beide categorieën wordt er nog een opsplitsing gemaakt tussen: must-haves, should-haves en nice-to-haves.
@@ -45,7 +45,7 @@ Deze thesis gaat aan de hand van een vergelijkende studie op zoek naar de beste 
             \paragraph{Must-haves}
             De must-haves van de build scheduler zullen vooral te maken hebben met de omgeving waarin ze moeten werken. Zoals in de literatuurstudie al beschreven staat, moet een build scheduler worden gebruikt met een SAPUI5 applicatie, samen met een SAP HANA database gehost op SAP Cloud Platform.
             
-            In deze thesis wordt dezelfde source control manager gebruikt als bij Amista. Het is niet van toepassing om zelf een source control system en repository manager te kiezen, er moet gebruik worden gemaakt van Git en Bitbucket. Het is vanzelfsprekend dat de build scheduler moet kunnen integreren met Git en Bitbucket.
+            In deze bachelorproef wordt dezelfde source control manager gebruikt als bij Amista. Het is niet van toepassing om zelf een source control system en repository manager te kiezen, er moet gebruik worden gemaakt van Git en Bitbucket. Het is vanzelfsprekend dat de build scheduler moet kunnen integreren met Git en Bitbucket.
 
             Om een betere vergelijking te kunnen maken heeft Amista een Ubuntu server voorzien voor de uitwerking van de proof-of-concept, zie hoofdstuk \ref{ch:proof-of-concept}. Deze dient ook als simulatie voor de realistische on-premise set-up. Het is dus noodzakelijk dat de build scheduler op een Unix-based systeem kan draaien.
             
@@ -139,7 +139,7 @@ Deze thesis gaat aan de hand van een vergelijkende studie op zoek naar de beste 
 
     \section{Voorbeeldapplicatie waar Amista gebruik van maakt}
     Hoe ziet de omgeving eruit waar Amista een CI/CD pipeline in wil opzetten? In de literatuurstudie worden de gebruikte tools uitgelegd, in dit hoofdstuk worden ze uitgewerkt en de onderliggende relaties besproken.
-    Amista heeft een Ubuntu server ter beschikking gesteld om te experimenteren. In deze thesis wordt de server gebruikt als Continuous Integration server.
+    Amista heeft een Ubuntu server ter beschikking gesteld om te experimenteren. In deze bachelorproef wordt de server gebruikt als Continuous Integration server.
     
     Om de leesbaarheid te bevorderen is er gekozen om de uitgewerkte handleiding in een apart bestand te schrijven. Er wordt namelijk vaak verwezen naar figuren. U kan de uitgewerkte handleiding terug vinden in het bestand proof-of-concept in de map 'bijlagen'.\\
     Hieronder kan u de extra duiding terug vinden die bij de handleiding hoort.
