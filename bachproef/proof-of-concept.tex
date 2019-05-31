@@ -66,8 +66,24 @@ Voor het onderhoud van de testen moet je rekening houden met de staat van je app
 \section{Jenkins}
 \label{sec:short-list}
 Uit het hoofdstuk\ref{ch:methodologie} is, in grote lijnen, de vergelijking gemaakt tussen verschillende build schedulers. Jenkins kwam daar als absolute winnaar naar boven. Deze wordt dus ook gebruikt om onze CI/CD pipeline uit te werken.
-Na het vorige hoofdstuk staat de Ubuntu server helemaal klaar voor het gebruik met een build scheduler. De opzet van Jenkins wordt in het hoofdstuk Continuous Integration uitgelegd in het extra document dat te vinden is bij deze bachelorproef.
+Na het vorige hoofdstuk staat de Ubuntu server helemaal klaar voor het gebruik met een build scheduler. De opzet van Jenkins wordt in het hoofdstuk B.4 Proof-of-concept uitgelegd in hoofdstuk \ref{ch:handleiding}.
+    
+    \subsection{Grunt Build file}
+    Deze file bevindt zich in de root folder van het project en zorgt voor de Grunt build van de SAPUI5 applicatie. Deze kan taken uitvoeren zoals het analyseren van de code, het minimaliseren van de JavaScript files en het creëren van een Component-preload.js.
+    
+    \subsection{Jenkins 2.0 pipeline}
+    Dit is de volgende stap in DevOps waarbij je de infrastructuur als code beheert. Voor Jenkins gebeurt dit aan de hand van Groovy scripts, een taal die gebruikt wordt om scripts te schrijven voor een Java platform. Een best practise is om het Groovy script in een file te schrijven, Jenkinsfile genaamd.\\
+    Dat de infrastructuur nu als code bewaard wordt heeft vele voordelen: er kan version control op toegepast worden waardoor je de configuratie kan bekijken doorheen de tijd en kan zien wanneer en hoe een verandering is doorgevoerd. Dit heeft als voordeel wanneer iets niet meer werkt aan de pipeline, dan kan er makkelijk terug gegrepen worden naar een stabiele versie.\\
+    Het is ook veel makkelijker om deze files uit te wisselen met anderen zodat ze de configuratie makkelijk kunnen overnemen.
+    
+    \subsection{Multitarget Application Archive Builder}
+    Kort is dit een command-line tool, gebaseerd op Java, dat de code van het project omzet naar een archive dat door de NEO omgeving ingelezen kan worden. Het verpakt de applicatie in een deployable bestand, een .mtar file.\\
+    Deze houdt rekening met de MTA development descriptor van het project en in welke omgeving het archive bestand moet terecht komen.
+    In deze bachelorproef is er sprake van SAP Cloud Platform. Deze heeft twee omgevingen waar je de mtar file naartoe kan deployen: NEO en Cloud Foundry. In deze studie maken we enkel gebruik van de NEO omgeving van SAP Cloud Platform.
+    
+        \paragraph{Multitarget Application Development Descriptor}
+        Ook wel MTA development descriptor genoemd. Dit is een file dat aangeeft hoe de MTA Archive Builder het project moet verpakken. Deze file moet worden opgeslagen onder de naam mta.yaml en roept de Grunt build op voor de SAPUI5 applicatie module.
     
 \section{Conclusie}
 \label{sec:conclusie}
-%TODO: Nog schrijven!!!!!!!!!!!!!!!!!!!
+Aan de hand van de handleiding in Appendix \ref{ch:handleiding} is het mogelijk om een CI/CD pipeline te bouwen met de technologieën uit hoofdstuk \ref{ch:methodologie} en Jenkins. Het eindresultaat de build van de software, het uitvoeren van de testen en het maken van een mtar-file die kan gebruikt worden in SAP Cloud Platform om te deployen.

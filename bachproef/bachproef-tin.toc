@@ -122,23 +122,31 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {6.5}Jenkins}{48}{section.6.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.6}Conclusie}{48}{section.6.6}
+\contentsline {subsection}{\numberline {6.5.1}Grunt Build file}{48}{subsection.6.5.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {7}Conclusie}{49}{chapter.7}
+\contentsline {subsection}{\numberline {6.5.2}Jenkins 2.0 pipeline}{48}{subsection.6.5.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {A}Onderzoeksvoorstel}{51}{appendix.A}
+\contentsline {subsection}{\numberline {6.5.3}Multitarget Application Archive Builder}{48}{subsection.6.5.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.1}Introductie}{51}{section.A.1}
+\contentsline {paragraph}{Multitarget Application Development Descriptor}{48}{section*.29}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.2}State-of-the-art}{52}{section.A.2}
+\contentsline {section}{\numberline {6.6}Conclusie}{49}{section.6.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.3}Methodologie}{54}{section.A.3}
+\contentsline {chapter}{\numberline {7}Conclusie}{51}{chapter.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.4}Verwachte resultaten}{55}{section.A.4}
+\contentsline {chapter}{\numberline {A}Onderzoeksvoorstel}{53}{appendix.A}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.5}Verwachte conclusies}{56}{section.A.5}
+\contentsline {section}{\numberline {A.1}Introductie}{53}{section.A.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {B}{dutch}{Handleiding}{Guideline}}{57}{appendix.B}
+\contentsline {section}{\numberline {A.2}State-of-the-art}{54}{section.A.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Bibliografie}{81}{appendix*.29}
+\contentsline {section}{\numberline {A.3}Methodologie}{56}{section.A.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {A.4}Verwachte resultaten}{57}{section.A.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {A.5}Verwachte conclusies}{58}{section.A.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {B}Handleiding}{59}{appendix.B}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{Bibliografie}{89}{appendix*.30}
 \contentsfinish 
